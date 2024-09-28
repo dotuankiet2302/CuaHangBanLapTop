@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="App_BanLaptop.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CNN" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=LAPTOP-E8D06NHE\SQLEXPRESS;Initial Catalog=Module_DN;User ID=sa;Password=123</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

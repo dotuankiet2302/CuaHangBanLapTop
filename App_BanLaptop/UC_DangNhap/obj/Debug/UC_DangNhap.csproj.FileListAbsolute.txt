@@ -1,0 +1,10 @@
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\UC_DangNhap\bin\Debug\UC_DangNhap.dll
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\UC_DangNhap\bin\Debug\UC_DangNhap.pdb
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\UC_DangNhap\obj\Debug\UC_DangNhap.csproj.AssemblyReference.cache
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\UC_DangNhap\obj\Debug\UC_DangNhap.DN.resources
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\UC_DangNhap\obj\Debug\UC_DangNhap.csproj.GenerateResource.cache
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\UC_DangNhap\obj\Debug\UC_DangNhap.csproj.CoreCompileInputs.cache
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\UC_DangNhap\obj\Debug\UC_DangNhap.dll
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\UC_DangNhap\obj\Debug\UC_DangNhap.pdb
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\UC_DangNhap\obj\Debug\UC_DangNhap.Properties.Resources.resources
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\UC_DangNhap\obj\Debug\UC_DangNhap.CH.resources

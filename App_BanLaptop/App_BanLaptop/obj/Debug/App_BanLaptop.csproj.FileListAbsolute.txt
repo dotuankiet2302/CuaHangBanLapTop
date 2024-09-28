@@ -1,0 +1,14 @@
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\bin\Debug\App_BanLaptop.exe.config
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\bin\Debug\App_BanLaptop.exe
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\bin\Debug\App_BanLaptop.pdb
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\bin\Debug\UC_DangNhap.dll
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\bin\Debug\UC_DangNhap.pdb
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\obj\Debug\App_BanLaptop.csproj.AssemblyReference.cache
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\obj\Debug\App_BanLaptop.Main.resources
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\obj\Debug\App_BanLaptop.Forms.Login.resources
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\obj\Debug\App_BanLaptop.Properties.Resources.resources
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\obj\Debug\App_BanLaptop.csproj.GenerateResource.cache
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\obj\Debug\App_BanLaptop.csproj.CoreCompileInputs.cache
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\obj\Debug\App_BanL.6FB670B6.Up2Date
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\obj\Debug\App_BanLaptop.exe
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\obj\Debug\App_BanLaptop.pdb
