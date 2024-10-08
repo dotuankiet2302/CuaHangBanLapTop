@@ -12,3 +12,7 @@ D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\obj\Deb
 D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\obj\Debug\App_BanL.6FB670B6.Up2Date
 D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\obj\Debug\App_BanLaptop.exe
 D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\obj\Debug\App_BanLaptop.pdb
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\obj\Debug\App_BanLaptop.Forms.BaoCaoThongKe.resources
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\obj\Debug\App_BanLaptop.Forms.DatHang.resources
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\obj\Debug\App_BanLaptop.Forms.QL_NhanVien.resources
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\obj\Debug\App_BanLaptop.Forms.QL_SanPham.resources

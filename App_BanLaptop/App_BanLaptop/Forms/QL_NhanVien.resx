@@ -117,35 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="thongtinban" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\thongtinban.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="thongkedoanhthu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\thongkedoanhthu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="nhanvien" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\nhanvien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="dangxuat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\dangxuat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="shopping" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\shopping.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sua" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\sua.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="them" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\them.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="czp15675592031" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\czp15675592031.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hoadon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\hoadon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="xoa" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\xoa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

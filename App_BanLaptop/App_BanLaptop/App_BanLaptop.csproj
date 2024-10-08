@@ -58,6 +58,18 @@
     <Compile Include="Forms\DatHang.Designer.cs">
       <DependentUpon>DatHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\QL_NhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QL_NhanVien.Designer.cs">
+      <DependentUpon>QL_NhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QL_SanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QL_SanPham.Designer.cs">
+      <DependentUpon>QL_SanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +84,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\BaoCaoThongKe.resx">
+      <DependentUpon>BaoCaoThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DatHang.resx">
+      <DependentUpon>DatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QL_NhanVien.resx">
+      <DependentUpon>QL_NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QL_SanPham.resx">
+      <DependentUpon>QL_SanPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +151,15 @@
       <Project>{6090DC46-8708-4685-AE20-2C591F2213B5}</Project>
       <Name>UC_DangNhap</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\them.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\sua.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\xoa.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
