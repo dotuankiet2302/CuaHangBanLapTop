@@ -1,0 +1,6 @@
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\DTO\bin\Debug\DTO.dll
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\DTO\bin\Debug\DTO.pdb
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\DTO\obj\Debug\DTO.dll
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\DTO\obj\Debug\DTO.pdb
