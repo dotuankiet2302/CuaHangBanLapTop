@@ -103,6 +103,7 @@
             this.btnDangXuat.Text = "  Đăng Xuất";
             this.btnDangXuat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDangXuat.UseVisualStyleBackColor = true;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // btnTKDoanhThu
             // 
@@ -119,6 +120,7 @@
             this.btnTKDoanhThu.Text = "Thống Kê Doanh Thu";
             this.btnTKDoanhThu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTKDoanhThu.UseVisualStyleBackColor = true;
+            this.btnTKDoanhThu.Click += new System.EventHandler(this.btnTKDoanhThu_Click);
             // 
             // btnDatHang
             // 
@@ -135,6 +137,7 @@
             this.btnDatHang.Text = "  Đặt Hàng";
             this.btnDatHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDatHang.UseVisualStyleBackColor = true;
+            this.btnDatHang.Click += new System.EventHandler(this.btnDatHang_Click);
             // 
             // btnTTKhachHang
             // 
@@ -151,6 +154,7 @@
             this.btnTTKhachHang.Text = " Thông Tin\r\n Khách Hàng";
             this.btnTTKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTTKhachHang.UseVisualStyleBackColor = true;
+            this.btnTTKhachHang.Click += new System.EventHandler(this.btnTTKhachHang_Click);
             // 
             // btnHoaDon
             // 
@@ -167,6 +171,7 @@
             this.btnHoaDon.Text = " Hoá Đơn";
             this.btnHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHoaDon.UseVisualStyleBackColor = true;
+            this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
             // 
             // btnQuanAo
             // 
@@ -183,6 +188,7 @@
             this.btnQuanAo.Text = " Laptop";
             this.btnQuanAo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnQuanAo.UseVisualStyleBackColor = true;
+            this.btnQuanAo.Click += new System.EventHandler(this.btnQuanAo_Click);
             // 
             // label1
             // 
@@ -233,13 +239,14 @@
             this.btnNhanVien.Text = "  Nhân viên";
             this.btnNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNhanVien.UseVisualStyleBackColor = true;
+            this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click);
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(440, 103);
+            this.panel1.Location = new System.Drawing.Point(440, 91);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1260, 585);
+            this.panel1.Size = new System.Drawing.Size(1264, 597);
             this.panel1.TabIndex = 11;
             // 
             // panelTitleBar
@@ -284,6 +291,7 @@
             this.picDangXuat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picDangXuat.TabIndex = 32;
             this.picDangXuat.TabStop = false;
+            this.picDangXuat.Click += new System.EventHandler(this.picDangXuat_Click);
             // 
             // picTKDT
             // 
@@ -296,6 +304,7 @@
             this.picTKDT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picTKDT.TabIndex = 31;
             this.picTKDT.TabStop = false;
+            this.picTKDT.Click += new System.EventHandler(this.picTKDT_Click);
             // 
             // picDatHang
             // 
@@ -308,6 +317,7 @@
             this.picDatHang.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picDatHang.TabIndex = 30;
             this.picDatHang.TabStop = false;
+            this.picDatHang.Click += new System.EventHandler(this.picDatHang_Click);
             // 
             // picTTKH
             // 
@@ -320,6 +330,7 @@
             this.picTTKH.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picTTKH.TabIndex = 29;
             this.picTTKH.TabStop = false;
+            this.picTTKH.Click += new System.EventHandler(this.picTTKH_Click);
             // 
             // picHoaDon
             // 
@@ -332,6 +343,7 @@
             this.picHoaDon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picHoaDon.TabIndex = 28;
             this.picHoaDon.TabStop = false;
+            this.picHoaDon.Click += new System.EventHandler(this.picHoaDon_Click);
             // 
             // picQuanAo
             // 
@@ -344,6 +356,7 @@
             this.picQuanAo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picQuanAo.TabIndex = 27;
             this.picQuanAo.TabStop = false;
+            this.picQuanAo.Click += new System.EventHandler(this.picQuanAo_Click);
             // 
             // picNhanVien
             // 
@@ -357,6 +370,7 @@
             this.picNhanVien.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picNhanVien.TabIndex = 26;
             this.picNhanVien.TabStop = false;
+            this.picNhanVien.Click += new System.EventHandler(this.picNhanVien_Click);
             // 
             // Main
             // 
@@ -368,6 +382,7 @@
             this.Controls.Add(this.panelTitleBar);
             this.Name = "Main";
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
             this.panelTitleBar.ResumeLayout(false);

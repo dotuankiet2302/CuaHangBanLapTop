@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace App_BanLaptop.Properties {
+namespace DTO.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -23,16 +23,14 @@ namespace App_BanLaptop.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-E8D06NHE\\SQLEXPRESS;Initial Catalog=doan_laptop;User ID=sa;Pas" +
-            "sword=123")]
-        public string CNN {
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-E8D06NHE\\SQLEXPRESS;Initial Catalog=doan_laptop;Persist Securi" +
+            "ty Info=True;User ID=sa;Password=123;TrustServerCertificate=True")]
+        public string doan_laptopConnectionString {
             get {
-                return ((string)(this["CNN"]));
-            }
-            set {
-                this["CNN"] = value;
+                return ((string)(this["doan_laptopConnectionString"]));
             }
         }
     }

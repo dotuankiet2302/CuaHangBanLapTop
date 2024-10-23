@@ -30,7 +30,7 @@ namespace UC_DangNhap
 
         public LoginResult Check_User(string pUser, string pPass, string pcnn)
         {
-            SqlDataAdapter daUser = new SqlDataAdapter("select * from QL_NguoiDung where TenDangNhap='" + pUser + "' and MatKhau ='" + pPass + "'", pcnn);
+            SqlDataAdapter daUser = new SqlDataAdapter("select * from khachhang where TAIKHOAN='" + pUser + "' and MATKHAU ='" + pPass + "'", pcnn);
             DataTable dt = new DataTable();
             daUser.Fill(dt);
             if (dt.Rows.Count == 0)

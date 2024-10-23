@@ -7,3 +7,4 @@ D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\DAL\obj\Debug\DAL.pdb
 D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\DAL\bin\Debug\DTO.dll
 D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\DAL\bin\Debug\DTO.pdb
 D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\DAL\obj\Debug\DAL.csproj.Up2Date
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\DAL\bin\Debug\DTO.dll.config

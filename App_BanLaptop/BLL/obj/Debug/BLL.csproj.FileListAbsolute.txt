@@ -9,3 +9,4 @@ D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\BLL\bin\Debug\DAL.pdb
 D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\BLL\obj\Debug\BLL.csproj.Up2Date
 D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\BLL\bin\Debug\DTO.dll
 D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\BLL\bin\Debug\DTO.pdb
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\BLL\bin\Debug\DTO.dll.config
