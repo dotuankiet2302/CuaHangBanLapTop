@@ -3,68 +3,32 @@
   "WorkspaceRootPath": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\GUI.csproj|d:\\phattrienphanmem_thongminh\\banlaptop_doan\\app_banlaptop\\app_banlaptop\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\GUI.csproj|solutionrelative:app_banlaptop\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\GUI.csproj|d:\\phattrienphanmem_thongminh\\banlaptop_doan\\app_banlaptop\\app_banlaptop\\forms\\ql_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\GUI.csproj|solutionrelative:app_banlaptop\\forms\\ql_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{358A65A6-1F80-4C5F-A034-3F627D18D202}|BLL\\BLL.csproj|d:\\phattrienphanmem_thongminh\\banlaptop_doan\\app_banlaptop\\bll\\nhanvienbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{358A65A6-1F80-4C5F-A034-3F627D18D202}|BLL\\BLL.csproj|solutionrelative:bll\\nhanvienbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E7194118-EF41-44C2-BBAC-62C1965BDE1B}|DAL\\DAL.csproj|d:\\phattrienphanmem_thongminh\\banlaptop_doan\\app_banlaptop\\dal\\nhanviendal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E7194118-EF41-44C2-BBAC-62C1965BDE1B}|DAL\\DAL.csproj|solutionrelative:dal\\nhanviendal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\GUI.csproj|d:\\phattrienphanmem_thongminh\\banlaptop_doan\\app_banlaptop\\app_banlaptop\\forms\\ql_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\GUI.csproj|solutionrelative:app_banlaptop\\forms\\ql_nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\GUI.csproj|d:\\phattrienphanmem_thongminh\\banlaptop_doan\\app_banlaptop\\app_banlaptop\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\GUI.csproj|solutionrelative:app_banlaptop\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\GUI.csproj|D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\app_banlaptop\\forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\GUI.csproj|solutionrelative:app_banlaptop\\forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6090DC46-8708-4685-AE20-2C591F2213B5}|UC_DangNhap\\UC_DangNhap.csproj|d:\\phattrienphanmem_thongminh\\banlaptop_doan\\app_banlaptop\\uc_dangnhap\\ql_nguoidung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6090DC46-8708-4685-AE20-2C591F2213B5}|UC_DangNhap\\UC_DangNhap.csproj|solutionrelative:uc_dangnhap\\ql_nguoidung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\GUI.csproj|d:\\phattrienphanmem_thongminh\\banlaptop_doan\\app_banlaptop\\app_banlaptop\\forms\\hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\GUI.csproj|solutionrelative:app_banlaptop\\forms\\hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\App_BanLaptop.csproj|D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\app_banlaptop\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\App_BanLaptop.csproj|solutionrelative:app_banlaptop\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\GUI.csproj|d:\\phattrienphanmem_thongminh\\banlaptop_doan\\app_banlaptop\\app_banlaptop\\forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\GUI.csproj|solutionrelative:app_banlaptop\\forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\App_BanLaptop.csproj|D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\app_banlaptop\\forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\App_BanLaptop.csproj|solutionrelative:app_banlaptop\\forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6090DC46-8708-4685-AE20-2C591F2213B5}|UC_DangNhap\\UC_DangNhap.csproj|D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\uc_dangnhap\\dn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6090DC46-8708-4685-AE20-2C591F2213B5}|UC_DangNhap\\UC_DangNhap.csproj|solutionrelative:uc_dangnhap\\dn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\GUI.csproj|d:\\phattrienphanmem_thongminh\\banlaptop_doan\\app_banlaptop\\app_banlaptop\\forms\\dathang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\GUI.csproj|solutionrelative:app_banlaptop\\forms\\dathang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\App_BanLaptop.csproj|D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\app_banlaptop\\forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\App_BanLaptop.csproj|solutionrelative:app_banlaptop\\forms\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\GUI.csproj|D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\app_banlaptop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\GUI.csproj|d:\\phattrienphanmem_thongminh\\banlaptop_doan\\app_banlaptop\\app_banlaptop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\GUI.csproj|solutionrelative:app_banlaptop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\App_BanLaptop.csproj|D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\app_banlaptop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\App_BanLaptop.csproj|solutionrelative:app_banlaptop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\GUI.csproj|D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\app_banlaptop\\forms\\baocaothongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\GUI.csproj|solutionrelative:app_banlaptop\\forms\\baocaothongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\GUI.csproj|D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\app_banlaptop\\forms\\baocaothongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\GUI.csproj|solutionrelative:app_banlaptop\\forms\\baocaothongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6090DC46-8708-4685-AE20-2C591F2213B5}|UC_DangNhap\\UC_DangNhap.csproj|D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\uc_dangnhap\\dn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6090DC46-8708-4685-AE20-2C591F2213B5}|UC_DangNhap\\UC_DangNhap.csproj|solutionrelative:uc_dangnhap\\dn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,91 +38,78 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "DN.cs",
-              "DocumentMoniker": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\UC_DangNhap\\DN.cs",
-              "RelativeDocumentMoniker": "UC_DangNhap\\DN.cs",
-              "ToolTip": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\UC_DangNhap\\DN.cs",
-              "RelativeToolTip": "UC_DangNhap\\DN.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T17:44:07.839Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "HoaDon.cs [Design]",
-              "DocumentMoniker": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Forms\\HoaDon.cs",
-              "RelativeDocumentMoniker": "App_BanLaptop\\Forms\\HoaDon.cs",
-              "ToolTip": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Forms\\HoaDon.cs [Design]",
-              "RelativeToolTip": "App_BanLaptop\\Forms\\HoaDon.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T11:54:11.12Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Main.cs",
-              "DocumentMoniker": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Main.cs",
-              "RelativeDocumentMoniker": "App_BanLaptop\\Main.cs",
-              "ToolTip": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Main.cs",
-              "RelativeToolTip": "App_BanLaptop\\Main.cs",
-              "ViewState": "AgIAAGgAAAAAAAAAAAAawHEAAAAJAAAAAAAAAA==",
+              "Title": "QL_NhanVien.cs",
+              "DocumentMoniker": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Forms\\QL_NhanVien.cs",
+              "RelativeDocumentMoniker": "App_BanLaptop\\Forms\\QL_NhanVien.cs",
+              "ToolTip": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Forms\\QL_NhanVien.cs",
+              "RelativeToolTip": "App_BanLaptop\\Forms\\QL_NhanVien.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAYwCQAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T11:47:57.349Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "QL_NguoiDung.cs",
-              "DocumentMoniker": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\UC_DangNhap\\QL_NguoiDung.cs",
-              "RelativeDocumentMoniker": "UC_DangNhap\\QL_NguoiDung.cs",
-              "ToolTip": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\UC_DangNhap\\QL_NguoiDung.cs",
-              "RelativeToolTip": "UC_DangNhap\\QL_NguoiDung.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBkAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T11:39:12.322Z",
+              "WhenOpened": "2024-11-02T12:03:36.003Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "NhanVienBLL.cs",
+              "DocumentMoniker": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\BLL\\NhanVienBLL.cs",
+              "RelativeDocumentMoniker": "BLL\\NhanVienBLL.cs",
+              "ToolTip": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\BLL\\NhanVienBLL.cs",
+              "RelativeToolTip": "BLL\\NhanVienBLL.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwCsAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T12:01:48.404Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NhanVienDAL.cs",
+              "DocumentMoniker": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\DAL\\NhanVienDAL.cs",
+              "RelativeDocumentMoniker": "DAL\\NhanVienDAL.cs",
+              "ToolTip": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\DAL\\NhanVienDAL.cs",
+              "RelativeToolTip": "DAL\\NhanVienDAL.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAgwEsAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T11:53:28.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "QL_NhanVien.cs [Design]",
+              "DocumentMoniker": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Forms\\QL_NhanVien.cs",
+              "RelativeDocumentMoniker": "App_BanLaptop\\Forms\\QL_NhanVien.cs",
+              "ToolTip": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Forms\\QL_NhanVien.cs [Design]",
+              "RelativeToolTip": "App_BanLaptop\\Forms\\QL_NhanVien.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-02T09:51:57.709Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Main.cs [Design]",
               "DocumentMoniker": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Main.cs",
               "RelativeDocumentMoniker": "App_BanLaptop\\Main.cs",
               "ToolTip": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Main.cs [Design]",
               "RelativeToolTip": "App_BanLaptop\\Main.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T07:22:02.282Z",
+              "WhenOpened": "2024-11-02T09:51:54.721Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Login.cs [Design]",
-              "DocumentMoniker": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Forms\\Login.cs",
-              "RelativeDocumentMoniker": "App_BanLaptop\\Forms\\Login.cs",
-              "ToolTip": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Forms\\Login.cs [Design]",
-              "RelativeToolTip": "App_BanLaptop\\Forms\\Login.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T11:59:51.82Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Program.cs",
               "RelativeDocumentMoniker": "App_BanLaptop\\Program.cs",
@@ -166,32 +117,8 @@
               "RelativeToolTip": "App_BanLaptop\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T11:59:52.513Z",
+              "WhenOpened": "2024-11-02T09:51:46.957Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Program.cs",
-              "RelativeDocumentMoniker": "App_BanLaptop\\Program.cs",
-              "ToolTip": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Program.cs",
-              "RelativeToolTip": "App_BanLaptop\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T17:57:56.481Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Login.cs",
-              "DocumentMoniker": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Forms\\Login.cs",
-              "RelativeDocumentMoniker": "App_BanLaptop\\Forms\\Login.cs",
-              "ToolTip": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Forms\\Login.cs",
-              "RelativeToolTip": "App_BanLaptop\\Forms\\Login.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAAABkAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T10:12:39.802Z"
             },
             {
               "$type": "Document",
@@ -203,79 +130,6 @@
               "RelativeToolTip": "App_BanLaptop\\Main.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-21T10:10:23.484Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "DatHang.cs [Design]",
-              "DocumentMoniker": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Forms\\DatHang.cs",
-              "RelativeDocumentMoniker": "App_BanLaptop\\Forms\\DatHang.cs",
-              "ToolTip": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Forms\\DatHang.cs [Design]",
-              "RelativeToolTip": "App_BanLaptop\\Forms\\DatHang.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T12:09:47.831Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Login.cs",
-              "DocumentMoniker": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Forms\\Login.cs",
-              "RelativeDocumentMoniker": "App_BanLaptop\\Forms\\Login.cs",
-              "ToolTip": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Forms\\Login.cs",
-              "RelativeToolTip": "App_BanLaptop\\Forms\\Login.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAmwBkAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T07:22:02.074Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "BaoCaoThongKe.cs [Design]",
-              "DocumentMoniker": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Forms\\BaoCaoThongKe.cs",
-              "RelativeDocumentMoniker": "App_BanLaptop\\Forms\\BaoCaoThongKe.cs",
-              "ToolTip": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Forms\\BaoCaoThongKe.cs [Design]",
-              "RelativeToolTip": "App_BanLaptop\\Forms\\BaoCaoThongKe.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T11:59:59.225Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "BaoCaoThongKe.cs",
-              "DocumentMoniker": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Forms\\BaoCaoThongKe.cs",
-              "RelativeDocumentMoniker": "App_BanLaptop\\Forms\\BaoCaoThongKe.cs",
-              "ToolTip": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Forms\\BaoCaoThongKe.cs",
-              "RelativeToolTip": "App_BanLaptop\\Forms\\BaoCaoThongKe.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T12:00:01.524Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Login.cs [Design]",
-              "DocumentMoniker": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Forms\\Login.cs",
-              "RelativeDocumentMoniker": "App_BanLaptop\\Forms\\Login.cs",
-              "ToolTip": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Forms\\Login.cs [Design]",
-              "RelativeToolTip": "App_BanLaptop\\Forms\\Login.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-21T10:12:19.653Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "DN.cs [Design]",
-              "DocumentMoniker": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\UC_DangNhap\\DN.cs",
-              "RelativeDocumentMoniker": "UC_DangNhap\\DN.cs",
-              "ToolTip": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\UC_DangNhap\\DN.cs [Design]",
-              "RelativeToolTip": "UC_DangNhap\\DN.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T15:06:29.455Z",
-              "EditorCaption": " [Design]"
             }
           ]
         }

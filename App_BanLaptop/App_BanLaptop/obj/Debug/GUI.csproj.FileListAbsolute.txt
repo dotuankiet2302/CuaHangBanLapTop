@@ -23,3 +23,5 @@ D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\bin\Deb
 D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\bin\Debug\DTO.dll.config
 D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\obj\Debug\App_BanLaptop.Forms.HoaDon.resources
 D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\obj\Debug\App_BanLaptop.Forms.QL_KhachHang.resources
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\bin\Debug\DAL.dll
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\App_BanLaptop\bin\Debug\DAL.pdb
