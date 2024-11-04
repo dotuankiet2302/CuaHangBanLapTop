@@ -31,7 +31,7 @@
             this.cboTimKiem = new System.Windows.Forms.ComboBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.txtDVT = new System.Windows.Forms.TextBox();
+            this.txtMaTinhTrang = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtMaMH = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,9 +42,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvSanPham = new System.Windows.Forms.DataGridView();
-            this.picXoa = new System.Windows.Forms.PictureBox();
-            this.picSua = new System.Windows.Forms.PictureBox();
-            this.picThem = new System.Windows.Forms.PictureBox();
+            this.Xoa = new System.Windows.Forms.PictureBox();
+            this.Sua = new System.Windows.Forms.PictureBox();
+            this.Them = new System.Windows.Forms.PictureBox();
             this.txtMoTa = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtNgayCapNhat = new System.Windows.Forms.TextBox();
@@ -58,9 +58,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nUDSoLuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDDonGiaBan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picXoa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSua)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picThem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Xoa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sua)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Them)).BeginInit();
             this.SuspendLayout();
             // 
             // cboTimKiem
@@ -94,13 +94,13 @@
             this.txtTimKiem.Size = new System.Drawing.Size(612, 41);
             this.txtTimKiem.TabIndex = 79;
             // 
-            // txtDVT
+            // txtMaTinhTrang
             // 
-            this.txtDVT.Location = new System.Drawing.Point(894, 197);
-            this.txtDVT.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDVT.Name = "txtDVT";
-            this.txtDVT.Size = new System.Drawing.Size(133, 22);
-            this.txtDVT.TabIndex = 75;
+            this.txtMaTinhTrang.Location = new System.Drawing.Point(894, 197);
+            this.txtMaTinhTrang.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaTinhTrang.Name = "txtMaTinhTrang";
+            this.txtMaTinhTrang.Size = new System.Drawing.Size(133, 22);
+            this.txtMaTinhTrang.TabIndex = 75;
             // 
             // label6
             // 
@@ -204,44 +204,44 @@
             this.dgvSanPham.Name = "dgvSanPham";
             this.dgvSanPham.RowHeadersWidth = 51;
             this.dgvSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSanPham.Size = new System.Drawing.Size(736, 367);
+            this.dgvSanPham.Size = new System.Drawing.Size(736, 448);
             this.dgvSanPham.TabIndex = 63;
             // 
-            // picXoa
+            // Xoa
             // 
-            this.picXoa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picXoa.Image = global::App_BanLaptop.Properties.Resources.xoa;
-            this.picXoa.Location = new System.Drawing.Point(1022, 512);
-            this.picXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.picXoa.Name = "picXoa";
-            this.picXoa.Size = new System.Drawing.Size(100, 60);
-            this.picXoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picXoa.TabIndex = 78;
-            this.picXoa.TabStop = false;
+            this.Xoa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Xoa.Image = global::App_BanLaptop.Properties.Resources.xoa;
+            this.Xoa.Location = new System.Drawing.Point(1022, 512);
+            this.Xoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Xoa.Name = "Xoa";
+            this.Xoa.Size = new System.Drawing.Size(100, 60);
+            this.Xoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Xoa.TabIndex = 78;
+            this.Xoa.TabStop = false;
             // 
-            // picSua
+            // Sua
             // 
-            this.picSua.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picSua.Image = global::App_BanLaptop.Properties.Resources.sua;
-            this.picSua.Location = new System.Drawing.Point(889, 512);
-            this.picSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.picSua.Name = "picSua";
-            this.picSua.Size = new System.Drawing.Size(100, 60);
-            this.picSua.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picSua.TabIndex = 77;
-            this.picSua.TabStop = false;
+            this.Sua.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Sua.Image = global::App_BanLaptop.Properties.Resources.sua;
+            this.Sua.Location = new System.Drawing.Point(889, 512);
+            this.Sua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Sua.Name = "Sua";
+            this.Sua.Size = new System.Drawing.Size(100, 60);
+            this.Sua.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Sua.TabIndex = 77;
+            this.Sua.TabStop = false;
             // 
-            // picThem
+            // Them
             // 
-            this.picThem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picThem.Image = global::App_BanLaptop.Properties.Resources.them;
-            this.picThem.Location = new System.Drawing.Point(761, 512);
-            this.picThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.picThem.Name = "picThem";
-            this.picThem.Size = new System.Drawing.Size(100, 60);
-            this.picThem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picThem.TabIndex = 76;
-            this.picThem.TabStop = false;
+            this.Them.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Them.Image = global::App_BanLaptop.Properties.Resources.them;
+            this.Them.Location = new System.Drawing.Point(761, 512);
+            this.Them.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Them.Name = "Them";
+            this.Them.Size = new System.Drawing.Size(100, 60);
+            this.Them.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Them.TabIndex = 76;
+            this.Them.TabStop = false;
             // 
             // txtMoTa
             // 
@@ -356,10 +356,10 @@
             this.Controls.Add(this.cboTimKiem);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.txtTimKiem);
-            this.Controls.Add(this.picXoa);
-            this.Controls.Add(this.picSua);
-            this.Controls.Add(this.picThem);
-            this.Controls.Add(this.txtDVT);
+            this.Controls.Add(this.Xoa);
+            this.Controls.Add(this.Sua);
+            this.Controls.Add(this.Them);
+            this.Controls.Add(this.txtMaTinhTrang);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtMaMH);
             this.Controls.Add(this.label3);
@@ -375,9 +375,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nUDSoLuong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDDonGiaBan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picXoa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSua)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picThem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Xoa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sua)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Them)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,10 +388,10 @@
         private System.Windows.Forms.ComboBox cboTimKiem;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.TextBox txtTimKiem;
-        private System.Windows.Forms.PictureBox picXoa;
-        private System.Windows.Forms.PictureBox picSua;
-        private System.Windows.Forms.PictureBox picThem;
-        private System.Windows.Forms.TextBox txtDVT;
+        private System.Windows.Forms.PictureBox Xoa;
+        private System.Windows.Forms.PictureBox Sua;
+        private System.Windows.Forms.PictureBox Them;
+        private System.Windows.Forms.TextBox txtMaTinhTrang;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtMaMH;
         private System.Windows.Forms.Label label3;
