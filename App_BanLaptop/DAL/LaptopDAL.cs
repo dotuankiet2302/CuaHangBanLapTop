@@ -35,18 +35,18 @@ namespace DAL
         {
             try
             {
-                var existingMonHoc = qlLapTop.laptops.SingleOrDefault(l => l.MALAP == plaptop.MALAP);
-                if (existingMonHoc != null)
+                var existingLaptop = qlLapTop.laptops.SingleOrDefault(l => l.MALAP == plaptop.MALAP);
+                if (existingLaptop != null)
                 {
-                    existingMonHoc.TENLAP = plaptop.TENLAP;
-                    existingMonHoc.MATINHTRANG = plaptop.MATINHTRANG;
-                    existingMonHoc.GIABAN = plaptop.GIABAN;
-                    existingMonHoc.MOTA = plaptop.MOTA;
-                    existingMonHoc.NGAYCAPNHAT = plaptop.NGAYCAPNHAT;
-                    existingMonHoc.ANHBIA = plaptop.ANHBIA;
-                    existingMonHoc.SOLUONGTON = plaptop.SOLUONGTON;
-                    existingMonHoc.MAHANG = plaptop.MAHANG;
-                    existingMonHoc.MANSX = plaptop.MANSX;
+                    existingLaptop.TENLAP = plaptop.TENLAP;
+                    existingLaptop.MATINHTRANG = plaptop.MATINHTRANG;
+                    existingLaptop.GIABAN = plaptop.GIABAN;
+                    existingLaptop.MOTA = plaptop.MOTA;
+                    existingLaptop.NGAYCAPNHAT = plaptop.NGAYCAPNHAT;
+                    existingLaptop.ANHBIA = plaptop.ANHBIA;
+                    existingLaptop.SOLUONGTON = plaptop.SOLUONGTON;
+                    existingLaptop.MAHANG = plaptop.MAHANG;
+                    existingLaptop.MANSX = plaptop.MANSX;
                     qlLapTop.SubmitChanges();
                     return true;
                 }

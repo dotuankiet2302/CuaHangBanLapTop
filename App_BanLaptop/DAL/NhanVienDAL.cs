@@ -38,19 +38,19 @@ namespace DAL
         {
             try
             {
-                var existingMonHoc = qlLapTop.khachhangs.SingleOrDefault(n => n.MAKH == pNhanVien.MAKH);
-                if (existingMonHoc != null)
+                var existingNhanVien = qlLapTop.khachhangs.SingleOrDefault(n => n.MAKH == pNhanVien.MAKH);
+                if (existingNhanVien != null)
                 {
-                    existingMonHoc.HOTEN = pNhanVien.HOTEN;
-                    existingMonHoc.NGAYSINH = pNhanVien.NGAYSINH;
-                    existingMonHoc.GIOITINH = pNhanVien.GIOITINH;
-                    existingMonHoc.DIENTHOAI = pNhanVien.DIENTHOAI;
-                    existingMonHoc.TAIKHOAN = pNhanVien.TAIKHOAN;
-                    existingMonHoc.MATKHAU = pNhanVien.MATKHAU;
-                    existingMonHoc.EMAIL = pNhanVien.EMAIL;
-                    existingMonHoc.DIACHI = pNhanVien.DIACHI;
-                    existingMonHoc.MAQUYEN = pNhanVien.MAQUYEN;
-                    existingMonHoc.MATINH = pNhanVien.MATINH;
+                    existingNhanVien.HOTEN = pNhanVien.HOTEN;
+                    existingNhanVien.NGAYSINH = pNhanVien.NGAYSINH;
+                    existingNhanVien.GIOITINH = pNhanVien.GIOITINH;
+                    existingNhanVien.DIENTHOAI = pNhanVien.DIENTHOAI;
+                    existingNhanVien.TAIKHOAN = pNhanVien.TAIKHOAN;
+                    existingNhanVien.MATKHAU = pNhanVien.MATKHAU;
+                    existingNhanVien.EMAIL = pNhanVien.EMAIL;
+                    existingNhanVien.DIACHI = pNhanVien.DIACHI;
+                    existingNhanVien.MAQUYEN = pNhanVien.MAQUYEN;
+                    existingNhanVien.MATINH = pNhanVien.MATINH;
                     qlLapTop.SubmitChanges();
                     return true;
                 }
