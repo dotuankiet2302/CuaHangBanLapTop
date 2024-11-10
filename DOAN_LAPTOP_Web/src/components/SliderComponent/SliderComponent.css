@@ -1,0 +1,12 @@
+.slider-container {
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    height: 100%; /* Đảm bảo container có chiều cao để căn giữa theo chiều dọc */
+  }
+  
+  .slider-image {
+    max-width: 100%; /* Đảm bảo ảnh không vượt quá kích thước của container */
+    max-height: 100%; /* Đảm bảo ảnh không vượt quá kích thước của container */
+  }
+  
