@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { Image, Col, InputNumber } from "antd";
 
 export const WrapperStyleImgSmall= styled(Image)`
-     height: 64px;
-     width: 64px;
+     height: 60px;
+     width: 100px;
 `
 export const WrapperStyleColImg=styled(Col)`
     flex-basics: unset;

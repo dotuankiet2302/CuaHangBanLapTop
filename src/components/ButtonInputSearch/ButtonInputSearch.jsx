@@ -1,41 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Input } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import InputComponent from '../InputComponent/InputComponent';
 import ButtonComponent from '../ButtonComponent/ButtonComponent';
 
 const ButtonInputSearch = (props) => {
-    const { size, textButton, placeholder } = props;
+    const { size, textButton, placeholder, onSearch } = props; 
+    const [searchTerm, setSearchTerm] = useState(''); 
+
+    const handleSearch = () => {
+        if (onSearch) {
+            console.log("Search term:", searchTerm); 
+            onSearch(searchTerm);
+        }
+    };
+    
 
     return (
         <div style={{
             display: 'flex',
             alignItems: 'center',
-            width: '500px', // Điều chỉnh chiều rộng của toàn bộ phần tìm kiếm
+            width: '500px', 
         }}>
-        
-             <InputComponent
+            <InputComponent
                 size={size}
                 placeholder={placeholder}
                 bordered={false}
+                value={searchTerm} 
+                onChange={(e) => setSearchTerm(e.target.value)} 
                 style={{
-                    borderRadius: '4px 0 0 4px', // Bo góc trái
-                    flex: 1, // Đảm bảo Input chiếm hết không gian còn lại
+                    borderRadius: '4px 0 0 4px',
+                    flex: 1, 
                     backgroundColor: '#fff',
-                    boxShadow: '0 2px 4px rgba(0,0,0,0.1)', // Thêm bóng nhẹ cho Input
-                    marginRight: '-1px', // Loại bỏ khoảng cách giữa Input và Button
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.1)', 
+                    marginRight: '-1px', 
                 }}
             />
             <ButtonComponent
                 size={size}
-               // type="primary"
                 icon={<SearchOutlined />}
+                onClick={handleSearch} 
                 style={{
-                    borderRadius: '0 4px 4px 0', // Bo góc phải
+                    borderRadius: '0 4px 4px 0', 
                     border: 'none',
-                    backgroundColor: '#003366', // Màu nền của Button
-                    color: '#fff', // Màu chữ của Button
-                    boxShadow: '0 2px 4px rgba(0,0,0,0.1)', // Thêm bóng nhẹ cho Button
+                    backgroundColor: '#003366', 
+                    color: '#fff', 
+                    boxShadow: '0 2px 4px rgba(0,0,0,0.1)', 
                 }}
                 textButton={textButton}
             />

@@ -1,10 +1,21 @@
+// import { configureStore } from '@reduxjs/toolkit';
+// import counterReducer from './slides/counterSlide';
+
+// export const store = configureStore({
+//   reducer: {
+//     counter: counterReducer,
+//   },
+// });
+
+// export default store;
+
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from './slides/counterSlide';
+import searchReducer from './searchSlice';
 
-export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-  },
+const store = configureStore({
+    reducer: {
+        search: searchReducer
+    }
 });
-
+    
 export default store;

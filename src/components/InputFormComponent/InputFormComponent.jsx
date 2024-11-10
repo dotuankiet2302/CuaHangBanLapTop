@@ -1,12 +1,35 @@
-import React, { useState } from 'react'
-import { Input } from 'antd'
-import { WrapperInputStyle } from './style'
+import React from 'react';
+import { Input, Form } from 'antd';
 
-const InputFormComponent = ({placeholder='Nhập Text', ...rest }) => {
-    const [valueInput, setvalueInput]=useState('')
+const InputFormComponent = ({ 
+  placeholder = 'Nhập Text',
+  value,
+  onChange,
+  onBlur,
+  validateStatus,
+  help,
+  type = 'text',
+  ...rest 
+}) => {
   return (
-    <WrapperInputStyle placeholder={placeholder} valueInput={valueInput} {...rest} />
-  )
-}
+    <Form.Item
+      validateStatus={validateStatus}
+      help={help}
+      style={{ position: 'relative', width: '100%', marginBottom: '16px' }}
+    >
+      <Input
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
+        type={type}
+        status={validateStatus === 'error' ? 'error' : ''}
+        allowClear
+        style={{ padding: '8px' }}
+        {...rest}
+      />
+    </Form.Item>
+  );
+};
 
-export default InputFormComponent
+export default InputFormComponent;

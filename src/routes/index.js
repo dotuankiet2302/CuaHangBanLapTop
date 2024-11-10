@@ -6,12 +6,17 @@ import ProductsPage from "../pages/ProductsPage/ProductsPage";
 import SignInPage from "../pages/SignInPage/SignInPage";
 import SignUpPage from "../pages/SignUpPage/SignUpPage";
 import TypeProductPage from "../pages/TypeProductPage/TypeProductPage";
-
+import FooterComponent from "../components/FooterComponent/FooterComponent";
+import CardPage from "../pages/CardPage/CardPage";
+import { ROUTERS } from "../utils/router";
 export const routes=[
     {
-        path: '/',
+        //path: '/',
+        path: ROUTERS.USER.HOME,
         page: HomePage,
-        isShowHeader: true
+        isShowHeader: true,
+        isShowFooter: true,
+        
     },
     {
         path: '/order',
@@ -24,24 +29,34 @@ export const routes=[
         isShowHeader: true,
     },
     {
-        path: '/type',
+        path: ROUTERS.USER.PRODUCTS,
+        //path: '/type',
         page: TypeProductPage,
         isShowHeader: true,
     },
     {
-        path: '/sign-up',
+        path: ROUTERS.USER.REGISTER,
         page: SignUpPage,
         isShowHeader: false,
     },
     {
-        path: '/sign-in',
+        path: ROUTERS.USER.LOGIN,
         page: SignInPage,
         isShowHeader: false,
     },
     {
-        path: '/product-details',
+        path: ROUTERS.USER.CART,
+        page: CardPage,
+        isShowHeader: false,
+        isShowFooter: true,
+    },
+    {
+        //path: '/product-details',
+        path: ROUTERS.USER.DETAIL + "/:id",
         page: ProductDetailsPage,
         isShowHeader: true,
+        isShowFooter: true,
+        
     },
     {
         path: '*',

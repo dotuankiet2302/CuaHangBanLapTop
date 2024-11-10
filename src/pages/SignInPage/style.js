@@ -1,8 +1,20 @@
 import styled from "styled-components";
 
+export const WapperLable= styled.h1`
+    font-size: 32px;
+    font-weight: bold; 
+    color: rgb(75, 0, 130); 
+    background: linear-gradient(135deg, rgb(75, 0, 130), rgba(255, 255, 255, 0.3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5), 
+                 1px 1px 5px rgba(128, 0, 128, 0.7);
+    padding: 10px;
+    border-radius: 5px; 
+`
 export const WrapperContainerLeft= styled.div`
     flex: 1;
-    padding: 40px 45px 24px;
+    padding: 40px 45px 20px;
     flex-direction: column;
     display: flex;
 `
@@ -19,4 +31,31 @@ export const WrapperContainerRight= styled.div`
 export const WrapperTextLight= styled.span`
     color: rgb(13,92,183);
     font-size: 13px;
+`
+export const WrapperSocialMedia = styled.div`
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+
+    div {
+        svg {
+            font-size: 20px;
+            padding: 10px;
+            color: #404040;
+            border: 1px solid #ededed;
+            border-radius: 50%;
+             border-radius: 50%;
+            transition: all 0.3s;
+            background: #ffffff;
+            cursor: pointer;
+
+            &:hover {
+               background: rgb(221, 160, 221); /* màu tím nhạt */
+                color: #ffffff;
+                border-color: #ffffff;
+            }
+        }
+    }
 `

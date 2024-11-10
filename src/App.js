@@ -7,6 +7,7 @@ import HeaderComponent from './components/HeaderComponent/HeaderComponent';
 import DefaultComponent from './components/DefaultComponent/DefaultComponent';
 /*import { useSelector, useDispatch } from 'react-redux';
 import { decrement, increment } from './redux/slides/counterSlide';*/
+import FooterComponent from './components/FooterComponent/FooterComponent';
 
 function App() {
  /* const count = useSelector((state) => state.counter.value);
@@ -19,11 +20,15 @@ function App() {
           {routes.map((route)=>{
             const Page=route.page
             const Layout=route.isShowHeader ? DefaultComponent : Fragment
+            const Layouts=route.isShowFooter ? FooterComponent : Fragment
             return(
               <Route key={route.path} path={route.path} element={
                 <Layout>
-                    <Page/> 
+                  
+                   <Page/> 
+                   <Layouts/>
                 </Layout>
+                
              
             } />
             )

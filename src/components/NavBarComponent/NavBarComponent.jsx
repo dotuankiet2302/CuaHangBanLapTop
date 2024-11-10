@@ -46,9 +46,9 @@ const NavBarComponent = () => {
     }
   return (
     <div>
-        <WrapperLableText>NavBarComponent</WrapperLableText>
+        <WrapperLableText>Bộ lọc tìm kiếm</WrapperLableText>
        <WrapperContent>
-            {renderContent('text',['Shirt', 'Trousers', 'Dress'])}
+            {renderContent('text',['Liên quan', 'Bán chạy', 'Mới'])}
         </WrapperContent>
         <WrapperContent>
             {renderContent('checkbox',[{value: 'a', lable: 'A'},

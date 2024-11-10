@@ -14,7 +14,7 @@ const TypeProductPage = () => {
            <NavBarComponent/>
         </WrapperNavbarProduct>
         <Col span={20}>
-        <WrapperProduct >
+        {/* <WrapperProduct >
           <CardComponent/>
           <CardComponent/>
           <CardComponent/>
@@ -24,7 +24,8 @@ const TypeProductPage = () => {
           <CardComponent/>
           <CardComponent/>
           <CardComponent/>
-       </WrapperProduct>
+       </WrapperProduct> */}
+       <CardComponent/>
        <Pagination style={{justifyContent: 'center', marginTop: '10px'}}defaultCurrent={2} total={50} onChange={onchange}/>
         </Col>
        
