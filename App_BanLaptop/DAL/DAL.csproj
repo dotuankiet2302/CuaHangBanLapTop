@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DonHangDAL.cs" />
+    <Compile Include="KhachHangDAL.cs" />
     <Compile Include="LaptopDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="NhanVienDAL.cs" />

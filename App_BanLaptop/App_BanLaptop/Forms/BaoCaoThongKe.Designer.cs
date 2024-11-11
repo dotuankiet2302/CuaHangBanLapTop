@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvSoLuong_DoanhThu = new System.Windows.Forms.DataGridView();
+            this.components = new System.ComponentModel.Container();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.rdoMacDinh = new System.Windows.Forms.RadioButton();
@@ -36,21 +36,30 @@
             this.btnThongKe = new System.Windows.Forms.Button();
             this.dtpNgayKT = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayBD = new System.Windows.Forms.DateTimePicker();
+            this.doan_laptop = new App_BanLaptop.doan_laptop();
+            this.chitietdonhangBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.chitietdonhangTableAdapter = new App_BanLaptop.doan_laptopTableAdapters.chitietdonhangTableAdapter();
+            this.tableAdapterManager = new App_BanLaptop.doan_laptopTableAdapters.TableAdapterManager();
+            this.thongKeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.thongKeTableAdapter = new App_BanLaptop.doan_laptopTableAdapters.ThongKeTableAdapter();
             this.dgvThongKe = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSoLuong_DoanhThu)).BeginInit();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tongThongKeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tongThongKeTableAdapter = new App_BanLaptop.doan_laptopTableAdapters.TongThongKeTableAdapter();
+            this.tongThongKeDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.doan_laptop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chitietdonhangBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.thongKeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThongKe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tongThongKeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tongThongKeDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvSoLuong_DoanhThu
-            // 
-            this.dgvSoLuong_DoanhThu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSoLuong_DoanhThu.Location = new System.Drawing.Point(52, 442);
-            this.dgvSoLuong_DoanhThu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvSoLuong_DoanhThu.Name = "dgvSoLuong_DoanhThu";
-            this.dgvSoLuong_DoanhThu.RowHeadersWidth = 51;
-            this.dgvSoLuong_DoanhThu.RowTemplate.Height = 24;
-            this.dgvSoLuong_DoanhThu.Size = new System.Drawing.Size(507, 127);
-            this.dgvSoLuong_DoanhThu.TabIndex = 37;
             // 
             // label6
             // 
@@ -123,23 +132,155 @@
             this.dtpNgayBD.Size = new System.Drawing.Size(200, 22);
             this.dtpNgayBD.TabIndex = 30;
             // 
+            // doan_laptop
+            // 
+            this.doan_laptop.DataSetName = "doan_laptop";
+            this.doan_laptop.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // chitietdonhangBindingSource
+            // 
+            this.chitietdonhangBindingSource.DataMember = "chitietdonhang";
+            this.chitietdonhangBindingSource.DataSource = this.doan_laptop;
+            // 
+            // chitietdonhangTableAdapter
+            // 
+            this.chitietdonhangTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.chitietdonhangTableAdapter = this.chitietdonhangTableAdapter;
+            this.tableAdapterManager.donhangTableAdapter = null;
+            this.tableAdapterManager.hangmayTableAdapter = null;
+            this.tableAdapterManager.khachhangTableAdapter = null;
+            this.tableAdapterManager.laptopTableAdapter = null;
+            this.tableAdapterManager.loaitinTableAdapter = null;
+            this.tableAdapterManager.nhasxTableAdapter = null;
+            this.tableAdapterManager.phanquyenTableAdapter = null;
+            this.tableAdapterManager.phuongTableAdapter = null;
+            this.tableAdapterManager.quanTableAdapter = null;
+            this.tableAdapterManager.tinhTableAdapter = null;
+            this.tableAdapterManager.tinhtrangmayTableAdapter = null;
+            this.tableAdapterManager.tinTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = App_BanLaptop.doan_laptopTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // thongKeBindingSource
+            // 
+            this.thongKeBindingSource.DataMember = "ThongKe";
+            this.thongKeBindingSource.DataSource = this.doan_laptop;
+            // 
+            // thongKeTableAdapter
+            // 
+            this.thongKeTableAdapter.ClearBeforeFill = true;
+            // 
             // dgvThongKe
             // 
+            this.dgvThongKe.AutoGenerateColumns = false;
             this.dgvThongKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvThongKe.Location = new System.Drawing.Point(52, 122);
-            this.dgvThongKe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvThongKe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5});
+            this.dgvThongKe.DataSource = this.thongKeBindingSource;
+            this.dgvThongKe.Location = new System.Drawing.Point(24, 109);
             this.dgvThongKe.Name = "dgvThongKe";
             this.dgvThongKe.RowHeadersWidth = 51;
             this.dgvThongKe.RowTemplate.Height = 24;
-            this.dgvThongKe.Size = new System.Drawing.Size(1045, 315);
-            this.dgvThongKe.TabIndex = 29;
+            this.dgvThongKe.Size = new System.Drawing.Size(935, 289);
+            this.dgvThongKe.TabIndex = 37;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "TENLAP";
+            this.dataGridViewTextBoxColumn1.HeaderText = "TENLAP";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "GIABAN";
+            this.dataGridViewTextBoxColumn2.HeaderText = "GIABAN";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "SOLUONG";
+            this.dataGridViewTextBoxColumn3.HeaderText = "SOLUONG";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "NGAYDAT";
+            this.dataGridViewTextBoxColumn4.HeaderText = "NGAYDAT";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "TONGTIEN";
+            this.dataGridViewTextBoxColumn5.HeaderText = "TONGTIEN";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 125;
+            // 
+            // tongThongKeBindingSource
+            // 
+            this.tongThongKeBindingSource.DataMember = "TongThongKe";
+            this.tongThongKeBindingSource.DataSource = this.doan_laptop;
+            // 
+            // tongThongKeTableAdapter
+            // 
+            this.tongThongKeTableAdapter.ClearBeforeFill = true;
+            // 
+            // tongThongKeDataGridView
+            // 
+            this.tongThongKeDataGridView.AutoGenerateColumns = false;
+            this.tongThongKeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tongThongKeDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7});
+            this.tongThongKeDataGridView.DataSource = this.tongThongKeBindingSource;
+            this.tongThongKeDataGridView.Location = new System.Drawing.Point(24, 411);
+            this.tongThongKeDataGridView.Name = "tongThongKeDataGridView";
+            this.tongThongKeDataGridView.RowHeadersWidth = 51;
+            this.tongThongKeDataGridView.RowTemplate.Height = 24;
+            this.tongThongKeDataGridView.Size = new System.Drawing.Size(406, 143);
+            this.tongThongKeDataGridView.TabIndex = 37;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "TONGSOLUONG";
+            this.dataGridViewTextBoxColumn6.HeaderText = "TONGSOLUONG";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "TONGDOANHTHU";
+            this.dataGridViewTextBoxColumn7.HeaderText = "TONGDOANHTHU";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 125;
             // 
             // BaoCaoThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1168, 623);
-            this.Controls.Add(this.dgvSoLuong_DoanhThu);
+            this.ClientSize = new System.Drawing.Size(993, 566);
+            this.Controls.Add(this.tongThongKeDataGridView);
+            this.Controls.Add(this.dgvThongKe);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.rdoMacDinh);
@@ -147,19 +288,21 @@
             this.Controls.Add(this.btnThongKe);
             this.Controls.Add(this.dtpNgayKT);
             this.Controls.Add(this.dtpNgayBD);
-            this.Controls.Add(this.dgvThongKe);
             this.Name = "BaoCaoThongKe";
             this.Text = "BaoCaoThongKe";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSoLuong_DoanhThu)).EndInit();
+            this.Load += new System.EventHandler(this.BaoCaoThongKe_Load_1);
+            ((System.ComponentModel.ISupportInitialize)(this.doan_laptop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chitietdonhangBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.thongKeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThongKe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tongThongKeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tongThongKeDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvSoLuong_DoanhThu;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RadioButton rdoMacDinh;
@@ -167,6 +310,22 @@
         private System.Windows.Forms.Button btnThongKe;
         private System.Windows.Forms.DateTimePicker dtpNgayKT;
         private System.Windows.Forms.DateTimePicker dtpNgayBD;
+        private doan_laptop doan_laptop;
+        private System.Windows.Forms.BindingSource chitietdonhangBindingSource;
+        private doan_laptopTableAdapters.chitietdonhangTableAdapter chitietdonhangTableAdapter;
+        private doan_laptopTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingSource thongKeBindingSource;
+        private doan_laptopTableAdapters.ThongKeTableAdapter thongKeTableAdapter;
         private System.Windows.Forms.DataGridView dgvThongKe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.BindingSource tongThongKeBindingSource;
+        private doan_laptopTableAdapters.TongThongKeTableAdapter tongThongKeTableAdapter;
+        private System.Windows.Forms.DataGridView tongThongKeDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
     }
 }

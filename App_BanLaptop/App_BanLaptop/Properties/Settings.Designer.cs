@@ -35,5 +35,16 @@ namespace App_BanLaptop.Properties {
                 this["CNN"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-E8D06NHE\\SQLEXPRESS;Initial Catalog=doan_laptop;Persist Securi" +
+            "ty Info=True;User ID=sa;Password=123;Encrypt=True;TrustServerCertificate=True")]
+        public string doan_laptopConnectionString {
+            get {
+                return ((string)(this["doan_laptopConnectionString"]));
+            }
+        }
     }
 }

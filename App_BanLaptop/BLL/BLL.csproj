@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DonHangBLL.cs" />
+    <Compile Include="KhachHangBLL.cs" />
     <Compile Include="LaptopBLL.cs" />
     <Compile Include="NhanVienBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

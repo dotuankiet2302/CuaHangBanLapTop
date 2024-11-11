@@ -52,6 +52,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="doan_laptop.cs">
+      <DependentUpon>doan_laptop.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="doan_laptop.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>doan_laptop.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\BaoCaoThongKe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +144,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="doan_laptop.xsc">
+      <DependentUpon>doan_laptop.xsd</DependentUpon>
+    </None>
+    <None Include="doan_laptop.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>doan_laptop.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="doan_laptop.xss">
+      <DependentUpon>doan_laptop.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
