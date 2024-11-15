@@ -9,7 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
-using BLL;
+using App_BanLaptop.doan_laptopTableAdapters;
+using System.Data.SqlClient;
 
 namespace App_BanLaptop.Forms
 {
@@ -19,89 +20,154 @@ namespace App_BanLaptop.Forms
         public QL_KhachHang()
         {
             InitializeComponent();
+            this.txtMakh.Enabled = false;
             this.Load += QL_KhachHang_Load;
             this.dgvKH.CellClick += DgvKH_CellClick;
             this.Them.Click += Them_Click;
             this.Sua.Click += Sua_Click;
             this.Xoa.Click += Xoa_Click;
+            cbHienThiMK.CheckedChanged += CbHienThiMK_CheckedChanged;
+            this.dgvKH.CellFormatting += DgvKH_CellFormatting;
+            this.btnSearch.Click += BtnSearch_Click;
+            txtTimKiem.TextChanged += TxtTimKiem_TextChanged;
+        }
+
+        private void TxtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            QLKhachHangTableAdapter qlKH = new QLKhachHangTableAdapter();
+            if (txtTimKiem.Text == "")
+            {
+                loadKhachHang();
+            }
+            else if (cboTimKiem.Text == "Mã Khách Hàng")
+            {
+                dgvKH.DataSource = qlKH.GetDataBy3(Convert.ToInt32(txtTimKiem.Text));
+            }
+            else if (cboTimKiem.Text == "Tên Khách Hàng")
+            {
+                dgvKH.DataSource = qlKH.GetDataBy4(txtTimKiem.Text);
+            }
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            QLKhachHangTableAdapter qlKH = new QLKhachHangTableAdapter();
+            if (txtTimKiem.Text == "")
+            {
+                loadKhachHang();
+            }
+            else if (cboTimKiem.Text == "Mã Khách Hàng")
+            {
+                dgvKH.DataSource = qlKH.GetDataBy3(Convert.ToInt32(txtTimKiem.Text));
+            }else if(cboTimKiem.Text == "Tên Khách Hàng")
+            {
+                dgvKH.DataSource = qlKH.GetDataBy4(txtTimKiem.Text);
+            }
+        }
+
+        private void DgvKH_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvKH.Columns[e.ColumnIndex].DataPropertyName == "MATKHAU" && e.Value != null)
+            {
+                e.Value = new string('*', e.Value.ToString().Length);
+            }
+        }
+
+        private void CbHienThiMK_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbHienThiMK.Checked)
+            {
+                txtPass.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPass.PasswordChar = '*';
+            }
         }
 
         private void Xoa_Click(object sender, EventArgs e)
         {
-            int maKhachHang = int.Parse(txtManv.Text); // Lấy mã môn học từ textbox
+            int maKH = Convert.ToInt32(txtMakh.Text);
+            QLKhachHangTableAdapter qlKH = new QLKhachHangTableAdapter();
 
-            if (bllKhachHang.XoaKhachHang(maKhachHang))
+            var existingRecord = qlKH.GetData().FirstOrDefault(kh => kh.MAKH == maKH);
+            if (existingRecord != null)
             {
-                MessageBox.Show("Xóa Thành Công");
-                loadKhachHang(); // Gọi hàm load lại danh sách môn học
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    qlKH.Xoa(maKH);
+                    MessageBox.Show("Xóa thành công");
+
+                    loadKhachHang();
+                }
             }
             else
             {
-                MessageBox.Show("Xóa Thất bại");
-                //// Kiểm tra xem mã không tồn tại hay có điểm liên quan
-                //var hasScores = bllKhachHang.KiemTraDiemMon(maKhachHang);
-                //if (hasScores)
-                //{
-                //    MessageBox.Show("Không thể xóa. Môn học này đã có điểm liên quan.");
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Mã môn học '" + maKhachHang + "' không tồn tại. Không thể xóa.");
-                //}
+                MessageBox.Show("Mã Khách Hàng không tồn tại. Vui lòng kiểm tra lại.");
             }
+
         }
 
         private void Sua_Click(object sender, EventArgs e)
         {
-            string sex = radioButtonNam.Checked ? "NAM" : "NỮ";
-            khachhang dt = new khachhang();
-            dt.MAKH = int.Parse(txtManv.Text);
-            dt.HOTEN = txtTennv.Text;
-            dt.NGAYSINH = DateTime.Parse(txtNgaySinh.Text);
-            dt.GIOITINH = sex;
-            dt.DIENTHOAI = txtPhone.Text;
-            dt.TAIKHOAN = txtUserName.Text;
-            dt.MATKHAU = txtPass.Text;
-            dt.EMAIL = txtEmail.Text;
-            dt.DIACHI = txtAddress.Text;
-            dt.MAQUYEN = int.Parse(txtMaQuyen.Text);
-            dt.MATINH = int.Parse(txtMaTinh.Text);
+            string gender = radioButtonNam.Checked ? "NAM" : "NỮ";
+            QLKhachHangTableAdapter qlKH = new QLKhachHangTableAdapter();
+            int MaKH = Convert.ToInt32(txtMakh.Text);
+            string HoTen = txtTenkh.Text;
+            string NgaySinh = txtNgaySinh.Text;
+            string GioiTinh = gender;
+            string DienThoai = txtPhone.Text;
+            string TaiKhoan = txtUserName.Text;
+            string MatKhau = txtPass.Text;
+            string Email = txtEmail.Text;
+            string DiaChi = txtAddress.Text;
+            int MaTinh = Convert.ToInt32(txtMaTinh.Text);
 
-            if (bllKhachHang.SuaKhachHang(dt))
+            var existingRecord = qlKH.GetData().FirstOrDefault(kh => kh.MAKH == MaKH);
+            if (existingRecord != null)
             {
-                MessageBox.Show("Sửa Thành Công");
-                loadKhachHang();
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn sửa thông tin khách hàng này không?", "Xác nhận sửa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    qlKH.Sua(HoTen, NgaySinh, GioiTinh, DienThoai, TaiKhoan, MatKhau, Email, DiaChi, MaTinh, MaKH);
+                    MessageBox.Show("Sửa thành công");
+                    loadKhachHang();
+                }
             }
             else
             {
-                MessageBox.Show("Sửa Thất Bại");
+                MessageBox.Show("Mã Khách Hàng không tồn tại. Vui lòng kiểm tra lại.");
             }
+
         }
 
         private void Them_Click(object sender, EventArgs e)
         {
-            string sex = radioButtonNam.Checked ? "NAM" : "NỮ";
-            khachhang dt = new khachhang();
-            dt.MAKH = int.Parse(txtManv.Text);
-            dt.HOTEN = txtTennv.Text;
-            dt.NGAYSINH = DateTime.Parse(txtNgaySinh.Text);
-            dt.GIOITINH = sex;
-            dt.DIENTHOAI = txtPhone.Text;
-            dt.TAIKHOAN = txtUserName.Text;
-            dt.MATKHAU = txtPass.Text;
-            dt.EMAIL = txtEmail.Text;
-            dt.DIACHI = txtAddress.Text;
-            dt.MAQUYEN = int.Parse(txtMaQuyen.Text);
-            dt.MATINH = int.Parse(txtMaTinh.Text);
+            string gender = radioButtonNam.Checked ? "NAM" : "NỮ";
+            QLKhachHangTableAdapter qlKH = new QLKhachHangTableAdapter();
+            string HoTen = txtTenkh.Text;
+            string NgaySinh = txtNgaySinh.Text;
+            string GioiTinh = gender;
+            string DienThoai = txtPhone.Text;
+            string TaiKhoan = txtUserName.Text;
+            string MatKhau = txtPass.Text;
+            string Email = txtEmail.Text;
+            string DiaChi = txtAddress.Text;
+            //string MaQuyen = dgvKH.CurrentRow.Cells[9].Value.ToString(); 
+            int MaTinh = Convert.ToInt32(txtMaTinh.Text);
 
-            if (bllKhachHang.ThemKhachHang(dt))
+            // Kiểm tra xem MaTinh đã tồn tại hay chưa
+            var existingRecord = qlKH.GetData().FirstOrDefault(kh => kh.TAIKHOAN == TaiKhoan);
+            if (existingRecord == null)
             {
-                MessageBox.Show("Thanh Cong");
+                qlKH.Them(HoTen, NgaySinh, GioiTinh, DienThoai, TaiKhoan, MatKhau, Email, DiaChi, MaTinh);
                 loadKhachHang();
+                MessageBox.Show("Thành Công");
             }
             else
             {
-                MessageBox.Show("That Bai");
+                MessageBox.Show("Tên Tài Khoản đã tồn tại. Vui lòng chọn giá trị khác.");
             }
         }
 
@@ -111,31 +177,50 @@ namespace App_BanLaptop.Forms
             {
                 DataGridViewRow row = dgvKH.Rows[e.RowIndex];
 
-                txtManv.Text = row.Cells["MAKH"].Value.ToString();
-                txtTennv.Text = row.Cells["HOTEN"].Value.ToString();
-                txtNgaySinh.Text = row.Cells["NGAYSINH"].Value.ToString();
-                if (row.Cells["GIOITINH"].Value.ToString() == "NAM")
-                    radioButtonNu.Checked = row.Cells["GIOITINH"].Value.ToString() == "NAM";
-                else if (row.Cells["GIOITINH"].Value.ToString() == "NỮ")
-                    radioButtonNam.Checked = row.Cells["GIOITINH"].Value.ToString() == "NỮ";
+                txtMakh.Text = row.Cells[0].Value.ToString();
+                txtTenkh.Text = row.Cells[1].Value.ToString();
+                txtNgaySinh.Text = row.Cells[2].Value.ToString();
+                if (row.Cells[3].Value.ToString() == "NAM")
+                    radioButtonNam.Checked = row.Cells[3].Value.ToString() == "NAM";
+                else if (row.Cells[3].Value.ToString() == "NỮ")
+                    radioButtonNu.Checked = row.Cells[3].Value.ToString() == "NỮ";
+                
+                txtPhone.Text = row.Cells[4].Value.ToString();
+                txtUserName.Text = row.Cells[5].Value.ToString();
+                txtPass.Text = row.Cells[6].Value.ToString();
+                txtEmail.Text = row.Cells[7].Value.ToString();
+                txtAddress.Text = row.Cells[8].Value.ToString();
+                txtMaTinh.Text = row.Cells[9].Value.ToString();
 
-                txtPhone.Text = row.Cells["DIENTHOAI"].Value.ToString();
-                txtUserName.Text = row.Cells["TAIKHOAN"].Value.ToString();
-                txtPass.Text = row.Cells["MATKHAU"].Value.ToString();
-                txtEmail.Text = row.Cells["EMAIL"].Value.ToString();
-                txtAddress.Text = row.Cells["DIACHI"].Value.ToString();
-                txtMaQuyen.Text = row.Cells["MAQUYEN"].Value.ToString();
-                txtMaTinh.Text = row.Cells["MATINH"].Value.ToString();
             }
         }
 
         public void loadKhachHang()
         {
-            dgvKH.DataSource = bllKhachHang.GetKhachHang();
+            QLKhachHangTableAdapter qlKH = new QLKhachHangTableAdapter();
+            DataTable dataTable = qlKH.GetData(); 
+            dgvKH.DataSource = dataTable;
         }
         private void QL_KhachHang_Load(object sender, EventArgs e)
         {
             loadKhachHang();
+        }
+
+        private void khachhangBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.khachhangBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.doan_laptop);
+
+        }
+
+        private void QL_KhachHang_Load_1(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'doan_laptop.QLKhachHang' table. You can move, or remove it, as needed.
+            this.qLKhachHangTableAdapter.Fill(this.doan_laptop.QLKhachHang);
+            // TODO: This line of code loads data into the 'doan_laptop.khachhang' table. You can move, or remove it, as needed.
+            this.khachhangTableAdapter.Fill(this.doan_laptop.khachhang);
+
         }
     }
 }

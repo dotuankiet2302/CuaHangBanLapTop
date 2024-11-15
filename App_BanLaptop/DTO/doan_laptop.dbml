@@ -15,29 +15,11 @@
       <Column Name="MADH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="NGAYGIAO" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="NGAYDAT" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="DATHANHTOAN" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="TINHTRANGGIAO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DATHANHTOAN" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="TINHTRANGGIAO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MAKH" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="donhang_chitietdonhang" Member="chitietdonhangs" ThisKey="MADH" OtherKey="MADH" Type="chitietdonhang" />
       <Association Name="khachhang_donhang" Member="khachhang" ThisKey="MAKH" OtherKey="MAKH" Type="khachhang" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.khachhang" Member="khachhangs">
-    <Type Name="khachhang">
-      <Column Name="MAKH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="HOTEN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="NGAYSINH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="GIOITINH" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
-      <Column Name="DIENTHOAI" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="TAIKHOAN" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="MATKHAU" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="EMAIL" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="DIACHI" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="MAQUYEN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MATINH" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="khachhang_donhang" Member="donhangs" ThisKey="MAKH" OtherKey="MAKH" Type="donhang" />
-      <Association Name="phanquyen_khachhang" Member="phanquyen" ThisKey="MAQUYEN" OtherKey="MAQUYEN" Type="phanquyen" IsForeignKey="true" />
-      <Association Name="tinh_khachhang" Member="tinh" ThisKey="MATINH" OtherKey="MATINH" Type="tinh" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.hangmay" Member="hangmays">
@@ -47,12 +29,37 @@
       <Association Name="hangmay_laptop" Member="laptops" ThisKey="MAHANG" OtherKey="MAHANG" Type="laptop" />
     </Type>
   </Table>
+  <Table Name="dbo.khachhang" Member="khachhangs">
+    <Type Name="khachhang">
+      <Column Name="MAKH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HOTEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NGAYSINH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="GIOITINH" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="DIENTHOAI" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="TAIKHOAN" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="MATKHAU" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MAQUYEN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MATINH" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="khachhang_donhang" Member="donhangs" ThisKey="MAKH" OtherKey="MAKH" Type="donhang" />
+      <Association Name="phanquyen_khachhang" Member="phanquyen" ThisKey="MAQUYEN" OtherKey="MAQUYEN" Type="phanquyen" IsForeignKey="true" />
+      <Association Name="tinh_khachhang" Member="tinh" ThisKey="MATINH" OtherKey="MATINH" Type="tinh" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.loaitin" Member="loaitins">
+    <Type Name="loaitin">
+      <Column Name="MLTIN" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TLTIN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="loaitin_tin" Member="tins" ThisKey="MLTIN" OtherKey="MLTIN" Type="tin" />
+    </Type>
+  </Table>
   <Table Name="dbo.laptop" Member="laptops">
     <Type Name="laptop">
       <Column Name="MALAP" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TENLAP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MATINHTRANG" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="GIABAN" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GIABAN" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="MOTA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="NGAYCAPNHAT" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="ANHBIA" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
@@ -63,13 +70,6 @@
       <Association Name="hangmay_laptop" Member="hangmay" ThisKey="MAHANG" OtherKey="MAHANG" Type="hangmay" IsForeignKey="true" />
       <Association Name="nhasx_laptop" Member="nhasx" ThisKey="MANSX" OtherKey="MANSX" Type="nhasx" IsForeignKey="true" />
       <Association Name="tinhtrangmay_laptop" Member="tinhtrangmay" ThisKey="MATINHTRANG" OtherKey="MATINHTRANG" Type="tinhtrangmay" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.loaitin" Member="loaitins">
-    <Type Name="loaitin">
-      <Column Name="MLTIN" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TLTIN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="loaitin_tin" Member="tins" ThisKey="MLTIN" OtherKey="MLTIN" Type="tin" />
     </Type>
   </Table>
   <Table Name="dbo.nhasx" Member="nhasxes">

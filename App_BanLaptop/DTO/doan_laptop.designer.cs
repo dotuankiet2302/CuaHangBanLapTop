@@ -36,18 +36,18 @@ namespace DTO
     partial void Insertdonhang(donhang instance);
     partial void Updatedonhang(donhang instance);
     partial void Deletedonhang(donhang instance);
-    partial void Insertkhachhang(khachhang instance);
-    partial void Updatekhachhang(khachhang instance);
-    partial void Deletekhachhang(khachhang instance);
     partial void Inserthangmay(hangmay instance);
     partial void Updatehangmay(hangmay instance);
     partial void Deletehangmay(hangmay instance);
-    partial void Insertlaptop(laptop instance);
-    partial void Updatelaptop(laptop instance);
-    partial void Deletelaptop(laptop instance);
+    partial void Insertkhachhang(khachhang instance);
+    partial void Updatekhachhang(khachhang instance);
+    partial void Deletekhachhang(khachhang instance);
     partial void Insertloaitin(loaitin instance);
     partial void Updateloaitin(loaitin instance);
     partial void Deleteloaitin(loaitin instance);
+    partial void Insertlaptop(laptop instance);
+    partial void Updatelaptop(laptop instance);
+    partial void Deletelaptop(laptop instance);
     partial void Insertnhasx(nhasx instance);
     partial void Updatenhasx(nhasx instance);
     partial void Deletenhasx(nhasx instance);
@@ -117,14 +117,6 @@ namespace DTO
 			}
 		}
 		
-		public System.Data.Linq.Table<khachhang> khachhangs
-		{
-			get
-			{
-				return this.GetTable<khachhang>();
-			}
-		}
-		
 		public System.Data.Linq.Table<hangmay> hangmays
 		{
 			get
@@ -133,11 +125,11 @@ namespace DTO
 			}
 		}
 		
-		public System.Data.Linq.Table<laptop> laptops
+		public System.Data.Linq.Table<khachhang> khachhangs
 		{
 			get
 			{
-				return this.GetTable<laptop>();
+				return this.GetTable<khachhang>();
 			}
 		}
 		
@@ -146,6 +138,14 @@ namespace DTO
 			get
 			{
 				return this.GetTable<loaitin>();
+			}
+		}
+		
+		public System.Data.Linq.Table<laptop> laptops
+		{
+			get
+			{
+				return this.GetTable<laptop>();
 			}
 		}
 		
@@ -529,7 +529,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATHANHTOAN", DbType="VarChar(20)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DATHANHTOAN", DbType="NVarChar(20)")]
 		public string DATHANHTOAN
 		{
 			get
@@ -549,7 +549,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TINHTRANGGIAO", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TINHTRANGGIAO", DbType="NVarChar(50)")]
 		public string TINHTRANGGIAO
 		{
 			get
@@ -673,6 +673,120 @@ namespace DTO
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.hangmay")]
+	public partial class hangmay : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MAHANG;
+		
+		private string _TENHANG;
+		
+		private EntitySet<laptop> _laptops;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMAHANGChanging(int value);
+    partial void OnMAHANGChanged();
+    partial void OnTENHANGChanging(string value);
+    partial void OnTENHANGChanged();
+    #endregion
+		
+		public hangmay()
+		{
+			this._laptops = new EntitySet<laptop>(new Action<laptop>(this.attach_laptops), new Action<laptop>(this.detach_laptops));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAHANG", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MAHANG
+		{
+			get
+			{
+				return this._MAHANG;
+			}
+			set
+			{
+				if ((this._MAHANG != value))
+				{
+					this.OnMAHANGChanging(value);
+					this.SendPropertyChanging();
+					this._MAHANG = value;
+					this.SendPropertyChanged("MAHANG");
+					this.OnMAHANGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENHANG", DbType="VarChar(50)")]
+		public string TENHANG
+		{
+			get
+			{
+				return this._TENHANG;
+			}
+			set
+			{
+				if ((this._TENHANG != value))
+				{
+					this.OnTENHANGChanging(value);
+					this.SendPropertyChanging();
+					this._TENHANG = value;
+					this.SendPropertyChanged("TENHANG");
+					this.OnTENHANGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="hangmay_laptop", Storage="_laptops", ThisKey="MAHANG", OtherKey="MAHANG")]
+		public EntitySet<laptop> laptops
+		{
+			get
+			{
+				return this._laptops;
+			}
+			set
+			{
+				this._laptops.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_laptops(laptop entity)
+		{
+			this.SendPropertyChanging();
+			entity.hangmay = this;
+		}
+		
+		private void detach_laptops(laptop entity)
+		{
+			this.SendPropertyChanging();
+			entity.hangmay = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.khachhang")]
 	public partial class khachhang : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -743,7 +857,7 @@ namespace DTO
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAKH", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAKH", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int MAKH
 		{
 			get
@@ -763,7 +877,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOTEN", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HOTEN", DbType="NVarChar(50)")]
 		public string HOTEN
 		{
 			get
@@ -803,7 +917,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIOITINH", DbType="VarChar(3)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIOITINH", DbType="NVarChar(3)")]
 		public string GIOITINH
 		{
 			get
@@ -903,7 +1017,7 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="VarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="NVarChar(50)")]
 		public string DIACHI
 		{
 			get
@@ -1085,84 +1199,84 @@ namespace DTO
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.hangmay")]
-	public partial class hangmay : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.loaitin")]
+	public partial class loaitin : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _MAHANG;
+		private int _MLTIN;
 		
-		private string _TENHANG;
+		private string _TLTIN;
 		
-		private EntitySet<laptop> _laptops;
+		private EntitySet<tin> _tins;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnMAHANGChanging(int value);
-    partial void OnMAHANGChanged();
-    partial void OnTENHANGChanging(string value);
-    partial void OnTENHANGChanged();
+    partial void OnMLTINChanging(int value);
+    partial void OnMLTINChanged();
+    partial void OnTLTINChanging(string value);
+    partial void OnTLTINChanged();
     #endregion
 		
-		public hangmay()
+		public loaitin()
 		{
-			this._laptops = new EntitySet<laptop>(new Action<laptop>(this.attach_laptops), new Action<laptop>(this.detach_laptops));
+			this._tins = new EntitySet<tin>(new Action<tin>(this.attach_tins), new Action<tin>(this.detach_tins));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAHANG", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MAHANG
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MLTIN", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MLTIN
 		{
 			get
 			{
-				return this._MAHANG;
+				return this._MLTIN;
 			}
 			set
 			{
-				if ((this._MAHANG != value))
+				if ((this._MLTIN != value))
 				{
-					this.OnMAHANGChanging(value);
+					this.OnMLTINChanging(value);
 					this.SendPropertyChanging();
-					this._MAHANG = value;
-					this.SendPropertyChanged("MAHANG");
-					this.OnMAHANGChanged();
+					this._MLTIN = value;
+					this.SendPropertyChanged("MLTIN");
+					this.OnMLTINChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENHANG", DbType="VarChar(50)")]
-		public string TENHANG
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TLTIN", DbType="NVarChar(50)")]
+		public string TLTIN
 		{
 			get
 			{
-				return this._TENHANG;
+				return this._TLTIN;
 			}
 			set
 			{
-				if ((this._TENHANG != value))
+				if ((this._TLTIN != value))
 				{
-					this.OnTENHANGChanging(value);
+					this.OnTLTINChanging(value);
 					this.SendPropertyChanging();
-					this._TENHANG = value;
-					this.SendPropertyChanged("TENHANG");
-					this.OnTENHANGChanged();
+					this._TLTIN = value;
+					this.SendPropertyChanged("TLTIN");
+					this.OnTLTINChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="hangmay_laptop", Storage="_laptops", ThisKey="MAHANG", OtherKey="MAHANG")]
-		public EntitySet<laptop> laptops
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="loaitin_tin", Storage="_tins", ThisKey="MLTIN", OtherKey="MLTIN")]
+		public EntitySet<tin> tins
 		{
 			get
 			{
-				return this._laptops;
+				return this._tins;
 			}
 			set
 			{
-				this._laptops.Assign(value);
+				this._tins.Assign(value);
 			}
 		}
 		
@@ -1186,16 +1300,16 @@ namespace DTO
 			}
 		}
 		
-		private void attach_laptops(laptop entity)
+		private void attach_tins(tin entity)
 		{
 			this.SendPropertyChanging();
-			entity.hangmay = this;
+			entity.loaitin = this;
 		}
 		
-		private void detach_laptops(laptop entity)
+		private void detach_tins(tin entity)
 		{
 			this.SendPropertyChanging();
-			entity.hangmay = null;
+			entity.loaitin = null;
 		}
 	}
 	
@@ -1211,7 +1325,7 @@ namespace DTO
 		
 		private System.Nullable<int> _MATINHTRANG;
 		
-		private System.Nullable<double> _GIABAN;
+		private System.Nullable<decimal> _GIABAN;
 		
 		private string _MOTA;
 		
@@ -1243,7 +1357,7 @@ namespace DTO
     partial void OnTENLAPChanged();
     partial void OnMATINHTRANGChanging(System.Nullable<int> value);
     partial void OnMATINHTRANGChanged();
-    partial void OnGIABANChanging(System.Nullable<double> value);
+    partial void OnGIABANChanging(System.Nullable<decimal> value);
     partial void OnGIABANChanged();
     partial void OnMOTAChanging(string value);
     partial void OnMOTAChanged();
@@ -1332,8 +1446,8 @@ namespace DTO
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIABAN", DbType="Float")]
-		public System.Nullable<double> GIABAN
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIABAN", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> GIABAN
 		{
 			get
 			{
@@ -1625,120 +1739,6 @@ namespace DTO
 		{
 			this.SendPropertyChanging();
 			entity.laptop = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.loaitin")]
-	public partial class loaitin : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MLTIN;
-		
-		private string _TLTIN;
-		
-		private EntitySet<tin> _tins;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMLTINChanging(int value);
-    partial void OnMLTINChanged();
-    partial void OnTLTINChanging(string value);
-    partial void OnTLTINChanged();
-    #endregion
-		
-		public loaitin()
-		{
-			this._tins = new EntitySet<tin>(new Action<tin>(this.attach_tins), new Action<tin>(this.detach_tins));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MLTIN", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MLTIN
-		{
-			get
-			{
-				return this._MLTIN;
-			}
-			set
-			{
-				if ((this._MLTIN != value))
-				{
-					this.OnMLTINChanging(value);
-					this.SendPropertyChanging();
-					this._MLTIN = value;
-					this.SendPropertyChanged("MLTIN");
-					this.OnMLTINChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TLTIN", DbType="NVarChar(50)")]
-		public string TLTIN
-		{
-			get
-			{
-				return this._TLTIN;
-			}
-			set
-			{
-				if ((this._TLTIN != value))
-				{
-					this.OnTLTINChanging(value);
-					this.SendPropertyChanging();
-					this._TLTIN = value;
-					this.SendPropertyChanged("TLTIN");
-					this.OnTLTINChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="loaitin_tin", Storage="_tins", ThisKey="MLTIN", OtherKey="MLTIN")]
-		public EntitySet<tin> tins
-		{
-			get
-			{
-				return this._tins;
-			}
-			set
-			{
-				this._tins.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_tins(tin entity)
-		{
-			this.SendPropertyChanging();
-			entity.loaitin = this;
-		}
-		
-		private void detach_tins(tin entity)
-		{
-			this.SendPropertyChanging();
-			entity.loaitin = null;
 		}
 	}
 	

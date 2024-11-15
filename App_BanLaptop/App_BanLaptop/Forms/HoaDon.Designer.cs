@@ -39,7 +39,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaDH = new System.Windows.Forms.TextBox();
             this.dgvHD = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtMaKH = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.Them = new System.Windows.Forms.PictureBox();
@@ -55,7 +54,7 @@
             // 
             // txtTTGiao
             // 
-            this.txtTTGiao.Location = new System.Drawing.Point(919, 268);
+            this.txtTTGiao.Location = new System.Drawing.Point(500, 65);
             this.txtTTGiao.Margin = new System.Windows.Forms.Padding(4);
             this.txtTTGiao.Name = "txtTTGiao";
             this.txtTTGiao.Size = new System.Drawing.Size(132, 22);
@@ -63,7 +62,7 @@
             // 
             // txtThanhToan
             // 
-            this.txtThanhToan.Location = new System.Drawing.Point(919, 228);
+            this.txtThanhToan.Location = new System.Drawing.Point(500, 25);
             this.txtThanhToan.Margin = new System.Windows.Forms.Padding(4);
             this.txtThanhToan.Name = "txtThanhToan";
             this.txtThanhToan.Size = new System.Drawing.Size(132, 22);
@@ -71,7 +70,7 @@
             // 
             // txtNgayDat
             // 
-            this.txtNgayDat.Location = new System.Drawing.Point(919, 186);
+            this.txtNgayDat.Location = new System.Drawing.Point(175, 105);
             this.txtNgayDat.Margin = new System.Windows.Forms.Padding(4);
             this.txtNgayDat.Name = "txtNgayDat";
             this.txtNgayDat.Size = new System.Drawing.Size(132, 22);
@@ -79,7 +78,7 @@
             // 
             // txtNgayGiao
             // 
-            this.txtNgayGiao.Location = new System.Drawing.Point(919, 143);
+            this.txtNgayGiao.Location = new System.Drawing.Point(175, 62);
             this.txtNgayGiao.Margin = new System.Windows.Forms.Padding(4);
             this.txtNgayGiao.Name = "txtNgayGiao";
             this.txtNgayGiao.Size = new System.Drawing.Size(132, 22);
@@ -88,7 +87,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(803, 271);
+            this.label7.Location = new System.Drawing.Point(384, 68);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(107, 16);
@@ -98,7 +97,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(803, 232);
+            this.label6.Location = new System.Drawing.Point(384, 29);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 16);
@@ -108,7 +107,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(803, 190);
+            this.label4.Location = new System.Drawing.Point(59, 109);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 16);
@@ -118,7 +117,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(803, 147);
+            this.label3.Location = new System.Drawing.Point(59, 66);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 16);
@@ -128,7 +127,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(803, 109);
+            this.label2.Location = new System.Drawing.Point(59, 28);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 16);
@@ -137,7 +136,7 @@
             // 
             // txtMaDH
             // 
-            this.txtMaDH.Location = new System.Drawing.Point(919, 105);
+            this.txtMaDH.Location = new System.Drawing.Point(175, 24);
             this.txtMaDH.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaDH.Name = "txtMaDH";
             this.txtMaDH.Size = new System.Drawing.Size(132, 22);
@@ -146,27 +145,16 @@
             // dgvHD
             // 
             this.dgvHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHD.Location = new System.Drawing.Point(27, 105);
+            this.dgvHD.Location = new System.Drawing.Point(62, 217);
             this.dgvHD.Margin = new System.Windows.Forms.Padding(4);
             this.dgvHD.Name = "dgvHD";
             this.dgvHD.RowHeadersWidth = 51;
-            this.dgvHD.Size = new System.Drawing.Size(736, 360);
+            this.dgvHD.Size = new System.Drawing.Size(862, 258);
             this.dgvHD.TabIndex = 34;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(304, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(604, 29);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "                        THÔNG TIN ĐƠN HÀNG                     ";
             // 
             // txtMaKH
             // 
-            this.txtMaKH.Location = new System.Drawing.Point(919, 311);
+            this.txtMaKH.Location = new System.Drawing.Point(500, 108);
             this.txtMaKH.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.Size = new System.Drawing.Size(132, 22);
@@ -175,7 +163,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(803, 314);
+            this.label5.Location = new System.Drawing.Point(384, 111);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(105, 16);
@@ -186,7 +174,7 @@
             // 
             this.Them.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Them.Image = global::App_BanLaptop.Properties.Resources.them;
-            this.Them.Location = new System.Drawing.Point(824, 350);
+            this.Them.Location = new System.Drawing.Point(732, 19);
             this.Them.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Them.Name = "Them";
             this.Them.Size = new System.Drawing.Size(54, 48);
@@ -198,7 +186,7 @@
             // 
             this.Sua.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Sua.Image = global::App_BanLaptop.Properties.Resources.sua;
-            this.Sua.Location = new System.Drawing.Point(995, 350);
+            this.Sua.Location = new System.Drawing.Point(870, 19);
             this.Sua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Sua.Name = "Sua";
             this.Sua.Size = new System.Drawing.Size(54, 54);
@@ -210,7 +198,7 @@
             // 
             this.Xoa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Xoa.Image = global::App_BanLaptop.Properties.Resources.xoa;
-            this.Xoa.Location = new System.Drawing.Point(824, 420);
+            this.Xoa.Location = new System.Drawing.Point(732, 89);
             this.Xoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Xoa.Name = "Xoa";
             this.Xoa.Size = new System.Drawing.Size(54, 45);
@@ -222,7 +210,7 @@
             // 
             this.In.Cursor = System.Windows.Forms.Cursors.Hand;
             this.In.Image = global::App_BanLaptop.Properties.Resources.In;
-            this.In.Location = new System.Drawing.Point(995, 420);
+            this.In.Location = new System.Drawing.Point(870, 89);
             this.In.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.In.Name = "In";
             this.In.Size = new System.Drawing.Size(54, 45);
@@ -252,7 +240,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtMaDH);
             this.Controls.Add(this.dgvHD);
-            this.Controls.Add(this.label1);
             this.Name = "HoaDon";
             this.Text = "HoaDon";
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).EndInit();
@@ -277,7 +264,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMaDH;
         private System.Windows.Forms.DataGridView dgvHD;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtMaKH;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox Them;

@@ -109,7 +109,9 @@ namespace App_BanLaptop.Forms
 
         public void LoadDonHang()
         {
-            dgvHD.DataSource = bllDonHang.GetDonHang();
+            var danhSachDonHangViewModel = bllDonHang.GetDonHang();
+            dgvHD.DataSource = danhSachDonHangViewModel;
+            //dgvHD.DataSource = bllDonHang.GetDonHang();
         }
         private void HoaDon_Load(object sender, EventArgs e)
         {

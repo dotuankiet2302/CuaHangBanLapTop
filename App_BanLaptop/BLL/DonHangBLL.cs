@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 using DAL;
+using DTO.ViewModel;
 
 namespace BLL
 {
@@ -13,9 +14,20 @@ namespace BLL
         DonHangDAL dalDonHang = new DonHangDAL();
         public DonHangBLL() { }
 
-        public List<donhang> GetDonHang()
+        public List<DonHang> GetDonHang()
         {
-            return dalDonHang.LoadDonHang();
+            var danhSachDonHangDTO = dalDonHang.LoadDonHang();
+            //return dalLaptop.LoadLaptop();
+            return danhSachDonHangDTO.Select(sp => new DonHang
+            {
+                MaDH = sp.MADH,
+                NgayGiao = (DateTime)sp.NGAYGIAO,
+                NgayDat = (DateTime)sp.NGAYDAT,
+                DaThanhToan = sp.DATHANHTOAN,
+                TinhTrangGiao = sp.TINHTRANGGIAO,
+                MaKH = (int)sp.MAKH
+            }).ToList();
+            //return dalDonHang.LoadDonHang();
         }
 
         public bool ThemDonHang(donhang pDonHang)

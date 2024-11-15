@@ -5,17 +5,33 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 using DAL;
+using DTO.ViewModel;
 
 namespace BLL
 {
     public class LaptopBLL
     {
         LaptopDAL dalLaptop = new LaptopDAL();
+        Laptop dtoLaptop = new Laptop();
         public LaptopBLL() { }
 
-        public List<laptop> GetLaptop()
+        public List<Laptop> GetLaptop()
         {
-            return dalLaptop.LoadLaptop();
+            var danhSachSanPhamDTO = dalLaptop.LoadLaptop();
+            //return dalLaptop.LoadLaptop();
+            return danhSachSanPhamDTO.Select(sp => new Laptop
+            {
+                MaLap = sp.MALAP,
+                TenLap = sp.TENLAP,
+                MaTinhTrang = (int)sp.MATINHTRANG,
+                GiaBan = (decimal)sp.GIABAN,
+                MoTa = sp.MOTA,
+                NgayCapNhat = (DateTime)sp.NGAYCAPNHAT,
+                AnhBia = sp.ANHBIA,
+                SoLuongTon = (int)sp.SOLUONGTON,
+                MaHang = (int)sp.MAHANG,
+                MaNSX = (int)sp.MANSX,
+            }).ToList();
         }
 
         public bool ThemLaptop(laptop pLaptop)

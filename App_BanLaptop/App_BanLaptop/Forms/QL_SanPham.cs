@@ -32,10 +32,10 @@ namespace App_BanLaptop.Forms
             dt.MALAP = int.Parse(txtMaMH.Text);
             dt.TENLAP = txtTenMH.Text;
             dt.MATINHTRANG = int.Parse(txtMaTinhTrang.Text);
-            dt.GIABAN = float.Parse(nUDDonGiaBan.Value.ToString());
+            dt.GIABAN = decimal.Parse(txtGiaBan.ToString());
             dt.MOTA = txtMoTa.Text;
             dt.NGAYCAPNHAT = DateTime.Parse(txtNgayCapNhat.Text);
-            dt.ANHBIA = txtAnhBia.Text;
+            dt.ANHBIA = picAnhBia.Text;
             dt.SOLUONGTON = int.Parse(nUDSoLuong.Text);
             dt.MAHANG = int.Parse(txtMaHang.Text);
             dt.MANSX = int.Parse(txtMaNSX.Text);
@@ -82,10 +82,10 @@ namespace App_BanLaptop.Forms
             dt.MALAP = int.Parse(txtMaMH.Text);
             dt.TENLAP = txtTenMH.Text;
             dt.MATINHTRANG = int.Parse(txtMaTinhTrang.Text);
-            dt.GIABAN = float.Parse(nUDDonGiaBan.Value.ToString());
+            dt.GIABAN = decimal.Parse(txtGiaBan.ToString());
             dt.MOTA = txtMoTa.Text;
             dt.NGAYCAPNHAT = DateTime.Parse(txtNgayCapNhat.Text);
-            dt.ANHBIA = txtAnhBia.Text;
+            dt.ANHBIA = picAnhBia.Text;
             dt.SOLUONGTON = int.Parse(nUDSoLuong.Text);
             dt.MAHANG = int.Parse(txtMaHang.Text);
             dt.MANSX = int.Parse(txtMaNSX.Text);
@@ -110,10 +110,23 @@ namespace App_BanLaptop.Forms
                 txtMaMH.Text = row.Cells["MALAP"].Value.ToString();
                 txtTenMH.Text = row.Cells["TENLAP"].Value.ToString();
                 txtMaTinhTrang.Text = row.Cells["MATINHTRANG"].Value.ToString();
-                nUDDonGiaBan.Text = row.Cells["GIABAN"].Value.ToString();
+                txtGiaBan.Text = row.Cells["GIABAN"].Value.ToString();
                 txtMoTa.Text = row.Cells["MOTA"].Value.ToString();
                 txtNgayCapNhat.Text = row.Cells["NGAYCAPNHAT"].Value.ToString();
-                txtAnhBia.Text = row.Cells["ANHBIA"].Value.ToString();
+                picAnhBia.Text = row.Cells["ANHBIA"].Value.ToString();
+                if (e.RowIndex >= 0 && e.ColumnIndex == dgvSanPham.Columns["ANHBIA"].Index)
+
+                {
+                    string duongDanAnh = dgvSanPham.Rows[e.RowIndex].Cells["ANHBIA"].Value.ToString();
+                    try
+                    {
+                        picAnhBia.Image = Image.FromFile(duongDanAnh);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi khi load hình ảnh: " + ex.Message);
+                    }
+                }
                 nUDSoLuong.Text = row.Cells["SOLUONGTON"].Value.ToString();
                 txtMaHang.Text = row.Cells["MAHANG"].Value.ToString();
                 txtMaNSX.Text = row.Cells["MANSX"].Value.ToString();
@@ -122,7 +135,9 @@ namespace App_BanLaptop.Forms
 
         public void loadLaptop()
         {
-            dgvSanPham.DataSource = bllLaptop.GetLaptop();
+            var danhSachSanPhamViewModel = bllLaptop.GetLaptop();
+            dgvSanPham.DataSource = danhSachSanPhamViewModel;
+            //dgvSanPham.DataSource = bllLaptop.GetLaptop();
         }
         private void QL_SanPham_Load(object sender, EventArgs e)
         {
