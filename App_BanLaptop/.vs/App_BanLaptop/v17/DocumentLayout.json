@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\GUI.csproj|d:\\phattrienphanmem_thongminh\\banlaptop_doan\\app_banlaptop\\app_banlaptop\\forms\\ql_sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\GUI.csproj|D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\app_banlaptop\\forms\\ql_sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D37AD5EC-E6F4-40B5-AB98-A3BF3C2DD8A5}|App_BanLaptop\\GUI.csproj|solutionrelative:app_banlaptop\\forms\\ql_sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{358A65A6-1F80-4C5F-A034-3F627D18D202}|BLL\\BLL.csproj|D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\bll\\laptopbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{358A65A6-1F80-4C5F-A034-3F627D18D202}|BLL\\BLL.csproj|d:\\phattrienphanmem_thongminh\\banlaptop_doan\\app_banlaptop\\bll\\laptopbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{358A65A6-1F80-4C5F-A034-3F627D18D202}|BLL\\BLL.csproj|solutionrelative:bll\\laptopbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -52,9 +52,10 @@
               "RelativeDocumentMoniker": "DAL\\LaptopDAL.cs",
               "ToolTip": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\DAL\\LaptopDAL.cs",
               "RelativeToolTip": "DAL\\LaptopDAL.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T04:30:53.051Z"
+              "WhenOpened": "2024-11-15T04:30:53.051Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -64,9 +65,10 @@
               "RelativeDocumentMoniker": "BLL\\LaptopBLL.cs",
               "ToolTip": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\BLL\\LaptopBLL.cs",
               "RelativeToolTip": "BLL\\LaptopBLL.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAQwB0AAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAADwvxEAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T02:47:54.314Z"
+              "WhenOpened": "2024-11-15T02:47:54.314Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -76,7 +78,7 @@
               "RelativeDocumentMoniker": "App_BanLaptop\\Forms\\QL_SanPham.cs",
               "ToolTip": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Forms\\QL_SanPham.cs",
               "RelativeToolTip": "App_BanLaptop\\Forms\\QL_SanPham.cs",
-              "ViewState": "AgIAAGgAAAAAAAAAAAAQwHgAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAADsAAAAAAAAAAAAAAEsAAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-14T17:37:36.613Z",
               "EditorCaption": ""
@@ -90,7 +92,8 @@
               "ToolTip": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\Forms\\QL_SanPham.cs [Design]",
               "RelativeToolTip": "App_BanLaptop\\Forms\\QL_SanPham.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T17:37:15.456Z"
+              "WhenOpened": "2024-11-14T17:37:15.456Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -101,7 +104,8 @@
               "ToolTip": "D:\\PhatTrienPhanMem_ThongMinh\\BanLapTop_DoAn\\App_BanLaptop\\App_BanLaptop\\doan_laptop.xsd",
               "RelativeToolTip": "App_BanLaptop\\doan_laptop.xsd",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
-              "WhenOpened": "2024-11-12T14:20:52.614Z"
+              "WhenOpened": "2024-11-12T14:20:52.614Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

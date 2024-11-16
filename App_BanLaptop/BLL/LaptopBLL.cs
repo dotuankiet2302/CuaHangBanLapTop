@@ -15,6 +15,54 @@ namespace BLL
         Laptop dtoLaptop = new Laptop();
         public LaptopBLL() { }
 
+        public List<Laptop> SearchProductsByPrice(decimal maxPrice)
+        {
+            var products = dalLaptop.SearchProductsByPrice(maxPrice); // Gọi hàm tìm kiếm trong DAL
+            var productViewModels = new List<Laptop>();
+
+            foreach (var product in products)
+            {
+                productViewModels.Add(new Laptop
+                {
+                    MaLap = product.MALAP,
+                    TenLap = product.TENLAP,
+                    MaTinhTrang = (int)product.MATINHTRANG,
+                    GiaBan = (decimal)product.GIABAN,
+                    MoTa = product.MOTA,
+                    NgayCapNhat = (DateTime)product.NGAYCAPNHAT,
+                    AnhBia = product.ANHBIA,
+                    SoLuongTon = (int)product.SOLUONGTON,
+                    MaHang = (int)product.MAHANG,
+                    MaNSX = (int)product.MANSX
+                });
+            }
+
+            return productViewModels;
+        }
+        public List<Laptop> SearchProducts(string keyword)
+        {
+            var products = dalLaptop.SearchProducts(keyword);
+            var productViewModels = new List<Laptop>();
+
+            foreach (var product in products)
+            {
+                productViewModels.Add(new Laptop
+                {
+                    MaLap = product.MALAP,
+                    TenLap = product.TENLAP,
+                    MaTinhTrang = (int)product.MATINHTRANG,
+                    GiaBan = (decimal)product.GIABAN,
+                    MoTa = product.MOTA,
+                    NgayCapNhat = (DateTime)product.NGAYCAPNHAT,
+                    AnhBia = product.ANHBIA,
+                    SoLuongTon = (int)product.SOLUONGTON,
+                    MaHang = (int)product.MAHANG,
+                    MaNSX = (int)product.MANSX
+                });
+            }
+
+            return productViewModels;
+        }
         public List<Laptop> GetLaptop()
         {
             var danhSachSanPhamDTO = dalLaptop.LoadLaptop();
@@ -30,7 +78,7 @@ namespace BLL
                 AnhBia = sp.ANHBIA,
                 SoLuongTon = (int)sp.SOLUONGTON,
                 MaHang = (int)sp.MAHANG,
-                MaNSX = (int)sp.MANSX,
+                MaNSX = (int)sp.MANSX
             }).ToList();
         }
 

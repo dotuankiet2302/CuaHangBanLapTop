@@ -1,7 +1,9 @@
 ﻿using DTO;
+using DTO.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,6 +14,18 @@ namespace DAL
         doan_laptopDataContext qlLapTop = new doan_laptopDataContext();
         public LaptopDAL() { }
 
+        public List<laptop> SearchProducts(string keyword)
+        {
+            return qlLapTop.laptops
+                .Where(p => p.TENLAP.Contains(keyword))
+                .ToList();
+        }
+        public List<laptop> SearchProductsByPrice(decimal maxPrice)
+        {
+            return qlLapTop.laptops
+                .Where(p => p.GIABAN <= maxPrice)
+                .ToList();
+        }
         public List<laptop> LoadLaptop()
         {
             return qlLapTop.laptops.Select(l => l).ToList<laptop>();

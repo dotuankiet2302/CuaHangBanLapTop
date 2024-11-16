@@ -24,6 +24,63 @@ namespace App_BanLaptop.Forms
             this.Them.Click += Them_Click;
             this.Xoa.Click += Xoa_Click;
             this.Sua.Click += Sua_Click;
+            btnTimKiem.Click += BtnTimKiem_Click;
+            txtTimKiem.TextChanged += TxtTimKiem_TextChanged;
+        }
+
+        private void TxtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            //string keyword = txtTimKiem.Text;
+            //var products = bllLaptop.SearchProducts(keyword);
+
+            //BindingSource bindingSource = new BindingSource();
+            //bindingSource.DataSource = products;
+
+            //dgvSanPham.DataSource = bindingSource;
+
+            //dgvSanPham.Columns["hangmay"].Visible = false;
+            //dgvSanPham.Columns["nhasx"].Visible = false;
+            //dgvSanPham.Columns["tinhtrangmay"].Visible = false;
+            if (cboTimKiem.Text == "Tên Sản Phẩm")
+            {
+                string keyword = txtTimKiem.Text;
+                dgvSanPham.DataSource = bllLaptop.SearchProducts(keyword);
+            }
+            else if (cboTimKiem.Text == "Giá Bán")
+            {
+                decimal keyword;
+                if (decimal.TryParse(txtTimKiem.Text, out keyword))
+                {
+                    dgvSanPham.DataSource = bllLaptop.SearchProductsByPrice(keyword);
+                }
+                else
+                {
+                    // Xử lý trường hợp nhập liệu không hợp lệ, ví dụ: hiển thị thông báo lỗi
+                    MessageBox.Show("Giá bán không hợp lệ. Vui lòng nhập lại.", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void BtnTimKiem_Click(object sender, EventArgs e)
+        {
+            if (cboTimKiem.Text == "Tên Sản Phẩm")
+            {
+                string keyword = txtTimKiem.Text;
+                dgvSanPham.DataSource = bllLaptop.SearchProducts(keyword);
+            }
+            else if (cboTimKiem.Text == "Giá Bán")
+            {
+                decimal keyword;
+                if (decimal.TryParse(txtTimKiem.Text, out keyword))
+                {
+                    dgvSanPham.DataSource = bllLaptop.SearchProductsByPrice(keyword);
+                }
+                else
+                {
+                    // Xử lý trường hợp nhập liệu không hợp lệ, ví dụ: hiển thị thông báo lỗi
+                    MessageBox.Show("Giá bán không hợp lệ. Vui lòng nhập lại.", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void Sua_Click(object sender, EventArgs e)
@@ -107,37 +164,33 @@ namespace App_BanLaptop.Forms
             {
                 DataGridViewRow row = dgvSanPham.Rows[e.RowIndex];
 
+                string images = row.Cells["ANHBIA"].Value.ToString();
                 txtMaMH.Text = row.Cells["MALAP"].Value.ToString();
                 txtTenMH.Text = row.Cells["TENLAP"].Value.ToString();
                 txtMaTinhTrang.Text = row.Cells["MATINHTRANG"].Value.ToString();
                 txtGiaBan.Text = row.Cells["GIABAN"].Value.ToString();
                 txtMoTa.Text = row.Cells["MOTA"].Value.ToString();
                 txtNgayCapNhat.Text = row.Cells["NGAYCAPNHAT"].Value.ToString();
-                picAnhBia.Text = row.Cells["ANHBIA"].Value.ToString();
-                if (e.RowIndex >= 0 && e.ColumnIndex == dgvSanPham.Columns["ANHBIA"].Index)
-
-                {
-                    string duongDanAnh = dgvSanPham.Rows[e.RowIndex].Cells["ANHBIA"].Value.ToString();
-                    try
-                    {
-                        picAnhBia.Image = Image.FromFile(duongDanAnh);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Lỗi khi load hình ảnh: " + ex.Message);
-                    }
-                }
                 nUDSoLuong.Text = row.Cells["SOLUONGTON"].Value.ToString();
                 txtMaHang.Text = row.Cells["MAHANG"].Value.ToString();
                 txtMaNSX.Text = row.Cells["MANSX"].Value.ToString();
+
+                try
+                {
+                    picAnhBia.Image = new Bitmap(Application.StartupPath + "\\Images\\" + images);
+                }
+                catch (ArgumentException ex)
+                {
+                    // Handle the exception, e.g., display an error message or set a default image
+                    MessageBox.Show("Chưa có ảnh cho dòng sản phẩm này!!!\n" + ex.Message);
+                    picAnhBia.Image = new Bitmap(Application.StartupPath + "\\Images\\errorImage.jpg");
+                }
             }
         }
 
         public void loadLaptop()
         {
-            var danhSachSanPhamViewModel = bllLaptop.GetLaptop();
-            dgvSanPham.DataSource = danhSachSanPhamViewModel;
-            //dgvSanPham.DataSource = bllLaptop.GetLaptop();
+            dgvSanPham.DataSource = bllLaptop.GetLaptop();
         }
         private void QL_SanPham_Load(object sender, EventArgs e)
         {

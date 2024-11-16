@@ -67,13 +67,14 @@
             // 
             this.cboTimKiem.FormattingEnabled = true;
             this.cboTimKiem.Items.AddRange(new object[] {
-            "Mã Mặt Hàng",
-            "Tên Mặt Hàng"});
+            "Tên Sản Phẩm",
+            "Giá Bán"});
             this.cboTimKiem.Location = new System.Drawing.Point(34, 15);
             this.cboTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.cboTimKiem.Name = "cboTimKiem";
             this.cboTimKiem.Size = new System.Drawing.Size(201, 24);
             this.cboTimKiem.TabIndex = 81;
+            this.cboTimKiem.Text = "Tên Sản Phẩm";
             // 
             // btnTimKiem
             // 
@@ -156,7 +157,7 @@
             this.txtTenMH.Location = new System.Drawing.Point(740, 69);
             this.txtTenMH.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenMH.Name = "txtTenMH";
-            this.txtTenMH.Size = new System.Drawing.Size(229, 22);
+            this.txtTenMH.Size = new System.Drawing.Size(230, 22);
             this.txtTenMH.TabIndex = 66;
             // 
             // label5
@@ -186,12 +187,12 @@
             this.dgvSanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSanPham.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(198)))), ((int)(((byte)(202)))));
             this.dgvSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSanPham.Location = new System.Drawing.Point(34, 269);
+            this.dgvSanPham.Location = new System.Drawing.Point(34, 287);
             this.dgvSanPham.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSanPham.Name = "dgvSanPham";
             this.dgvSanPham.RowHeadersWidth = 51;
             this.dgvSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSanPham.Size = new System.Drawing.Size(1049, 318);
+            this.dgvSanPham.Size = new System.Drawing.Size(1049, 300);
             this.dgvSanPham.TabIndex = 63;
             // 
             // Xoa
@@ -327,9 +328,10 @@
             // 
             // picAnhBia
             // 
-            this.picAnhBia.Location = new System.Drawing.Point(740, 101);
+            this.picAnhBia.ErrorImage = global::App_BanLaptop.Properties.Resources.errorImage;
+            this.picAnhBia.Location = new System.Drawing.Point(700, 100);
             this.picAnhBia.Name = "picAnhBia";
-            this.picAnhBia.Size = new System.Drawing.Size(229, 161);
+            this.picAnhBia.Size = new System.Drawing.Size(270, 180);
             this.picAnhBia.TabIndex = 93;
             this.picAnhBia.TabStop = false;
             // 

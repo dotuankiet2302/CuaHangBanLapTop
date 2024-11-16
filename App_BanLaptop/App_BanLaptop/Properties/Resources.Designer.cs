@@ -83,6 +83,16 @@ namespace App_BanLaptop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap errorImage {
+            get {
+                object obj = ResourceManager.GetObject("errorImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hoadon {
             get {
                 object obj = ResourceManager.GetObject("hoadon", resourceCulture);
