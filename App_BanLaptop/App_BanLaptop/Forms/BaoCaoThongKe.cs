@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace App_BanLaptop.Forms
 {
@@ -21,9 +22,83 @@ namespace App_BanLaptop.Forms
         public BaoCaoThongKe()
         {
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
             this.Load += BaoCaoThongKe_Load;
             this.btnThongKe.Click += BtnThongKe_Click;
+            this.Xuat.Click += Xuat_Click;
         }
+
+        private void Xuat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Excel.Application xlApp = new Excel.Application();
+                Excel.Workbook xlWorkbook = xlApp.Workbooks.Add();
+                Excel.Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+
+                // Export header của DataGridView
+                for (int i = 0; i < dgvThongKe.Columns.Count; i++)
+                {
+                    xlWorksheet.Cells[1, i + 1] = dgvThongKe.Columns[i].HeaderText;
+                }
+
+                // Export nội dung của DataGridView
+                for (int i = 0; i < dgvThongKe.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dgvThongKe.Columns.Count; j++)
+                    {
+                        if (dgvThongKe.Rows[i].Cells[j].Value != null)
+                        {
+                            xlWorksheet.Cells[i + 2, j + 1] = dgvThongKe.Rows[i].Cells[j].Value.ToString();
+                        }
+                    }
+                }
+
+                // Thêm dòng trống
+                int lastRow = dgvThongKe.Rows.Count + 4;
+
+                // Export header của bảng tổng
+                for (int i = 0; i < dgvSoLuong_DoanhThu.Columns.Count; i++)
+                {
+                    xlWorksheet.Cells[lastRow, i + 1] = dgvSoLuong_DoanhThu.Columns[i].HeaderText;
+                }
+
+                // Export nội dung của bảng tổng
+                for (int i = 0; i < dgvSoLuong_DoanhThu.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dgvSoLuong_DoanhThu.Columns.Count; j++)
+                    {
+                        if (dgvSoLuong_DoanhThu.Rows[i].Cells[j].Value != null)
+                        {
+                            xlWorksheet.Cells[lastRow + i + 1, j + 1] = dgvSoLuong_DoanhThu.Rows[i].Cells[j].Value.ToString();
+                        }
+                    }
+                }
+
+                // Tự động điều chỉnh độ rộng cột
+                xlWorksheet.Columns.AutoFit();
+
+                // Hiển thị SaveFileDialog
+                SaveFileDialog saveDialog = new SaveFileDialog();
+                saveDialog.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+                saveDialog.FilterIndex = 1;
+                saveDialog.FileName = "ThongKeBanHang_" + DateTime.Now.ToString("ddMMyyyy");
+
+                if (saveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    xlWorkbook.SaveAs(saveDialog.FileName);
+                    xlWorkbook.Close();
+                    xlApp.Quit();
+
+                    MessageBox.Show("Xuất file Excel thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi khi xuất file: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         void Load_DgvBaoCao_ThongKe()
         {
             ds = new DataSet();

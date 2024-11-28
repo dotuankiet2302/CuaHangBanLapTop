@@ -1,10 +1,10 @@
-D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\DAL\bin\Debug\DAL.dll
-D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\DAL\bin\Debug\DAL.pdb
 D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
 D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
-D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\DAL\obj\Debug\DAL.dll
-D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\DAL\obj\Debug\DAL.pdb
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\DAL\bin\Debug\DAL.dll
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\DAL\bin\Debug\DAL.pdb
 D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\DAL\bin\Debug\DTO.dll
 D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\DAL\bin\Debug\DTO.pdb
-D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\DAL\obj\Debug\DAL.csproj.Up2Date
 D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\DAL\bin\Debug\DTO.dll.config
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\DAL\obj\Debug\DAL.csproj.Up2Date
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\DAL\obj\Debug\DAL.dll
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\DAL\obj\Debug\DAL.pdb

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DTO;
 using BLL;
 using App_BanLaptop.doan_laptopTableAdapters;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace App_BanLaptop.Forms
 {
@@ -19,8 +20,11 @@ namespace App_BanLaptop.Forms
         public QL_NhanVien()
         {
             InitializeComponent();
+            this.AutoSize = false;
+            this.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;    
+            this.dgvNhanVien.Dock = DockStyle.Bottom;
+            this.dgvNhanVien.Height = this.ClientSize.Height - 300;
             this.txtManv.Enabled = false;
-            this.Load += QL_NhanVien_Load;
             this.dgvNhanVien.CellClick += DgvNhanVien_CellClick;
             this.Them.Click += Them_Click;
             this.Sua.Click += Sua_Click;
@@ -29,6 +33,111 @@ namespace App_BanLaptop.Forms
             this.dgvNhanVien.CellFormatting += DgvNhanVien_CellFormatting;
             this.btnTimKiem.Click += BtnTimKiem_Click;
             this.txtTimKiem.TextChanged += TxtTimKiem_TextChanged;
+            this.In.Click += In_Click;
+            #if DEBUG
+                this.AutoScaleMode = AutoScaleMode.Font;
+                this.ClientSize = new System.Drawing.Size(800, 500);
+            #endif
+            this.Load += new EventHandler(QL_NhanVien_Load);
+            this.Xuat.Click += Xuat_Click;
+        }
+
+        private void Xuat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Excel.Application xlApp = new Excel.Application();
+                Excel.Workbook xlWorkbook = xlApp.Workbooks.Add();
+                Excel.Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+
+                // Tạo tiêu đề
+                xlWorksheet.Cells[1, 1] = "DANH SÁCH NHÂN VIÊN";
+                Excel.Range titleRange = xlWorksheet.Range[xlWorksheet.Cells[1, 1], xlWorksheet.Cells[1, dgvNhanVien.Columns.Count]];
+                titleRange.Merge();
+                titleRange.Font.Bold = true;
+                titleRange.Font.Size = 16;
+                titleRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+                // Export header của DataGridView
+                for (int i = 0; i < dgvNhanVien.Columns.Count; i++)
+                {
+                    xlWorksheet.Cells[3, i + 1] = dgvNhanVien.Columns[i].HeaderText;
+                    xlWorksheet.Cells[3, i + 1].Font.Bold = true;
+                    xlWorksheet.Cells[3, i + 1].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightGray);
+                }
+
+                // Export nội dung của DataGridView
+                for (int i = 0; i < dgvNhanVien.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dgvNhanVien.Columns.Count; j++)
+                    {
+                        if (dgvNhanVien.Rows[i].Cells[j].Value != null)
+                        {
+                            // Xử lý đặc biệt cho cột mật khẩu
+                            if (dgvNhanVien.Columns[j].DataPropertyName == "MATKHAU")
+                            {
+                                xlWorksheet.Cells[i + 4, j + 1] = "********";
+                            }
+                            else
+                            {
+                                xlWorksheet.Cells[i + 4, j + 1] = dgvNhanVien.Rows[i].Cells[j].Value.ToString();
+                            }
+                        }
+                    }
+                }
+
+                // Tự động điều chỉnh độ rộng cột
+                xlWorksheet.Columns.AutoFit();
+
+                // Thêm đường viền
+                Excel.Range range = xlWorksheet.UsedRange;
+                range.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+
+                // Hiển thị SaveFileDialog
+                SaveFileDialog saveDialog = new SaveFileDialog();
+                saveDialog.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+                saveDialog.FilterIndex = 1;
+                saveDialog.FileName = "DanhSachNhanVien_" + DateTime.Now.ToString("ddMMyyyy_HHmmss");
+
+                if (saveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    xlWorkbook.SaveAs(saveDialog.FileName);
+                    xlWorkbook.Close();
+                    xlApp.Quit();
+
+                    MessageBox.Show("Xuất file Excel thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                // Giải phóng tài nguyên
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorksheet);
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkbook);
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi khi xuất file: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void In_Click(object sender, EventArgs e)
+        {
+            if (dgvNhanVien.Rows.Count > 0)
+            {
+                string hoTen = txtTennv.Text;
+                string ngaySinh = txtNgaySinh.Text;
+                if (hoTen == "" || ngaySinh == "")
+                {
+                    MessageBox.Show("Hãy chọn 1 hàng trước.");
+                    return;
+                }
+
+                WordExport dt = new WordExport();
+                dt.QuyetDinhKhenThuong(hoTen, ngaySinh);
+            }
+            else
+            {
+                MessageBox.Show("Hãy chọn 1 hàng trước.");
+            }
         }
 
         private void TxtTimKiem_TextChanged(object sender, EventArgs e) 
@@ -40,7 +149,17 @@ namespace App_BanLaptop.Forms
             }
             else if (cboTimKiem.Text == "Mã Nhân Viên")
             {
-                dgvNhanVien.DataSource = qlNV.GetDataBy3(Convert.ToInt32(txtTimKiem.Text));
+                int maNV;
+                if (int.TryParse(txtTimKiem.Text, out maNV))
+                {
+                    // Nếu chuyển đổi thành công, thực hiện tìm kiếm
+                    dgvNhanVien.DataSource = qlNV.GetDataBy3(maNV);
+                }
+                else
+                {
+                    // Nếu chuyển đổi thất bại, thông báo lỗi cho người dùng
+                    MessageBox.Show("Vui lòng nhập mã nhân viên là số.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else if (cboTimKiem.Text == "Tên Nhân Viên")
             {
@@ -57,7 +176,17 @@ namespace App_BanLaptop.Forms
             }
             else if (cboTimKiem.Text == "Mã Nhân Viên")
             {
-                dgvNhanVien.DataSource = qlNV.GetDataBy3(Convert.ToInt32(txtTimKiem.Text));
+                int maNV;
+                if (int.TryParse(txtTimKiem.Text, out maNV))
+                {
+                    // Nếu chuyển đổi thành công, thực hiện tìm kiếm
+                    dgvNhanVien.DataSource = qlNV.GetDataBy3(maNV);
+                }
+                else
+                {
+                    // Nếu chuyển đổi thất bại, thông báo lỗi cho người dùng
+                    MessageBox.Show("Vui lòng nhập mã nhân viên là số.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else if (cboTimKiem.Text == "Tên Nhân Viên")
             {
@@ -261,6 +390,10 @@ namespace App_BanLaptop.Forms
 
         public void loadNhanVien()
         {
+            this.WindowState = FormWindowState.Normal;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Dock = DockStyle.Fill;
+            ResizeControls();
             QLNhanVienTableAdapter qlNV = new QLNhanVienTableAdapter();
             DataTable dataTable = qlNV.GetData();
             dgvNhanVien.DataSource = dataTable;
@@ -268,6 +401,121 @@ namespace App_BanLaptop.Forms
         private void QL_NhanVien_Load(object sender, EventArgs e)
         {
             loadNhanVien();
+        }
+
+        private void ResizeControls()
+        {
+            // Tính padding dựa trên kích thước form
+            int padding = (this.ClientSize.Width - 220) / 20;
+            
+            // Cột bên trái
+            label1.Left = padding;
+            txtManv.Left = label1.Right + padding;
+            txtManv.Width = 150;
+
+            label2.Left = padding;
+            label2.Top = label1.Bottom + padding;
+            txtTennv.Left = label2.Right + padding;
+            txtTennv.Width = 150;
+            txtTennv.Top = label2.Top;
+
+            label3.Left = padding;
+            label3.Top = label2.Bottom + padding;
+            txtNgaySinh.Left = label3.Right + padding;
+            txtNgaySinh.Width = 150;
+            txtNgaySinh.Top = label3.Top;
+
+            label4.Left = padding;
+            label4.Top = label3.Bottom + padding;
+            radioButtonNam.Left = label4.Right + padding;
+            radioButtonNam.Top = label4.Top;
+            radioButtonNu.Left = radioButtonNam.Right + padding;
+            radioButtonNu.Top = label4.Top;
+
+            // Cột giữa
+            int middleX = this.ClientSize.Width / 2;
+
+            label5.Left = middleX - 100;
+            txtPhone.Left = label5.Right + padding;
+            txtPhone.Width = 150;
+            txtPhone.Top = txtManv.Top;
+
+            label7.Left = middleX - 100;
+            label7.Top = label5.Bottom + padding;
+            txtUserName.Left = label7.Right + padding;
+            txtUserName.Width = 150;
+            txtUserName.Top = label7.Top;
+
+            label8.Left = middleX - 100;
+            label8.Top = label7.Bottom + padding;
+            txtPass.Left = label8.Right + padding;
+            txtPass.Width = 150;
+            txtPass.Top = label8.Top;
+            cbHienThiMK.Left = txtPass.Right + padding;
+            cbHienThiMK.Top = txtPass.Top;
+
+            // Cột bên phải
+            int rightX = this.ClientSize.Width - 220;
+
+            label9.Left = rightX - 150;
+            txtEmail.Left = label9.Right + padding;
+            txtEmail.Width = 150;
+            txtEmail.Top = txtManv.Top;
+
+            label10.Left = rightX - 150;
+            label10.Top = label9.Bottom + padding;
+            txtAddress.Left = label10.Right + padding;
+            txtAddress.Width = 150;
+            txtAddress.Top = label10.Top;
+
+            label6.Left = rightX - 150;
+            label6.Top = label10.Bottom + padding;
+            txtMaTinh.Left = label6.Right + padding;
+            txtMaTinh.Width = 150;
+            txtMaTinh.Top = label6.Top;
+
+            // Thanh tìm kiếm
+            cboTimKiem.Left = padding;
+            cboTimKiem.Top = label4.Bottom + padding * 2;
+            cboTimKiem.Width = 120;
+
+            txtTimKiem.Left = cboTimKiem.Right + padding;
+            txtTimKiem.Top = cboTimKiem.Top;
+            txtTimKiem.Width = 200;
+
+            btnTimKiem.Left = txtTimKiem.Right + padding;
+            btnTimKiem.Top = txtTimKiem.Top;
+
+            // Các nút chức năng
+            Them.Left = this.ClientSize.Width - 250;
+            Them.Top = cboTimKiem.Top;
+            
+            Sua.Left = Them.Right + padding;
+            Sua.Top = Them.Top;
+            
+            Xoa.Left = Sua.Right + padding;
+            Xoa.Top = Them.Top;
+
+            In.Left = Xoa.Right + padding;
+            In.Top = Them.Top;
+
+            Xuat.Left = In.Right + padding;
+            Xuat.Top = Them.Top;
+
+            // DataGridView
+            dgvNhanVien.Left = padding;
+            dgvNhanVien.Top = Them.Bottom + padding * 2;
+            dgvNhanVien.Width = this.ClientSize.Width - (padding * 2);
+            dgvNhanVien.Height = this.ClientSize.Height - dgvNhanVien.Top - padding;
+
+            // Đặt Anchor cho các controls cần thiết
+            dgvNhanVien.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtTimKiem.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            Them.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            Sua.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            Xoa.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            In.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            Xuat.Anchor = AnchorStyles.Top | AnchorStyles.Right;
         }
 
         private void qLNhanVienBindingNavigatorSaveItem_Click(object sender, EventArgs e)

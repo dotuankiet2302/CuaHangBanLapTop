@@ -46,18 +46,20 @@
             this.tongThongKeTableAdapter = new App_BanLaptop.doan_laptopTableAdapters.TongThongKeTableAdapter();
             this.dgvSoLuong_DoanhThu = new System.Windows.Forms.DataGridView();
             this.dgvThongKe = new System.Windows.Forms.DataGridView();
+            this.Xuat = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.doan_laptop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chitietdonhangBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thongKeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tongThongKeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSoLuong_DoanhThu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThongKe)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Xuat)).BeginInit();
             this.SuspendLayout();
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(621, 27);
+            this.label6.Location = new System.Drawing.Point(409, 25);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 16);
             this.label6.TabIndex = 36;
@@ -66,7 +68,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(131, 27);
+            this.label5.Location = new System.Drawing.Point(89, 25);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 16);
             this.label5.TabIndex = 35;
@@ -99,7 +101,7 @@
             // 
             // btnThongKe
             // 
-            this.btnThongKe.Location = new System.Drawing.Point(484, 11);
+            this.btnThongKe.Location = new System.Drawing.Point(752, 12);
             this.btnThongKe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThongKe.Name = "btnThongKe";
             this.btnThongKe.Size = new System.Drawing.Size(92, 43);
@@ -110,7 +112,7 @@
             // dtpNgayKT
             // 
             this.dtpNgayKT.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayKT.Location = new System.Drawing.Point(704, 22);
+            this.dtpNgayKT.Location = new System.Drawing.Point(492, 20);
             this.dtpNgayKT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpNgayKT.Name = "dtpNgayKT";
             this.dtpNgayKT.Size = new System.Drawing.Size(200, 22);
@@ -119,7 +121,7 @@
             // dtpNgayBD
             // 
             this.dtpNgayBD.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayBD.Location = new System.Drawing.Point(220, 22);
+            this.dtpNgayBD.Location = new System.Drawing.Point(178, 20);
             this.dtpNgayBD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpNgayBD.Name = "dtpNgayBD";
             this.dtpNgayBD.Size = new System.Drawing.Size(200, 22);
@@ -151,6 +153,8 @@
             this.tableAdapterManager.nhasxTableAdapter = null;
             this.tableAdapterManager.phanquyenTableAdapter = null;
             this.tableAdapterManager.phuongTableAdapter = null;
+            this.tableAdapterManager.QLKhachHangTableAdapter = null;
+            this.tableAdapterManager.QLNhanVienTableAdapter = null;
             this.tableAdapterManager.quanTableAdapter = null;
             this.tableAdapterManager.tinhTableAdapter = null;
             this.tableAdapterManager.tinhtrangmayTableAdapter = null;
@@ -197,11 +201,24 @@
             this.dgvThongKe.Size = new System.Drawing.Size(760, 315);
             this.dgvThongKe.TabIndex = 37;
             // 
+            // Xuat
+            // 
+            this.Xuat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Xuat.Image = global::App_BanLaptop.Properties.Resources.xuat;
+            this.Xuat.Location = new System.Drawing.Point(874, 12);
+            this.Xuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Xuat.Name = "Xuat";
+            this.Xuat.Size = new System.Drawing.Size(54, 54);
+            this.Xuat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Xuat.TabIndex = 137;
+            this.Xuat.TabStop = false;
+            // 
             // BaoCaoThongKe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(999, 566);
+            this.Controls.Add(this.Xuat);
             this.Controls.Add(this.dgvSoLuong_DoanhThu);
             this.Controls.Add(this.dgvThongKe);
             this.Controls.Add(this.label6);
@@ -220,6 +237,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tongThongKeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSoLuong_DoanhThu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThongKe)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Xuat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,5 +261,6 @@
         private doan_laptopTableAdapters.TongThongKeTableAdapter tongThongKeTableAdapter;
         private System.Windows.Forms.DataGridView dgvSoLuong_DoanhThu;
         private System.Windows.Forms.DataGridView dgvThongKe;
+        private System.Windows.Forms.PictureBox Xuat;
     }
 }

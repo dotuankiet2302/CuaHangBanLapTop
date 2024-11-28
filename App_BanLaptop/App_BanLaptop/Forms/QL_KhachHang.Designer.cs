@@ -1,4 +1,6 @@
-﻿namespace App_BanLaptop.Forms
+﻿using System.Windows.Forms;
+
+namespace App_BanLaptop.Forms
 {
     partial class QL_KhachHang
     {
@@ -40,9 +42,6 @@
             this.cbHienThiMK = new System.Windows.Forms.CheckBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.Xoa = new System.Windows.Forms.PictureBox();
-            this.Sua = new System.Windows.Forms.PictureBox();
-            this.Them = new System.Windows.Forms.PictureBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtMakh = new System.Windows.Forms.TextBox();
@@ -57,7 +56,6 @@
             this.txtMaTinh = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvKH = new System.Windows.Forms.DataGridView();
-            this.cboTimKiem = new System.Windows.Forms.ComboBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,17 +68,25 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qLKhachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.doan_laptop = new App_BanLaptop.doan_laptop();
+            this.cboTimKiem = new System.Windows.Forms.ComboBox();
             this.khachhangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.khachhangTableAdapter = new App_BanLaptop.doan_laptopTableAdapters.khachhangTableAdapter();
             this.tableAdapterManager = new App_BanLaptop.doan_laptopTableAdapters.TableAdapterManager();
             this.qLKhachHangTableAdapter = new App_BanLaptop.doan_laptopTableAdapters.QLKhachHangTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.Xoa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sua)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Them)).BeginInit();
+            this.In = new System.Windows.Forms.PictureBox();
+            this.Xoa = new System.Windows.Forms.PictureBox();
+            this.Sua = new System.Windows.Forms.PictureBox();
+            this.Them = new System.Windows.Forms.PictureBox();
+            this.Xuat = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLKhachHangBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doan_laptop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.khachhangBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.In)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Xoa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sua)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Them)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Xuat)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearch
@@ -189,42 +195,6 @@
             this.label7.Size = new System.Drawing.Size(98, 22);
             this.label7.TabIndex = 120;
             this.label7.Text = "Mật Khẩu: ";
-            // 
-            // Xoa
-            // 
-            this.Xoa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Xoa.Image = global::App_BanLaptop.Properties.Resources.xoa;
-            this.Xoa.Location = new System.Drawing.Point(877, 215);
-            this.Xoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Xoa.Name = "Xoa";
-            this.Xoa.Size = new System.Drawing.Size(54, 45);
-            this.Xoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Xoa.TabIndex = 119;
-            this.Xoa.TabStop = false;
-            // 
-            // Sua
-            // 
-            this.Sua.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Sua.Image = global::App_BanLaptop.Properties.Resources.sua;
-            this.Sua.Location = new System.Drawing.Point(877, 150);
-            this.Sua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Sua.Name = "Sua";
-            this.Sua.Size = new System.Drawing.Size(54, 54);
-            this.Sua.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Sua.TabIndex = 118;
-            this.Sua.TabStop = false;
-            // 
-            // Them
-            // 
-            this.Them.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Them.Image = global::App_BanLaptop.Properties.Resources.them;
-            this.Them.Location = new System.Drawing.Point(877, 88);
-            this.Them.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Them.Name = "Them";
-            this.Them.Size = new System.Drawing.Size(54, 48);
-            this.Them.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Them.TabIndex = 117;
-            this.Them.TabStop = false;
             // 
             // txtAddress
             // 
@@ -372,25 +342,14 @@
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10});
             this.dgvKH.DataSource = this.qLKhachHangBindingSource;
+            this.dgvKH.Dock = DockStyle.Bottom;
             this.dgvKH.Location = new System.Drawing.Point(25, 291);
             this.dgvKH.Name = "dgvKH";
             this.dgvKH.RowHeadersWidth = 51;
             this.dgvKH.RowTemplate.Height = 24;
             this.dgvKH.Size = new System.Drawing.Size(1025, 242);
             this.dgvKH.TabIndex = 131;
-            // 
-            // cboTimKiem
-            // 
-            this.cboTimKiem.FormattingEnabled = true;
-            this.cboTimKiem.Items.AddRange(new object[] {
-            "Mã Khách Hàng",
-            "Tên Khách Hàng"});
-            this.cboTimKiem.Location = new System.Drawing.Point(102, 13);
-            this.cboTimKiem.Margin = new System.Windows.Forms.Padding(4);
-            this.cboTimKiem.Name = "cboTimKiem";
-            this.cboTimKiem.Size = new System.Drawing.Size(192, 24);
-            this.cboTimKiem.TabIndex = 132;
-            this.cboTimKiem.Text = "Mã Khách Hàng";
+            this.dgvKH.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -482,6 +441,19 @@
             this.doan_laptop.DataSetName = "doan_laptop";
             this.doan_laptop.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // cboTimKiem
+            // 
+            this.cboTimKiem.FormattingEnabled = true;
+            this.cboTimKiem.Items.AddRange(new object[] {
+            "Mã Khách Hàng",
+            "Tên Khách Hàng"});
+            this.cboTimKiem.Location = new System.Drawing.Point(102, 13);
+            this.cboTimKiem.Margin = new System.Windows.Forms.Padding(4);
+            this.cboTimKiem.Name = "cboTimKiem";
+            this.cboTimKiem.Size = new System.Drawing.Size(192, 24);
+            this.cboTimKiem.TabIndex = 132;
+            this.cboTimKiem.Text = "Mã Khách Hàng";
+            // 
             // khachhangBindingSource
             // 
             this.khachhangBindingSource.DataMember = "khachhang";
@@ -515,11 +487,73 @@
             // 
             this.qLKhachHangTableAdapter.ClearBeforeFill = true;
             // 
+            // In
+            // 
+            this.In.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.In.Image = global::App_BanLaptop.Properties.Resources.In;
+            this.In.Location = new System.Drawing.Point(953, 140);
+            this.In.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.In.Name = "In";
+            this.In.Size = new System.Drawing.Size(54, 54);
+            this.In.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.In.TabIndex = 133;
+            this.In.TabStop = false;
+            // 
+            // Xoa
+            // 
+            this.Xoa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Xoa.Image = global::App_BanLaptop.Properties.Resources.xoa;
+            this.Xoa.Location = new System.Drawing.Point(953, 77);
+            this.Xoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Xoa.Name = "Xoa";
+            this.Xoa.Size = new System.Drawing.Size(54, 48);
+            this.Xoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Xoa.TabIndex = 119;
+            this.Xoa.TabStop = false;
+            // 
+            // Sua
+            // 
+            this.Sua.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Sua.Image = global::App_BanLaptop.Properties.Resources.sua;
+            this.Sua.Location = new System.Drawing.Point(877, 140);
+            this.Sua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Sua.Name = "Sua";
+            this.Sua.Size = new System.Drawing.Size(54, 54);
+            this.Sua.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Sua.TabIndex = 118;
+            this.Sua.TabStop = false;
+            // 
+            // Them
+            // 
+            this.Them.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Them.Image = global::App_BanLaptop.Properties.Resources.them;
+            this.Them.Location = new System.Drawing.Point(877, 77);
+            this.Them.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Them.Name = "Them";
+            this.Them.Size = new System.Drawing.Size(54, 48);
+            this.Them.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Them.TabIndex = 117;
+            this.Them.TabStop = false;
+            // 
+            // Xuat
+            // 
+            this.Xuat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Xuat.Image = global::App_BanLaptop.Properties.Resources.xuat;
+            this.Xuat.Location = new System.Drawing.Point(953, 208);
+            this.Xuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Xuat.Name = "Xuat";
+            this.Xuat.Size = new System.Drawing.Size(54, 54);
+            this.Xuat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Xuat.TabIndex = 134;
+            this.Xuat.TabStop = false;
+            // 
             // QL_KhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1072, 580);
+            this.Controls.Add(this.Xuat);
+            this.Controls.Add(this.In);
             this.Controls.Add(this.cboTimKiem);
             this.Controls.Add(this.dgvKH);
             this.Controls.Add(this.txtMaTinh);
@@ -552,13 +586,15 @@
             this.Name = "QL_KhachHang";
             this.Text = "QL_KhachHang";
             this.Load += new System.EventHandler(this.QL_KhachHang_Load_1);
-            ((System.ComponentModel.ISupportInitialize)(this.Xoa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Sua)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Them)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLKhachHangBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.doan_laptop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.khachhangBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.In)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Xoa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sua)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Them)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Xuat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -611,5 +647,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.ComboBox cboTimKiem;
+        private System.Windows.Forms.PictureBox In;
+        private System.Windows.Forms.PictureBox Xuat;
     }
 }

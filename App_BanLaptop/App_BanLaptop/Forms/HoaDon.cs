@@ -18,11 +18,83 @@ namespace App_BanLaptop.Forms
         public HoaDon()
         {
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
             this.Load += HoaDon_Load;
             this.dgvHD.CellClick += DgvHD_CellClick;
             this.Them.Click += Them_Click;
             this.Sua.Click += Sua_Click;
             this.Xoa.Click += Xoa_Click;
+            btnTimKiem.Click += BtnTimKiem_Click;
+            txtTimKiem.TextChanged += TxtTimKiem_TextChanged;
+            this.In.Click += In_Click;
+        }
+
+        private void In_Click(object sender, EventArgs e)
+        {
+            if (dgvHD.Rows.Count > 0)
+            {
+                string maHD = txtMaDH.Text;
+                string ngayDat = txtNgayDat.Text;
+                string ngayGiao = txtNgayGiao.Text;
+                if (maHD == "" || ngayDat == "" || ngayGiao == "")
+                {
+                    MessageBox.Show("Hãy chọn 1 hàng trước.");
+                    return;
+                }
+
+                WordExport dt = new WordExport();
+                dt.HoaDon(maHD, ngayDat, ngayGiao);
+            }
+            else
+            {
+                MessageBox.Show("Hãy chọn 1 hàng trước.");
+            }
+        }
+
+        private void TxtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            if (cboTimKiem.Text == "Mã Đơn Hàng")
+            {
+                string keyword = txtTimKiem.Text;
+                dgvHD.DataSource = bllDonHang.TimKiemDonHang(keyword);
+            }
+            else if (cboTimKiem.Text == "Ngày Đặt")
+            {
+                DateTime keyword;
+                if (DateTime.TryParse(txtTimKiem.Text, out keyword))
+                {
+                    dgvHD.DataSource = bllDonHang.TimKiemQuaNgayDat(keyword);
+                }
+                else
+                {
+                    // Xử lý trường hợp nhập liệu không hợp lệ, ví dụ: hiển thị thông báo lỗi
+                    LoadDonHang();
+                    //MessageBox.Show("Ngày đặt không hợp lệ. Vui lòng nhập lại.", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void BtnTimKiem_Click(object sender, EventArgs e)
+        {
+            if (cboTimKiem.Text == "Mã Đơn Hàng")
+            {
+                string keyword = txtTimKiem.Text;
+                dgvHD.DataSource = bllDonHang.TimKiemDonHang(keyword);
+            }
+            else if (cboTimKiem.Text == "Ngày Đặt")
+            {
+                DateTime keyword;
+                if (DateTime.TryParse(txtTimKiem.Text, out keyword))
+                {
+                    dgvHD.DataSource = bllDonHang.TimKiemQuaNgayDat(keyword);
+                }
+                else
+                {
+                    // Xử lý trường hợp nhập liệu không hợp lệ, ví dụ: hiển thị thông báo lỗi
+                    LoadDonHang();
+                    //MessageBox.Show("Ngày đặt không hợp lệ. Vui lòng nhập lại.", "Lỗi nhập liệu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void Xoa_Click(object sender, EventArgs e)

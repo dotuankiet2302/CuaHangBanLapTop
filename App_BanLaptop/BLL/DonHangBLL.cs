@@ -14,6 +14,47 @@ namespace BLL
         DonHangDAL dalDonHang = new DonHangDAL();
         public DonHangBLL() { }
 
+        public List<DonHang> TimKiemDonHang(string keyword)
+        {
+            var orders = dalDonHang.TimKiemDonHang(keyword);
+            var orderViewModels = new List<DonHang>();
+
+            foreach (var order in orders)
+            {
+                orderViewModels.Add(new DonHang
+                {
+                    MaDH = (int)order.MADH,
+                    NgayGiao = (DateTime)order.NGAYGIAO,
+                    NgayDat = (DateTime)order.NGAYDAT,
+                    DaThanhToan = order.DATHANHTOAN,
+                    TinhTrangGiao = order.TINHTRANGGIAO,
+                    MaKH = (int)order.MAKH
+                });
+            }
+
+            return orderViewModels;
+        }
+
+        public List<DonHang> TimKiemQuaNgayDat(DateTime keyword)
+        {
+            var orders = dalDonHang.TimKiemQuaNgayDat(keyword);
+            var orderViewModels = new List<DonHang>();
+
+            foreach (var order in orders)
+            {
+                orderViewModels.Add(new DonHang
+                {
+                    MaDH = order.MADH,
+                    NgayGiao = (DateTime)order.NGAYGIAO,
+                    NgayDat = (DateTime)order.NGAYDAT,
+                    DaThanhToan = order.DATHANHTOAN,
+                    TinhTrangGiao = order.TINHTRANGGIAO,
+                    MaKH = (int)order.MAKH
+                });
+            }
+
+            return orderViewModels;
+        }
         public List<DonHang> GetDonHang()
         {
             var danhSachDonHangDTO = dalDonHang.LoadDonHang();

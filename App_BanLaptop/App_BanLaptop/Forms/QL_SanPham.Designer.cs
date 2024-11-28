@@ -1,4 +1,6 @@
-﻿namespace App_BanLaptop.Forms
+﻿using System.Windows.Forms;
+
+namespace App_BanLaptop.Forms
 {
     partial class QL_SanPham
     {
@@ -55,12 +57,16 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtGiaBan = new System.Windows.Forms.TextBox();
             this.picAnhBia = new System.Windows.Forms.PictureBox();
+            this.Xuat = new System.Windows.Forms.PictureBox();
+            this.In = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nUDSoLuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Xoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sua)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Them)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAnhBia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Xuat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.In)).BeginInit();
             this.SuspendLayout();
             // 
             // cboTimKiem
@@ -184,22 +190,25 @@
             // 
             // dgvSanPham
             // 
+            // Thay đổi thiết lập của dgvSanPham
             this.dgvSanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSanPham.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(198)))), ((int)(((byte)(202)))));
             this.dgvSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSanPham.Location = new System.Drawing.Point(34, 287);
+            this.dgvSanPham.Location = new System.Drawing.Point(20, 300);
             this.dgvSanPham.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSanPham.Name = "dgvSanPham";
             this.dgvSanPham.RowHeadersWidth = 51;
             this.dgvSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSanPham.Size = new System.Drawing.Size(1049, 300);
+            this.dgvSanPham.Size = new System.Drawing.Size(1000, 250);
             this.dgvSanPham.TabIndex = 63;
+            this.dgvSanPham.Dock = DockStyle.None; // Bỏ dock style
+            this.dgvSanPham.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right; // Giữ anchor
             // 
             // Xoa
             // 
             this.Xoa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Xoa.Image = global::App_BanLaptop.Properties.Resources.xoa;
-            this.Xoa.Location = new System.Drawing.Point(990, 187);
+            this.Xoa.Location = new System.Drawing.Point(990, 154);
             this.Xoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Xoa.Name = "Xoa";
             this.Xoa.Size = new System.Drawing.Size(43, 40);
@@ -211,7 +220,7 @@
             // 
             this.Sua.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Sua.Image = global::App_BanLaptop.Properties.Resources.sua;
-            this.Sua.Location = new System.Drawing.Point(991, 130);
+            this.Sua.Location = new System.Drawing.Point(991, 112);
             this.Sua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Sua.Name = "Sua";
             this.Sua.Size = new System.Drawing.Size(42, 38);
@@ -335,11 +344,37 @@
             this.picAnhBia.TabIndex = 93;
             this.picAnhBia.TabStop = false;
             // 
+            // Xuat
+            // 
+            this.Xuat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Xuat.Image = global::App_BanLaptop.Properties.Resources.xuat;
+            this.Xuat.Location = new System.Drawing.Point(991, 242);
+            this.Xuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Xuat.Name = "Xuat";
+            this.Xuat.Size = new System.Drawing.Size(44, 39);
+            this.Xuat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Xuat.TabIndex = 138;
+            this.Xuat.TabStop = false;
+            // 
+            // In
+            // 
+            this.In.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.In.Image = global::App_BanLaptop.Properties.Resources.In;
+            this.In.Location = new System.Drawing.Point(991, 198);
+            this.In.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.In.Name = "In";
+            this.In.Size = new System.Drawing.Size(44, 40);
+            this.In.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.In.TabIndex = 137;
+            this.In.TabStop = false;
+            // 
             // QL_SanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1122, 619);
+            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Controls.Add(this.Xuat);
+            this.Controls.Add(this.In);
             this.Controls.Add(this.picAnhBia);
             this.Controls.Add(this.txtGiaBan);
             this.Controls.Add(this.txtMaNSX);
@@ -375,6 +410,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Sua)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Them)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAnhBia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Xuat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.In)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -409,5 +446,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtGiaBan;
         private System.Windows.Forms.PictureBox picAnhBia;
+        private System.Windows.Forms.PictureBox Xuat;
+        private System.Windows.Forms.PictureBox In;
     }
 }

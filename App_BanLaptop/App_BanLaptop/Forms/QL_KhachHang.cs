@@ -11,6 +11,9 @@ using System.Windows.Forms;
 using DTO;
 using App_BanLaptop.doan_laptopTableAdapters;
 using System.Data.SqlClient;
+using Microsoft.Office.Interop.Word;
+using Excel = Microsoft.Office.Interop.Excel;
+
 
 namespace App_BanLaptop.Forms
 {
@@ -20,7 +23,13 @@ namespace App_BanLaptop.Forms
         public QL_KhachHang()
         {
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
             this.txtMakh.Enabled = false;
+            
+            // Thiết lập Anchor cho DataGridView
+            dgvKH.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            
+            // Các event handlers khác
             this.Load += QL_KhachHang_Load;
             this.dgvKH.CellClick += DgvKH_CellClick;
             this.Them.Click += Them_Click;
@@ -30,6 +39,117 @@ namespace App_BanLaptop.Forms
             this.dgvKH.CellFormatting += DgvKH_CellFormatting;
             this.btnSearch.Click += BtnSearch_Click;
             txtTimKiem.TextChanged += TxtTimKiem_TextChanged;
+            this.In.Click += In_Click;
+            this.Xuat.Click += Xuat_Click;
+            this.TopLevel = false;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Dock = DockStyle.Fill;
+            this.AutoScaleMode = AutoScaleMode.None;
+        }
+
+        private void Form_Resize(object sender, EventArgs e)
+        {
+            // Điều chỉnh lại kích thước các control khi form thay đổi kích thước
+            dgvKH.Height = this.Height - 250; // Điều chỉnh chiều cao của DataGridView
+            // Điều chỉnh các control khác nếu cần
+        }
+
+        private void Xuat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Excel.Application xlApp = new Excel.Application();
+                Excel.Workbook xlWorkbook = xlApp.Workbooks.Add();
+                Excel.Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+
+                // Tạo tiêu đề
+                xlWorksheet.Cells[1, 1] = "DANH SÁCH KHÁCH HÀNG";
+                Excel.Range titleRange = xlWorksheet.Range[xlWorksheet.Cells[1, 1], xlWorksheet.Cells[1, dgvKH.Columns.Count]];
+                titleRange.Merge();
+                titleRange.Font.Bold = true;
+                titleRange.Font.Size = 16;
+                titleRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+                // Export header của DataGridView
+                for (int i = 0; i < dgvKH.Columns.Count; i++)
+                {
+                    xlWorksheet.Cells[3, i + 1] = dgvKH.Columns[i].HeaderText;
+                    xlWorksheet.Cells[3, i + 1].Font.Bold = true;
+                    xlWorksheet.Cells[3, i + 1].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightGray);
+                }
+
+                // Export nội dung của DataGridView
+                for (int i = 0; i < dgvKH.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dgvKH.Columns.Count; j++)
+                    {
+                        if (dgvKH.Rows[i].Cells[j].Value != null)
+                        {
+                            // Xử lý đặc biệt cho cột mật khẩu
+                            if (dgvKH.Columns[j].DataPropertyName == "MATKHAU")
+                            {
+                                xlWorksheet.Cells[i + 4, j + 1] = "********";
+                            }
+                            else
+                            {
+                                xlWorksheet.Cells[i + 4, j + 1] = dgvKH.Rows[i].Cells[j].Value.ToString();
+                            }
+                        }
+                    }
+                }
+
+                // Tự động điều chỉnh độ rộng cột
+                xlWorksheet.Columns.AutoFit();
+
+                // Thêm đường viền
+                Excel.Range range = xlWorksheet.UsedRange;
+                range.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+
+                // Hiển thị SaveFileDialog
+                SaveFileDialog saveDialog = new SaveFileDialog();
+                saveDialog.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+                saveDialog.FilterIndex = 1;
+                saveDialog.FileName = "DanhSachKhachHang_" + DateTime.Now.ToString("ddMMyyyy_HHmmss");
+
+                if (saveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    xlWorkbook.SaveAs(saveDialog.FileName);
+                    xlWorkbook.Close();
+                    xlApp.Quit();
+
+                    MessageBox.Show("Xuất file Excel thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                // Giải phóng tài nguyên
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorksheet);
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkbook);
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi khi xuất file: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void In_Click(object sender, EventArgs e)
+        {
+            if (dgvKH.Rows.Count > 0)
+            {
+                string hoTen = txtTenkh.Text;
+                string ngaySinh = txtNgaySinh.Text;
+                if(hoTen == "" || ngaySinh == "")
+                {
+                    MessageBox.Show("Hãy chọn 1 hàng trước.");
+                    return;
+                }
+
+                WordExport dt = new WordExport();
+                dt.QuyetDinhKhenThuong(hoTen, ngaySinh);
+            }
+            else
+            {
+                MessageBox.Show("Hãy chọn 1 hàng trước.");
+            }
         }
 
         private void TxtTimKiem_TextChanged(object sender, EventArgs e)
@@ -41,7 +161,17 @@ namespace App_BanLaptop.Forms
             }
             else if (cboTimKiem.Text == "Mã Khách Hàng")
             {
-                dgvKH.DataSource = qlKH.GetDataBy3(Convert.ToInt32(txtTimKiem.Text));
+                int maKhachHang;
+                if (int.TryParse(txtTimKiem.Text, out maKhachHang))
+                {
+                    // Nếu chuyển đổi thành công, thực hiện tìm kiếm
+                    dgvKH.DataSource = qlKH.GetDataBy3(maKhachHang);
+                }
+                else
+                {
+                    // Nếu chuyển đổi thất bại, thông báo lỗi cho người dùng
+                    MessageBox.Show("Vui lòng nhập mã khách hàng là số.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else if (cboTimKiem.Text == "Tên Khách Hàng")
             {
@@ -58,8 +188,19 @@ namespace App_BanLaptop.Forms
             }
             else if (cboTimKiem.Text == "Mã Khách Hàng")
             {
-                dgvKH.DataSource = qlKH.GetDataBy3(Convert.ToInt32(txtTimKiem.Text));
-            }else if(cboTimKiem.Text == "Tên Khách Hàng")
+                int maKhachHang;
+                if (int.TryParse(txtTimKiem.Text, out maKhachHang))
+                {
+                    // Nếu chuyển đổi thành công, thực hiện tìm kiếm
+                    dgvKH.DataSource = qlKH.GetDataBy3(maKhachHang);
+                }
+                else
+                {
+                    // Nếu chuyển đổi thất bại, thông báo lỗi cho người dùng
+                    MessageBox.Show("Vui lòng nhập mã khách hàng là số.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else if(cboTimKiem.Text == "Tên Khách Hàng")
             {
                 dgvKH.DataSource = qlKH.GetDataBy4(txtTimKiem.Text);
             }
@@ -198,8 +339,8 @@ namespace App_BanLaptop.Forms
         public void loadKhachHang()
         {
             QLKhachHangTableAdapter qlKH = new QLKhachHangTableAdapter();
-            DataTable dataTable = qlKH.GetData(); 
-            dgvKH.DataSource = dataTable;
+            //System.Data.DataTable dataTable = qlKH.GetData(); 
+            dgvKH.DataSource = qlKH.GetData();
         }
         private void QL_KhachHang_Load(object sender, EventArgs e)
         {

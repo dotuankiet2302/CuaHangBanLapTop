@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DTO;
 using BLL;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace App_BanLaptop.Forms
 {
@@ -20,12 +21,127 @@ namespace App_BanLaptop.Forms
         {
             InitializeComponent();
             this.Load += QL_SanPham_Load;
+            this.WindowState = FormWindowState.Maximized;
             this.dgvSanPham.CellClick += DgvSanPham_CellClick;
             this.Them.Click += Them_Click;
             this.Xoa.Click += Xoa_Click;
             this.Sua.Click += Sua_Click;
             btnTimKiem.Click += BtnTimKiem_Click;
             txtTimKiem.TextChanged += TxtTimKiem_TextChanged;
+            this.In.Click += In_Click;
+            this.Resize += QL_SanPham_Resize;
+            this.Xuat.Click += Xuat_Click;
+        }
+
+        private void Xuat_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Excel.Application xlApp = new Excel.Application();
+                Excel.Workbook xlWorkbook = xlApp.Workbooks.Add();
+                Excel.Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+
+                // Tạo tiêu đề
+                xlWorksheet.Cells[1, 1] = "DANH SÁCH SẢN PHẨM LAPTOP";
+                Excel.Range titleRange = xlWorksheet.Range[xlWorksheet.Cells[1, 1], xlWorksheet.Cells[1, dgvSanPham.Columns.Count]];
+                titleRange.Merge();
+                titleRange.Font.Bold = true;
+                titleRange.Font.Size = 16;
+                titleRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+                // Export header của DataGridView
+                for (int i = 0; i < dgvSanPham.Columns.Count; i++)
+                {
+                    xlWorksheet.Cells[3, i + 1] = dgvSanPham.Columns[i].HeaderText;
+                    xlWorksheet.Cells[3, i + 1].Font.Bold = true;
+                    xlWorksheet.Cells[3, i + 1].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightGray);
+                }
+
+                // Export nội dung của DataGridView
+                for (int i = 0; i < dgvSanPham.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dgvSanPham.Columns.Count; j++)
+                    {
+                        if (dgvSanPham.Rows[i].Cells[j].Value != null)
+                        {
+                            // Định dạng đặc biệt cho cột giá bán
+                            if (dgvSanPham.Columns[j].Name == "GIABAN" || dgvSanPham.Columns[j].HeaderText.Contains("Giá"))
+                            {
+                                xlWorksheet.Cells[i + 4, j + 1] = dgvSanPham.Rows[i].Cells[j].Value;
+                                xlWorksheet.Cells[i + 4, j + 1].NumberFormat = "#,##0";
+                            }
+                            // Định dạng đặc biệt cho cột ngày
+                            else if (dgvSanPham.Columns[j].Name == "NGAYCAPNHAT")
+                            {
+                                xlWorksheet.Cells[i + 4, j + 1] = dgvSanPham.Rows[i].Cells[j].Value;
+                                xlWorksheet.Cells[i + 4, j + 1].NumberFormat = "dd/mm/yyyy";
+                            }
+                            else
+                            {
+                                xlWorksheet.Cells[i + 4, j + 1] = dgvSanPham.Rows[i].Cells[j].Value.ToString();
+                            }
+                        }
+                    }
+                }
+
+                // Tự động điều chỉnh độ rộng cột
+                xlWorksheet.Columns.AutoFit();
+
+                // Thêm đường viền
+                Excel.Range range = xlWorksheet.UsedRange;
+                range.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+
+                // Hiển thị SaveFileDialog
+                SaveFileDialog saveDialog = new SaveFileDialog();
+                saveDialog.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+                saveDialog.FilterIndex = 1;
+                saveDialog.FileName = "DanhSachLaptop_" + DateTime.Now.ToString("ddMMyyyy_HHmmss");
+
+                if (saveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    xlWorkbook.SaveAs(saveDialog.FileName);
+                    xlWorkbook.Close();
+                    xlApp.Quit();
+
+                    MessageBox.Show("Xuất file Excel thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                // Giải phóng tài nguyên
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorksheet);
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkbook);
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi khi xuất file: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void QL_SanPham_Resize(object sender, EventArgs e)
+        {
+            AdjustLayout();
+        }
+
+        private void In_Click(object sender, EventArgs e)
+        {
+            if (dgvSanPham.Rows.Count > 0)
+            {
+                string tenLap = txtTenMH.Text;
+                string moTa = txtMoTa.Text;
+                string ngayCN = txtNgayCapNhat.Text;
+                if (tenLap == "" || moTa == "" || ngayCN == "")
+                {
+                    MessageBox.Show("Hãy chọn 1 hàng trước.");
+                    return;
+                }
+
+                WordExport dt = new WordExport();
+                dt.XacNhanChatLuongSP(tenLap, moTa, ngayCN);
+            }
+            else
+            {
+                MessageBox.Show("Hãy chọn 1 hàng trước.");
+            }
         }
 
         private void TxtTimKiem_TextChanged(object sender, EventArgs e)
@@ -190,11 +306,20 @@ namespace App_BanLaptop.Forms
 
         public void loadLaptop()
         {
+            AdjustLayout();
             dgvSanPham.DataSource = bllLaptop.GetLaptop();
         }
         private void QL_SanPham_Load(object sender, EventArgs e)
         {
             loadLaptop();
+        }
+        private void AdjustLayout()
+        {
+            dgvSanPham.Dock = DockStyle.None;
+            int margin = 20;
+            dgvSanPham.Location = new Point(margin, 300);
+            dgvSanPham.Width = this.ClientSize.Width - (margin * 2);
+            dgvSanPham.Height = 250;
         }
     }
 }

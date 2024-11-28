@@ -1052,7 +1052,7 @@ SELECT MAKH, HOTEN, NGAYSINH, GIOITINH, DIENTHOAI, TAIKHOAN, MATKHAU, EMAIL, DIA
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="doan_laptopConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Sua" Modifier="Public" Name="Sua" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="Sua">
+              <DbSource ConnectionRef="doan_laptopConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Sua" Modifier="Public" Name="Sua" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Sua">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE khachhang
@@ -1073,7 +1073,7 @@ WHERE  (MAKH = @Makh);  </CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="doan_laptopConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Them" Modifier="Public" Name="Them" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Them">
+              <DbSource ConnectionRef="doan_laptopConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Them" Modifier="Public" Name="Them" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="Them">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO khachhang
@@ -1093,7 +1093,7 @@ VALUES (@HoTen, @NgaySinh, @GioiTinh, @DienThoai, @TaiKhoan, @MatKhau, @Email, @
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="doan_laptopConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Xoa" Modifier="Public" Name="Xoa" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="Xoa">
+              <DbSource ConnectionRef="doan_laptopConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Xoa" Modifier="Public" Name="Xoa" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="Xoa">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM khachhang
@@ -1215,7 +1215,7 @@ WHERE  (MAKH LIKE @MaKH) AND (MAQUYEN = 2)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="doan_laptopConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Sua" Modifier="Public" Name="Sua" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="Sua">
+              <DbSource ConnectionRef="doan_laptopConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Sua" Modifier="Public" Name="Sua" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Sua">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE khachhang
@@ -1236,7 +1236,7 @@ WHERE  (MAKH = @MaNV); </CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="doan_laptopConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Them" Modifier="Public" Name="Them" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Them">
+              <DbSource ConnectionRef="doan_laptopConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Them" Modifier="Public" Name="Them" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="Them">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO khachhang
@@ -1263,6 +1263,74 @@ VALUES (@HoTen,@NgaySinh,@GioiTinh,@DienThoai,@TaiKhoan,@MatKhau,@Email,@DiaChi,
 WHERE  (MAKH = @MaNV)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="MaNV" ColumnName="MAKH" DataSourceName="doan_laptop.dbo.khachhang" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@MaNV" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="MAKH" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="QLTinTucTableAdapter" GeneratorDataComponentClassName="QLTinTucTableAdapter" Name="QLTinTuc" UserDataComponentName="QLTinTucTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="doan_laptopConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT t.MATIN, t.TIEUDE, t.NOIDUNG, t.HINH, t.NGAYDANG, lt.TLTIN
+FROM     tin AS t INNER JOIN
+                  loaitin AS lt ON t.MLTIN = lt.MLTIN</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MATIN" DataSetColumn="MATIN" />
+              <Mapping SourceColumn="TIEUDE" DataSetColumn="TIEUDE" />
+              <Mapping SourceColumn="NOIDUNG" DataSetColumn="NOIDUNG" />
+              <Mapping SourceColumn="HINH" DataSetColumn="HINH" />
+              <Mapping SourceColumn="NGAYDANG" DataSetColumn="NGAYDANG" />
+              <Mapping SourceColumn="TLTIN" DataSetColumn="TLTIN" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="doan_laptopConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Sua" Modifier="Public" Name="Sua" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="Sua">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE tin
+SET TIEUDE = @TieuDe, NOIDUNG = @NoiDung, HINH = @HinhAnh, NGAYDANG = @NgayDang, MLTIN = @MLTin
+WHERE (MATIN = @MaTin);</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="TieuDe" ColumnName="TIEUDE" DataSourceName="doan_laptop.dbo.tin" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@TieuDe" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="TIEUDE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="NoiDung" ColumnName="NOIDUNG" DataSourceName="doan_laptop.dbo.tin" DataTypeServer="nvarchar(200)" DbType="String" Direction="Input" ParameterName="@NoiDung" Precision="0" ProviderType="NVarChar" Scale="0" Size="200" SourceColumn="NOIDUNG" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="HinhAnh" ColumnName="HINH" DataSourceName="doan_laptop.dbo.tin" DataTypeServer="nvarchar(200)" DbType="String" Direction="Input" ParameterName="@HinhAnh" Precision="0" ProviderType="NVarChar" Scale="0" Size="200" SourceColumn="HINH" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="NgayDang" ColumnName="NGAYDANG" DataSourceName="doan_laptop.dbo.tin" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@NgayDang" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="NGAYDANG" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="MLTin" ColumnName="MLTIN" DataSourceName="doan_laptop.dbo.tin" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@MLTin" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="MLTIN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="MaTin" ColumnName="MATIN" DataSourceName="doan_laptop.dbo.tin" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@MaTin" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="MATIN" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+              <DbSource ConnectionRef="doan_laptopConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Them" Modifier="Public" Name="Them" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Them">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO tin(MATIN, TIEUDE, NOIDUNG, HINH, NGAYDANG, MLTIN)
+VALUES (@MaTin, @TieuDe, @NoiDung, @HinhAnh, @NgayDang, @MLTin);</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="MaTin" ColumnName="MATIN" DataSourceName="doan_laptop.dbo.tin" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@MaTin" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="MATIN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="TieuDe" ColumnName="TIEUDE" DataSourceName="doan_laptop.dbo.tin" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@TieuDe" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="TIEUDE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="NoiDung" ColumnName="NOIDUNG" DataSourceName="doan_laptop.dbo.tin" DataTypeServer="nvarchar(200)" DbType="String" Direction="Input" ParameterName="@NoiDung" Precision="0" ProviderType="NVarChar" Scale="0" Size="200" SourceColumn="NOIDUNG" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="HinhAnh" ColumnName="HINH" DataSourceName="doan_laptop.dbo.tin" DataTypeServer="nvarchar(200)" DbType="String" Direction="Input" ParameterName="@HinhAnh" Precision="0" ProviderType="NVarChar" Scale="0" Size="200" SourceColumn="HINH" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="NgayDang" ColumnName="NGAYDANG" DataSourceName="doan_laptop.dbo.tin" DataTypeServer="date" DbType="AnsiString" Direction="Input" ParameterName="@NgayDang" Precision="0" ProviderType="Date" Scale="0" Size="3" SourceColumn="NGAYDANG" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="MLTin" ColumnName="MLTIN" DataSourceName="doan_laptop.dbo.tin" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@MLTin" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="MLTIN" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="doan_laptopConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Xoa" Modifier="Public" Name="Xoa" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="Xoa">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM tin
+WHERE  (MATIN = @MaTin)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="MaTin" ColumnName="MATIN" DataSourceName="doan_laptop.dbo.tin" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@MaTin" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="MATIN" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
@@ -1641,7 +1709,7 @@ WHERE  (MAKH = @MaNV)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="MATINH" msprop:Generator_UserColumnName="MATINH" msprop:Generator_ColumnPropNameInTable="MATINHColumn" msprop:Generator_ColumnPropNameInRow="MATINH" msprop:Generator_ColumnVarNameInTable="columnMATINH" type="xs:int" />
+              <xs:element name="MATINH" msprop:Generator_ColumnPropNameInTable="MATINHColumn" msprop:Generator_ColumnPropNameInRow="MATINH" msprop:Generator_UserColumnName="MATINH" msprop:Generator_ColumnVarNameInTable="columnMATINH" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1699,7 +1767,43 @@ WHERE  (MAKH = @MaNV)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="MATINH" msprop:Generator_ColumnPropNameInRow="MATINH" msprop:Generator_ColumnPropNameInTable="MATINHColumn" msprop:Generator_ColumnVarNameInTable="columnMATINH" msprop:Generator_UserColumnName="MATINH" type="xs:int" />
+              <xs:element name="MATINH" msprop:Generator_ColumnPropNameInTable="MATINHColumn" msprop:Generator_ColumnPropNameInRow="MATINH" msprop:Generator_UserColumnName="MATINH" msprop:Generator_ColumnVarNameInTable="columnMATINH" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="QLTinTuc" msprop:Generator_RowClassName="QLTinTucRow" msprop:Generator_RowEvHandlerName="QLTinTucRowChangeEventHandler" msprop:Generator_RowDeletedName="QLTinTucRowDeleted" msprop:Generator_RowDeletingName="QLTinTucRowDeleting" msprop:Generator_RowEvArgName="QLTinTucRowChangeEvent" msprop:Generator_TablePropName="QLTinTuc" msprop:Generator_RowChangedName="QLTinTucRowChanged" msprop:Generator_UserTableName="QLTinTuc" msprop:Generator_RowChangingName="QLTinTucRowChanging" msprop:Generator_TableClassName="QLTinTucDataTable" msprop:Generator_TableVarName="tableQLTinTuc">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MATIN" msprop:Generator_UserColumnName="MATIN" msprop:Generator_ColumnPropNameInTable="MATINColumn" msprop:Generator_ColumnPropNameInRow="MATIN" msprop:Generator_ColumnVarNameInTable="columnMATIN" type="xs:int" />
+              <xs:element name="TIEUDE" msprop:Generator_UserColumnName="TIEUDE" msprop:Generator_ColumnPropNameInTable="TIEUDEColumn" msprop:Generator_ColumnPropNameInRow="TIEUDE" msprop:Generator_ColumnVarNameInTable="columnTIEUDE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NOIDUNG" msprop:Generator_UserColumnName="NOIDUNG" msprop:Generator_ColumnPropNameInTable="NOIDUNGColumn" msprop:Generator_ColumnPropNameInRow="NOIDUNG" msprop:Generator_ColumnVarNameInTable="columnNOIDUNG" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HINH" msprop:Generator_UserColumnName="HINH" msprop:Generator_ColumnPropNameInTable="HINHColumn" msprop:Generator_ColumnPropNameInRow="HINH" msprop:Generator_ColumnVarNameInTable="columnHINH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NGAYDANG" msprop:Generator_UserColumnName="NGAYDANG" msprop:Generator_ColumnPropNameInTable="NGAYDANGColumn" msprop:Generator_ColumnPropNameInRow="NGAYDANG" msprop:Generator_ColumnVarNameInTable="columnNGAYDANG" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TLTIN" msprop:Generator_UserColumnName="TLTIN" msprop:Generator_ColumnPropNameInTable="TLTINColumn" msprop:Generator_ColumnPropNameInRow="TLTIN" msprop:Generator_ColumnVarNameInTable="columnTLTIN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1765,6 +1869,10 @@ WHERE  (MAKH = @MaNV)</CommandText>
     <xs:unique name="QLNhanVien_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:QLNhanVien" />
       <xs:field xpath="mstns:MAKH" />
+    </xs:unique>
+    <xs:unique name="QLTinTuc_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:QLTinTuc" />
+      <xs:field xpath="mstns:MATIN" />
     </xs:unique>
   </xs:element>
   <xs:annotation>

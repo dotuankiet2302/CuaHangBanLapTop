@@ -72,12 +72,16 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Xuat = new System.Windows.Forms.PictureBox();
+            this.In = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Xoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sua)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Them)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLNhanVienBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.doan_laptop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Xuat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.In)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUserName
@@ -124,6 +128,8 @@
             // 
             // txtTimKiem
             // 
+            this.txtTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTimKiem.Location = new System.Drawing.Point(323, 22);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimKiem.Multiline = true;
@@ -277,10 +283,10 @@
             // 
             this.Xoa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Xoa.Image = global::App_BanLaptop.Properties.Resources.xoa;
-            this.Xoa.Location = new System.Drawing.Point(924, 213);
+            this.Xoa.Location = new System.Drawing.Point(964, 89);
             this.Xoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Xoa.Name = "Xoa";
-            this.Xoa.Size = new System.Drawing.Size(54, 45);
+            this.Xoa.Size = new System.Drawing.Size(57, 48);
             this.Xoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Xoa.TabIndex = 88;
             this.Xoa.TabStop = false;
@@ -289,7 +295,7 @@
             // 
             this.Sua.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Sua.Image = global::App_BanLaptop.Properties.Resources.sua;
-            this.Sua.Location = new System.Drawing.Point(924, 148);
+            this.Sua.Location = new System.Drawing.Point(882, 151);
             this.Sua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Sua.Name = "Sua";
             this.Sua.Size = new System.Drawing.Size(54, 54);
@@ -301,7 +307,7 @@
             // 
             this.Them.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Them.Image = global::App_BanLaptop.Properties.Resources.them;
-            this.Them.Location = new System.Drawing.Point(924, 86);
+            this.Them.Location = new System.Drawing.Point(882, 89);
             this.Them.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Them.Name = "Them";
             this.Them.Size = new System.Drawing.Size(54, 48);
@@ -402,6 +408,9 @@
             // 
             // dgvNhanVien
             // 
+            this.dgvNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvNhanVien.AutoGenerateColumns = false;
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -503,11 +512,38 @@
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.Width = 125;
             // 
+            // Xuat
+            // 
+            this.Xuat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Xuat.Image = global::App_BanLaptop.Properties.Resources.xuat;
+            this.Xuat.Location = new System.Drawing.Point(967, 219);
+            this.Xuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Xuat.Name = "Xuat";
+            this.Xuat.Size = new System.Drawing.Size(54, 54);
+            this.Xuat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Xuat.TabIndex = 136;
+            this.Xuat.TabStop = false;
+            // 
+            // In
+            // 
+            this.In.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.In.Image = global::App_BanLaptop.Properties.Resources.In;
+            this.In.Location = new System.Drawing.Point(967, 151);
+            this.In.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.In.Name = "In";
+            this.In.Size = new System.Drawing.Size(54, 54);
+            this.In.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.In.TabIndex = 135;
+            this.In.TabStop = false;
+            // 
             // QL_NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1086, 593);
+            this.ClientSize = new System.Drawing.Size(800, 600); // Kích thước nhỏ hơn để dễ design
+
+            this.Controls.Add(this.Xuat);
+            this.Controls.Add(this.In);
             this.Controls.Add(this.dgvNhanVien);
             this.Controls.Add(this.txtMaTinh);
             this.Controls.Add(this.label6);
@@ -546,6 +582,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.qLNhanVienBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.doan_laptop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Xuat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.In)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -596,5 +634,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.PictureBox Xuat;
+        private System.Windows.Forms.PictureBox In;
     }
 }

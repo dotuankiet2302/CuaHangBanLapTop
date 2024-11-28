@@ -12,6 +12,22 @@ namespace DAL
         doan_laptopDataContext qlLapTop = new doan_laptopDataContext();
         public DonHangDAL() { }
 
+
+        public List<donhang> TimKiemDonHang(string keyword)
+        {
+            return qlLapTop.donhangs
+                .Where(d => d.MADH.ToString().Contains(keyword))
+                .ToList();
+        }
+        public List<donhang> TimKiemQuaNgayDat(DateTime keyword)
+        {
+            //return qlLapTop.donhangs
+            //    .Where(d => d.NGAYDAT.ToString().Contains(keyword))
+            //    .ToList();
+            return qlLapTop.donhangs
+                .Where(d => d.NGAYDAT == keyword)
+                .ToList();
+        }
         public List<donhang> LoadDonHang()
         {
             return qlLapTop.donhangs.Select(d => d).ToList<donhang>();
