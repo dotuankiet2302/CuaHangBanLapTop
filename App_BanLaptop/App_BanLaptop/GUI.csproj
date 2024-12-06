@@ -65,8 +65,12 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UC_RequiredTextBox">
+      <HintPath>..\UC_RequiredTextBox\bin\Debug\UC_RequiredTextBox.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DecisionTreeNode.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="doan_laptop.cs">
       <DependentUpon>doan_laptop.xsd</DependentUpon>
@@ -83,6 +87,12 @@
     </Compile>
     <Compile Include="Forms\BaoCaoThongKe.Designer.cs">
       <DependentUpon>BaoCaoThongKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\QL_DatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\QL_DatHang.Designer.cs">
+      <DependentUpon>QL_DatHang.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\TinTuc.cs">
       <SubType>Form</SubType>
@@ -115,6 +125,7 @@
       <DependentUpon>QL_SanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
+    <Compile Include="ID3RecommendationSystem.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +143,9 @@
     <Compile Include="WordExport.cs" />
     <EmbeddedResource Include="Forms\BaoCaoThongKe.resx">
       <DependentUpon>BaoCaoThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\QL_DatHang.resx">
+      <DependentUpon>QL_DatHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TinTuc.resx">
       <DependentUpon>TinTuc.cs</DependentUpon>
@@ -211,6 +225,10 @@
     <None Include="Images\thongtinban.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{6fb33969-2770-4f61-b5c3-740e50ca0c7f}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UC_DangNhap\UC_DangNhap.csproj">
       <Project>{6090DC46-8708-4685-AE20-2C591F2213B5}</Project>
       <Name>UC_DangNhap</Name>
@@ -274,6 +292,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\icon_shop.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\datHang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\chatBox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\laptop.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -124,6 +124,9 @@
   <data name="thongtinban1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\thongtinban.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="chatBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\chatBox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="czp156755920311" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\czp15675592031.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,6 +148,9 @@
   <data name="shopping1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\shopping.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="sua" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\sua.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="dangxuat1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\dangxuat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -160,8 +166,8 @@
   <data name="xuat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\xuat.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="czp15675592031" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\czp15675592031.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="nhanvien2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\nhanvien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="thongkedoanhthu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\thongkedoanhthu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,13 +178,16 @@
   <data name="icon_shop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\icon_shop.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sua" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\sua.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="datHang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\datHang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="czp15675592031" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\czp15675592031.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dangxuat" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\dangxuat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="nhanvien2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\nhanvien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="laptop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\laptop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
+using Common;
 
 namespace App_BanLaptop.Forms
 {
@@ -36,10 +37,39 @@ namespace App_BanLaptop.Forms
                 Excel.Workbook xlWorkbook = xlApp.Workbooks.Add();
                 Excel.Worksheet xlWorksheet = xlWorkbook.Sheets[1];
 
+                // Thêm tiêu đề
+                string title;
+                if (rdoMacDinh.Checked)
+                {
+                    title = "DANH SÁCH THỐNG KÊ CÁC ĐƠN HÀNG";
+                }
+                else
+                {
+                    title = $"DANH SÁCH THỐNG KÊ TỪ NGÀY {dtpNgayBD.Value.ToString("dd/MM/yyyy")} ĐẾN NGÀY {dtpNgayKT.Value.ToString("dd/MM/yyyy")}";
+                }
+                xlWorksheet.Cells[1, 1] = title;
+                Excel.Range titleRange = xlWorksheet.Range[xlWorksheet.Cells[1, 1], xlWorksheet.Cells[1, dgvThongKe.Columns.Count]];
+                titleRange.Merge();
+                titleRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+                titleRange.Font.Bold = true;
+                titleRange.Font.Size = 14;
+
+                // Thêm thông tin người xuất báo cáo
+                string nguoiXuat = string.IsNullOrEmpty(SessionManager.CurrentUserName) ? 
+                                "Admin" : SessionManager.CurrentUserName;
+                xlWorksheet.Cells[2, 1] = $"Người xuất báo cáo: {nguoiXuat}";
+                
+                // Thêm ngày xuất báo cáo
+                xlWorksheet.Cells[3, 1] = $"Ngày xuất báo cáo: {DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")}";
+                
                 // Export header của DataGridView
                 for (int i = 0; i < dgvThongKe.Columns.Count; i++)
                 {
-                    xlWorksheet.Cells[1, i + 1] = dgvThongKe.Columns[i].HeaderText;
+                    xlWorksheet.Cells[5, i + 1] = dgvThongKe.Columns[i].HeaderText;
+                    // Định dạng header
+                    Excel.Range headerCell = xlWorksheet.Cells[5, i + 1];
+                    headerCell.Font.Bold = true;
+                    headerCell.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightGray);
                 }
 
                 // Export nội dung của DataGridView
@@ -49,28 +79,7 @@ namespace App_BanLaptop.Forms
                     {
                         if (dgvThongKe.Rows[i].Cells[j].Value != null)
                         {
-                            xlWorksheet.Cells[i + 2, j + 1] = dgvThongKe.Rows[i].Cells[j].Value.ToString();
-                        }
-                    }
-                }
-
-                // Thêm dòng trống
-                int lastRow = dgvThongKe.Rows.Count + 4;
-
-                // Export header của bảng tổng
-                for (int i = 0; i < dgvSoLuong_DoanhThu.Columns.Count; i++)
-                {
-                    xlWorksheet.Cells[lastRow, i + 1] = dgvSoLuong_DoanhThu.Columns[i].HeaderText;
-                }
-
-                // Export nội dung của bảng tổng
-                for (int i = 0; i < dgvSoLuong_DoanhThu.Rows.Count; i++)
-                {
-                    for (int j = 0; j < dgvSoLuong_DoanhThu.Columns.Count; j++)
-                    {
-                        if (dgvSoLuong_DoanhThu.Rows[i].Cells[j].Value != null)
-                        {
-                            xlWorksheet.Cells[lastRow + i + 1, j + 1] = dgvSoLuong_DoanhThu.Rows[i].Cells[j].Value.ToString();
+                            xlWorksheet.Cells[i + 6, j + 1] = dgvThongKe.Rows[i].Cells[j].Value.ToString();
                         }
                     }
                 }

@@ -9,11 +9,11 @@ namespace DAL
 {
     public class NhanVienDAL
     {
-        doan_laptopDataContext qlLapTop = new doan_laptopDataContext();
+        doan_laptopDataContext qlLapTop;
 
         public NhanVienDAL()
         {
-
+            qlLapTop = new doan_laptopDataContext();
         }
         public List<khachhang> LoadNhanVien()
         {

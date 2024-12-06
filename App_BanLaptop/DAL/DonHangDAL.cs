@@ -1,4 +1,5 @@
 ﻿using DTO;
+using DTO.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,9 +29,27 @@ namespace DAL
                 .Where(d => d.NGAYDAT == keyword)
                 .ToList();
         }
-        public List<donhang> LoadDonHang()
+        public List<DonHang> GetDonHang()
         {
-            return qlLapTop.donhangs.Select(d => d).ToList<donhang>();
+            var query = from dh in qlLapTop.donhangs
+                        join kh in qlLapTop.khachhangs on dh.MAKH equals kh.MAKH
+                        join ctdh in qlLapTop.chitietdonhangs on dh.MADH equals ctdh.MADH
+                        join lap in qlLapTop.laptops on ctdh.MALAP equals lap.MALAP
+                        select new DonHang
+                        {
+                            MaDH = dh.MADH,
+                            NgayGiao = (DateTime)dh.NGAYGIAO,  // Thêm chuyển đổi tường minh
+                            NgayDat = (DateTime)dh.NGAYDAT,    // Thêm chuyển đổi tường minh
+                            DaThanhToan = dh.DATHANHTOAN,
+                            TinhTrangGiao = dh.TINHTRANGGIAO,
+                            MaKH = (int)dh.MAKH,
+                            TenKH = kh.HOTEN,
+                            MaLap = lap.MALAP,
+                            TenLap = lap.TENLAP,
+                            SoLuong = (int)ctdh.SOLUONG,
+                            DonGia = (decimal)ctdh.DONGIA
+                        };
+            return query.ToList();
         }
 
         public bool ThemDonHang(donhang pDonhang)

@@ -11,11 +11,14 @@ using DTO;
 using BLL;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Drawing.Imaging;
+using System.IO;
 
 namespace App_BanLaptop.Forms
 {
     public partial class QL_SanPham : Form
     {
+        private bool isEditing = false;
         LaptopBLL bllLaptop = new LaptopBLL();
         public QL_SanPham()
         {
@@ -31,6 +34,125 @@ namespace App_BanLaptop.Forms
             this.In.Click += In_Click;
             this.Resize += QL_SanPham_Resize;
             this.Xuat.Click += Xuat_Click;
+            this.picAnhBia.Click += PicAnhBia_Click;
+            SetInitialState();
+        }
+
+        private void PicAnhBia_Click(object sender, EventArgs e)
+        {
+            if (!isEditing) return;
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files (*.jpg;*.jpeg;*.png;*.gif)|*.jpg;*.jpeg;*.png;*.gif";
+            openFileDialog.Title = "Chọn ảnh";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    string fileName = Path.GetFileName(openFileDialog.FileName);
+                    string destinationPath = Path.Combine(Application.StartupPath, "Images", fileName);
+
+                    // Giải phóng tài nguyên hình ảnh cũ
+                    if (picAnhBia.Image != null)
+                    {
+                        picAnhBia.Image.Dispose();
+                        picAnhBia.Image = null;
+                    }
+
+                    // Tạo bản sao của hình ảnh mới
+                    using (var sourceImage = Image.FromFile(openFileDialog.FileName))
+                    {
+                        picAnhBia.Image = new Bitmap(sourceImage);
+                        picAnhBia.SizeMode = PictureBoxSizeMode.StretchImage;
+                    }
+
+                    // Copy file vào thư mục Images
+                    if (File.Exists(destinationPath))
+                    {
+                        System.Threading.Thread.Sleep(100);
+                        File.Delete(destinationPath);
+                    }
+                    File.Copy(openFileDialog.FileName, destinationPath);
+
+                    picAnhBia.Text = fileName;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Có lỗi khi tải ảnh: " + ex.Message);
+                }
+            }
+        }
+
+        private void SetInitialState()
+        {
+            // Disable các controls nhập liệu
+            picAnhBia.Enabled = false;
+            txtMaMH.Enabled = false;
+            txtTenMH.Enabled = false;
+            txtMaTinhTrang.Enabled = false;
+            txtGiaBan.Enabled = false;
+            txtMoTa.Enabled = false;
+            txtNgayCapNhat.Enabled = false;
+            nUDSoLuong.Enabled = false;
+            txtMaHang.Enabled = false;
+            txtMaNSX.Enabled = false;
+
+            // Đặt màu mờ cho nút Thêm và Sửa
+            Them.Image = SetImageOpacity(Properties.Resources.them, 0.5f);
+            Sua.Image = SetImageOpacity(Properties.Resources.sua, 0.5f);
+
+            isEditing = false;
+        }
+
+        private void ClearControls()
+        {
+            txtMaMH.Clear();
+            txtTenMH.Clear();
+            txtMaTinhTrang.Clear();
+            txtGiaBan.Clear();
+            txtMoTa.Clear();
+            txtNgayCapNhat.Clear();
+            nUDSoLuong.Value = 0;
+            txtMaHang.Clear();
+            txtMaNSX.Clear();
+            picAnhBia.Image = null;
+        }
+
+
+        private Image SetImageOpacity(Image image, float opacity)
+        {
+            try
+            {
+                Bitmap bmp = new Bitmap(image.Width, image.Height);
+                using (Graphics gfx = Graphics.FromImage(bmp))
+                {
+                    ColorMatrix matrix = new ColorMatrix();
+                    matrix.Matrix33 = opacity;
+                    ImageAttributes attributes = new ImageAttributes();
+                    attributes.SetColorMatrix(matrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+                    gfx.DrawImage(image, new Rectangle(0, 0, bmp.Width, bmp.Height), 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, attributes);
+                }
+                return bmp;
+            }
+            catch
+            {
+                return image;
+            }
+        }
+        private void EnableEditingState()
+        {
+            // Enable các controls nhập liệu
+            picAnhBia.Enabled = true;
+            txtMaMH.Enabled = true;
+            txtTenMH.Enabled = true;
+            txtMaTinhTrang.Enabled = true;
+            txtGiaBan.Enabled = true;
+            txtMoTa.Enabled = true;
+            txtNgayCapNhat.Enabled = true;
+            nUDSoLuong.Enabled = true;
+            txtMaHang.Enabled = true;
+            txtMaNSX.Enabled = true;
         }
 
         private void Xuat_Click(object sender, EventArgs e)
@@ -201,26 +323,104 @@ namespace App_BanLaptop.Forms
 
         private void Sua_Click(object sender, EventArgs e)
         {
-            laptop dt = new laptop();
-            dt.MALAP = int.Parse(txtMaMH.Text);
-            dt.TENLAP = txtTenMH.Text;
-            dt.MATINHTRANG = int.Parse(txtMaTinhTrang.Text);
-            dt.GIABAN = decimal.Parse(txtGiaBan.ToString());
-            dt.MOTA = txtMoTa.Text;
-            dt.NGAYCAPNHAT = DateTime.Parse(txtNgayCapNhat.Text);
-            dt.ANHBIA = picAnhBia.Text;
-            dt.SOLUONGTON = int.Parse(nUDSoLuong.Text);
-            dt.MAHANG = int.Parse(txtMaHang.Text);
-            dt.MANSX = int.Parse(txtMaNSX.Text);
-
-            if (bllLaptop.SuaLaptop(dt))
+            if (!isEditing)
             {
-                MessageBox.Show("Sửa Thành Công");
-                loadLaptop();
+                isEditing = true;
+                EnableEditingState();
+                Sua.Image = Properties.Resources.sua;
             }
             else
             {
-                MessageBox.Show("Sửa Thất Bại");
+                try
+                {
+                    // Kiểm tra dữ liệu đầu vào tương tự như trong Them_Click
+                    if (string.IsNullOrEmpty(txtMaMH.Text) || string.IsNullOrEmpty(txtTenMH.Text) ||
+                        string.IsNullOrEmpty(txtMaTinhTrang.Text) || string.IsNullOrEmpty(txtGiaBan.Text) ||
+                        string.IsNullOrEmpty(txtNgayCapNhat.Text))
+                    {
+                        MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    laptop dt = new laptop();
+                    if (!int.TryParse(txtMaMH.Text, out int maLap))
+                    {
+                        MessageBox.Show("Mã laptop phải là số!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    dt.MALAP = maLap;
+                    dt.TENLAP = txtTenMH.Text;
+
+                    if (!int.TryParse(txtMaTinhTrang.Text, out int maTT))
+                    {
+                        MessageBox.Show("Mã tình trạng phải là số!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    dt.MATINHTRANG = maTT;
+
+                    if (!decimal.TryParse(txtGiaBan.Text, out decimal giaBan))
+                    {
+                        MessageBox.Show("Giá bán không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    dt.GIABAN = giaBan;
+
+                    dt.MOTA = txtMoTa.Text;
+
+                    if (!DateTime.TryParse(txtNgayCapNhat.Text, out DateTime ngayCN))
+                    {
+                        MessageBox.Show("Ngày cập nhật không hợp lệ! (định dạng: dd/MM/yyyy)", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    dt.NGAYCAPNHAT = ngayCN;
+
+                    DataGridViewRow currentRow = dgvSanPham.CurrentRow;
+                    if (currentRow != null && !string.IsNullOrEmpty(picAnhBia.Text))
+                    {
+                        dt.ANHBIA = picAnhBia.Text;
+                    }
+                    else
+                    {
+                        dt.ANHBIA = currentRow.Cells["ANHBIA"].Value.ToString();
+                    }
+
+
+                    if (!int.TryParse(nUDSoLuong.Text, out int soLuong))
+                    {
+                        MessageBox.Show("Số lượng phải là số!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    dt.SOLUONGTON = soLuong;
+
+                    if (!int.TryParse(txtMaHang.Text, out int maHang))
+                    {
+                        MessageBox.Show("Mã hãng phải là số!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    dt.MAHANG = maHang;
+
+                    if (!int.TryParse(txtMaNSX.Text, out int maNSX))
+                    {
+                        MessageBox.Show("Mã NSX phải là số!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    dt.MANSX = maNSX;
+
+                    if (bllLaptop.SuaLaptop(dt))
+                    {
+                        MessageBox.Show("Sửa Thành Công");
+                        loadLaptop();
+                        SetInitialState();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa Thất Bại");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
             }
         }
 
@@ -251,26 +451,104 @@ namespace App_BanLaptop.Forms
 
         private void Them_Click(object sender, EventArgs e)
         {
-            laptop dt = new laptop();
-            dt.MALAP = int.Parse(txtMaMH.Text);
-            dt.TENLAP = txtTenMH.Text;
-            dt.MATINHTRANG = int.Parse(txtMaTinhTrang.Text);
-            dt.GIABAN = decimal.Parse(txtGiaBan.ToString());
-            dt.MOTA = txtMoTa.Text;
-            dt.NGAYCAPNHAT = DateTime.Parse(txtNgayCapNhat.Text);
-            dt.ANHBIA = picAnhBia.Text;
-            dt.SOLUONGTON = int.Parse(nUDSoLuong.Text);
-            dt.MAHANG = int.Parse(txtMaHang.Text);
-            dt.MANSX = int.Parse(txtMaNSX.Text);
-
-            if (bllLaptop.ThemLaptop(dt))
+            if (!isEditing)
             {
-                MessageBox.Show("Thanh Cong");
-                loadLaptop();
+                // Bắt đầu thêm mới
+                isEditing = true;
+                EnableEditingState();
+                Them.Image = Properties.Resources.them;
+                ClearControls();
             }
             else
             {
-                MessageBox.Show("That Bai");
+                try
+                {
+                    // Kiểm tra dữ liệu đầu vào
+                    if (string.IsNullOrEmpty(txtMaMH.Text) || string.IsNullOrEmpty(txtTenMH.Text) ||
+                        string.IsNullOrEmpty(txtMaTinhTrang.Text) || string.IsNullOrEmpty(txtGiaBan.Text) ||
+                        string.IsNullOrEmpty(txtNgayCapNhat.Text))
+                    {
+                        MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    laptop dt = new laptop();
+                    if (!int.TryParse(txtMaMH.Text, out int maLap))
+                    {
+                        MessageBox.Show("Mã laptop phải là số!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    dt.MALAP = maLap;
+                    dt.TENLAP = txtTenMH.Text;
+
+                    if (!int.TryParse(txtMaTinhTrang.Text, out int maTT))
+                    {
+                        MessageBox.Show("Mã tình trạng phải là số!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    dt.MATINHTRANG = maTT;
+
+                    if (!decimal.TryParse(txtGiaBan.Text, out decimal giaBan))
+                    {
+                        MessageBox.Show("Giá bán không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    dt.GIABAN = giaBan;
+
+                    dt.MOTA = txtMoTa.Text;
+
+                    if (!DateTime.TryParse(txtNgayCapNhat.Text, out DateTime ngayCN))
+                    {
+                        MessageBox.Show("Ngày cập nhật không hợp lệ! (định dạng: dd/MM/yyyy)", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    dt.NGAYCAPNHAT = ngayCN;
+
+                    if (string.IsNullOrEmpty(picAnhBia.Text))
+                    {
+                        dt.ANHBIA = "errorImage.jpg";
+                    }
+                    else
+                    {
+                        dt.ANHBIA = picAnhBia.Text;
+                    }
+
+                    if (!int.TryParse(nUDSoLuong.Text, out int soLuong))
+                    {
+                        MessageBox.Show("Số lượng phải là số!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    dt.SOLUONGTON = soLuong;
+
+                    if (!int.TryParse(txtMaHang.Text, out int maHang))
+                    {
+                        MessageBox.Show("Mã hãng phải là số!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    dt.MAHANG = maHang;
+
+                    if (!int.TryParse(txtMaNSX.Text, out int maNSX))
+                    {
+                        MessageBox.Show("Mã NSX phải là số!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    dt.MANSX = maNSX;
+
+                    if (bllLaptop.ThemLaptop(dt))
+                    {
+                        MessageBox.Show("Thêm Thành Công");
+                        loadLaptop();
+                        SetInitialState();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm Thất Bại");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
             }
         }
 
@@ -293,13 +571,35 @@ namespace App_BanLaptop.Forms
 
                 try
                 {
-                    picAnhBia.Image = new Bitmap(Application.StartupPath + "\\Images\\" + images);
+                    if (picAnhBia.Image != null)
+                    {
+                        picAnhBia.Image.Dispose();
+                        picAnhBia.Image = null;
+                    }
+
+                    if (!string.IsNullOrEmpty(images))
+                    {
+                        string imagePath = Path.Combine(Application.StartupPath, "Images", images);
+                        if (File.Exists(imagePath))
+                        {
+                            using (var sourceImage = Image.FromFile(imagePath))
+                            {
+                                picAnhBia.Image = new Bitmap(sourceImage);
+                            }
+                            picAnhBia.Text = images;
+                        }
+                        else
+                        {
+                            picAnhBia.Image = Properties.Resources.errorImage;
+                            picAnhBia.Text = "errorImage.jpg";
+                        }
+                    }
                 }
-                catch (ArgumentException ex)
+                catch (Exception ex)
                 {
-                    // Handle the exception, e.g., display an error message or set a default image
-                    MessageBox.Show("Chưa có ảnh cho dòng sản phẩm này!!!\n" + ex.Message);
-                    picAnhBia.Image = new Bitmap(Application.StartupPath + "\\Images\\errorImage.jpg");
+                    MessageBox.Show("Lỗi khi tải ảnh: " + ex.Message);
+                    picAnhBia.Image = Properties.Resources.errorImage;
+                    picAnhBia.Text = "errorImage.jpg";
                 }
             }
         }

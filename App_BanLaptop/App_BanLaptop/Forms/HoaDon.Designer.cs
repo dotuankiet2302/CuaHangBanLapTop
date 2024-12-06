@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtTTGiao = new System.Windows.Forms.TextBox();
-            this.txtThanhToan = new System.Windows.Forms.TextBox();
             this.txtNgayDat = new System.Windows.Forms.TextBox();
             this.txtNgayGiao = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -44,32 +42,18 @@
             this.Them = new System.Windows.Forms.PictureBox();
             this.Sua = new System.Windows.Forms.PictureBox();
             this.Xoa = new System.Windows.Forms.PictureBox();
-            this.In = new System.Windows.Forms.PictureBox();
+            this.Xuat = new System.Windows.Forms.PictureBox();
             this.cboTimKiem = new System.Windows.Forms.ComboBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.txtTTGiao = new System.Windows.Forms.ComboBox();
+            this.txtThanhToan = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Them)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sua)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Xoa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.In)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Xuat)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtTTGiao
-            // 
-            this.txtTTGiao.Location = new System.Drawing.Point(523, 143);
-            this.txtTTGiao.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTTGiao.Name = "txtTTGiao";
-            this.txtTTGiao.Size = new System.Drawing.Size(132, 22);
-            this.txtTTGiao.TabIndex = 49;
-            // 
-            // txtThanhToan
-            // 
-            this.txtThanhToan.Location = new System.Drawing.Point(523, 103);
-            this.txtThanhToan.Margin = new System.Windows.Forms.Padding(4);
-            this.txtThanhToan.Name = "txtThanhToan";
-            this.txtThanhToan.Size = new System.Drawing.Size(132, 22);
-            this.txtThanhToan.TabIndex = 48;
             // 
             // txtNgayDat
             // 
@@ -152,7 +136,7 @@
             this.dgvHD.Margin = new System.Windows.Forms.Padding(4);
             this.dgvHD.Name = "dgvHD";
             this.dgvHD.RowHeadersWidth = 51;
-            this.dgvHD.Size = new System.Drawing.Size(908, 293);
+            this.dgvHD.Size = new System.Drawing.Size(1750, 300);
             this.dgvHD.TabIndex = 34;
             // 
             // txtMaKH
@@ -209,17 +193,17 @@
             this.Xoa.TabIndex = 89;
             this.Xoa.TabStop = false;
             // 
-            // In
+            // Xuat
             // 
-            this.In.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.In.Image = global::App_BanLaptop.Properties.Resources.In;
-            this.In.Location = new System.Drawing.Point(893, 167);
-            this.In.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.In.Name = "In";
-            this.In.Size = new System.Drawing.Size(54, 45);
-            this.In.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.In.TabIndex = 90;
-            this.In.TabStop = false;
+            this.Xuat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Xuat.Image = global::App_BanLaptop.Properties.Resources.xuat;
+            this.Xuat.Location = new System.Drawing.Point(893, 167);
+            this.Xuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Xuat.Name = "Xuat";
+            this.Xuat.Size = new System.Drawing.Size(54, 45);
+            this.Xuat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Xuat.TabIndex = 90;
+            this.Xuat.TabStop = false;
             // 
             // cboTimKiem
             // 
@@ -253,22 +237,45 @@
             this.txtTimKiem.Size = new System.Drawing.Size(578, 41);
             this.txtTimKiem.TabIndex = 91;
             // 
+            // txtTTGiao
+            // 
+            this.txtTTGiao.FormattingEnabled = true;
+            this.txtTTGiao.Items.AddRange(new object[] {
+            "Chưa giao",
+            "Đang giao",
+            "Đã nhận"});
+            this.txtTTGiao.Location = new System.Drawing.Point(523, 144);
+            this.txtTTGiao.Name = "txtTTGiao";
+            this.txtTTGiao.Size = new System.Drawing.Size(132, 24);
+            this.txtTTGiao.TabIndex = 94;
+            // 
+            // txtThanhToan
+            // 
+            this.txtThanhToan.FormattingEnabled = true;
+            this.txtThanhToan.Items.AddRange(new object[] {
+            "Chưa thanh toán",
+            "Đã thanh toán"});
+            this.txtThanhToan.Location = new System.Drawing.Point(523, 103);
+            this.txtThanhToan.Name = "txtThanhToan";
+            this.txtThanhToan.Size = new System.Drawing.Size(132, 24);
+            this.txtThanhToan.TabIndex = 95;
+            // 
             // HoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 560);
+            this.Controls.Add(this.txtThanhToan);
+            this.Controls.Add(this.txtTTGiao);
             this.Controls.Add(this.cboTimKiem);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.txtTimKiem);
-            this.Controls.Add(this.In);
+            this.Controls.Add(this.Xuat);
             this.Controls.Add(this.Xoa);
             this.Controls.Add(this.Sua);
             this.Controls.Add(this.Them);
             this.Controls.Add(this.txtMaKH);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtTTGiao);
-            this.Controls.Add(this.txtThanhToan);
             this.Controls.Add(this.txtNgayDat);
             this.Controls.Add(this.txtNgayGiao);
             this.Controls.Add(this.label7);
@@ -279,20 +286,18 @@
             this.Controls.Add(this.txtMaDH);
             this.Controls.Add(this.dgvHD);
             this.Name = "HoaDon";
-            this.Text = "HoaDon";
+            this.Text = "58";
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Them)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sua)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Xoa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.In)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Xuat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtTTGiao;
-        private System.Windows.Forms.TextBox txtThanhToan;
         private System.Windows.Forms.TextBox txtNgayDat;
         private System.Windows.Forms.TextBox txtNgayGiao;
         private System.Windows.Forms.Label label7;
@@ -307,9 +312,11 @@
         private System.Windows.Forms.PictureBox Them;
         private System.Windows.Forms.PictureBox Sua;
         private System.Windows.Forms.PictureBox Xoa;
-        private System.Windows.Forms.PictureBox In;
+        private System.Windows.Forms.PictureBox Xuat;
         private System.Windows.Forms.ComboBox cboTimKiem;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.TextBox txtTimKiem;
+        private System.Windows.Forms.ComboBox txtTTGiao;
+        private System.Windows.Forms.ComboBox txtThanhToan;
     }
 }

@@ -190,7 +190,8 @@ namespace App_BanLaptop.Forms
             // 
             // dgvSanPham
             // 
-            // Thay đổi thiết lập của dgvSanPham
+            this.dgvSanPham.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSanPham.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(198)))), ((int)(((byte)(202)))));
             this.dgvSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -199,10 +200,8 @@ namespace App_BanLaptop.Forms
             this.dgvSanPham.Name = "dgvSanPham";
             this.dgvSanPham.RowHeadersWidth = 51;
             this.dgvSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSanPham.Size = new System.Drawing.Size(1000, 250);
+            this.dgvSanPham.Size = new System.Drawing.Size(1260, 250);
             this.dgvSanPham.TabIndex = 63;
-            this.dgvSanPham.Dock = DockStyle.None; // Bỏ dock style
-            this.dgvSanPham.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right; // Giữ anchor
             // 
             // Xoa
             // 
@@ -372,7 +371,7 @@ namespace App_BanLaptop.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 600);
+            this.ClientSize = new System.Drawing.Size(1060, 600);
             this.Controls.Add(this.Xuat);
             this.Controls.Add(this.In);
             this.Controls.Add(this.picAnhBia);
@@ -403,7 +402,7 @@ namespace App_BanLaptop.Forms
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvSanPham);
             this.Name = "QL_SanPham";
-            this.Text = "QL_SanPham";
+            this.Text = "Quản Lý Sản Phẩm";
             ((System.ComponentModel.ISupportInitialize)(this.nUDSoLuong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Xoa)).EndInit();

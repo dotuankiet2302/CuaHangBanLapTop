@@ -229,7 +229,7 @@
             this.Controls.Add(this.dtpNgayKT);
             this.Controls.Add(this.dtpNgayBD);
             this.Name = "BaoCaoThongKe";
-            this.Text = "BaoCaoThongKe";
+            this.Text = "Báo Cáo Thống Kê";
             this.Load += new System.EventHandler(this.BaoCaoThongKe_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.doan_laptop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chitietdonhangBindingSource)).EndInit();

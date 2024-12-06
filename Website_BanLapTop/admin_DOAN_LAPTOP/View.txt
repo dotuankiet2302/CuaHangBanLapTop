@@ -1,0 +1,5 @@
+View Sản Phẩm : viewAllProducts.php
+View Đơn Nhập Hàng :viewProductSizes.php
+View Thông Kê Chi Phi Mua : viewSizes.php
+View thông kê chi phí nhập :viewAllOrders.php
+View thông kê thu chi : viewCustomers.php

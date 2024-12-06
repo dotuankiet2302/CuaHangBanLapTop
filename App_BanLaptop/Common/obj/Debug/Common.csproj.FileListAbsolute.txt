@@ -1,0 +1,6 @@
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\Common\bin\Debug\Common.dll
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\Common\bin\Debug\Common.pdb
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\Common\obj\Debug\Common.dll
+D:\PhatTrienPhanMem_ThongMinh\BanLapTop_DoAn\App_BanLaptop\Common\obj\Debug\Common.pdb

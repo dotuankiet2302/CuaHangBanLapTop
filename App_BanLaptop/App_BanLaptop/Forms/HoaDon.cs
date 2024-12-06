@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using BLL;
+using Excel = Microsoft.Office.Interop.Excel;
+
 
 namespace App_BanLaptop.Forms
 {
@@ -26,28 +28,93 @@ namespace App_BanLaptop.Forms
             this.Xoa.Click += Xoa_Click;
             btnTimKiem.Click += BtnTimKiem_Click;
             txtTimKiem.TextChanged += TxtTimKiem_TextChanged;
-            this.In.Click += In_Click;
+            this.Xuat.Click += Xuat_Click;
         }
 
-        private void In_Click(object sender, EventArgs e)
+        private void Xuat_Click(object sender, EventArgs e)
         {
-            if (dgvHD.Rows.Count > 0)
+            try
             {
-                string maHD = txtMaDH.Text;
-                string ngayDat = txtNgayDat.Text;
-                string ngayGiao = txtNgayGiao.Text;
-                if (maHD == "" || ngayDat == "" || ngayGiao == "")
+                // Tạo Excel Application
+                Excel.Application xlApp = new Excel.Application();
+                Excel.Workbook xlWorkbook = xlApp.Workbooks.Add();
+                Excel.Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+
+                // Thiết lập header
+                xlWorksheet.Cells[1, 1] = "LAPTOP STORE";
+                Excel.Range headerRange = xlWorksheet.Range["A1:M1"];
+                headerRange.Merge();
+                headerRange.Font.Bold = true;
+                headerRange.Font.Size = 18;
+                headerRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+
+                // Header của bảng dữ liệu
+                string[] headers = new string[] {
+                        "STT",
+                        "Mã Hóa Đơn",
+                        "Ngày Giao",
+                        "Ngày Đặt",
+                        "Trạng Thái Thanh Toán",
+                        "Tình Trạng Giao",
+                        "Mã Khách Hàng",
+                        "Tên Khách Hàng",
+                        "Mã Laptop",
+                        "Tên Laptop",
+                        "Số Lượng",
+                        "Đơn Giá",
+                        "Thành Tiền"
+                    };
+                for (int i = 0; i < headers.Length; i++)
                 {
-                    MessageBox.Show("Hãy chọn 1 hàng trước.");
-                    return;
+                    xlWorksheet.Cells[3, i + 1] = headers[i];
+                    xlWorksheet.Cells[3, i + 1].Font.Bold = true;
+                    xlWorksheet.Cells[3, i + 1].Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.LightGray);
                 }
 
-                WordExport dt = new WordExport();
-                dt.HoaDon(maHD, ngayDat, ngayGiao);
+                // Export dữ liệu từ DataGridView
+                for (int i = 0; i < dgvHD.Rows.Count; i++)
+                {
+                    xlWorksheet.Cells[i + 4, 1] = i + 1; // Số thứ tự
+                    for (int j = 0; j < dgvHD.Columns.Count; j++)
+                    {
+                        if (dgvHD.Rows[i].Cells[j].Value != null)
+                        {
+                            xlWorksheet.Cells[i + 4, j + 2] = dgvHD.Rows[i].Cells[j].Value.ToString();
+                        }
+                    }
+                }
+
+                // Tự động điều chỉnh độ rộng cột
+                xlWorksheet.Columns.AutoFit();
+
+                // Thêm đường viền
+                Excel.Range range = xlWorksheet.UsedRange;
+                range.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+
+                // Hiển thị SaveFileDialog
+                SaveFileDialog saveDialog = new SaveFileDialog();
+                saveDialog.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+                saveDialog.FilterIndex = 1;
+                saveDialog.FileName = "HoaDon_" + txtMaDH.Text + "_" + DateTime.Now.ToString("ddMMyyyy_HHmmss");
+
+                if (saveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    xlWorkbook.SaveAs(saveDialog.FileName);
+                    xlWorkbook.Close();
+                    xlApp.Quit();
+
+                    MessageBox.Show("Xuất file Excel thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                // Giải phóng tài nguyên
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorksheet);
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(xlWorkbook);
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(xlApp);
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Hãy chọn 1 hàng trước.");
+                MessageBox.Show("Có lỗi khi xuất file: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -183,7 +250,17 @@ namespace App_BanLaptop.Forms
         {
             var danhSachDonHangViewModel = bllDonHang.GetDonHang();
             dgvHD.DataSource = danhSachDonHangViewModel;
-            //dgvHD.DataSource = bllDonHang.GetDonHang();
+
+            // Đặt tên hiển thị cho các cột
+            dgvHD.Columns["MADH"].HeaderText = "Mã ĐH";
+            dgvHD.Columns["NGAYGIAO"].HeaderText = "Ngày Giao";
+            dgvHD.Columns["NGAYDAT"].HeaderText = "Ngày Đặt";
+            dgvHD.Columns["DATHANHTOAN"].HeaderText = "Thanh Toán";
+            dgvHD.Columns["TINHTRANGGIAO"].HeaderText = "TT Giao";
+            dgvHD.Columns["MAKH"].HeaderText = "Mã KH";
+            dgvHD.Columns["TENKH"].HeaderText = "Tên KH";
+            dgvHD.Columns["MALAP"].HeaderText = "Mã Laptop";
+            dgvHD.Columns["TENLAP"].HeaderText = "Tên Laptop";
         }
         private void HoaDon_Load(object sender, EventArgs e)
         {

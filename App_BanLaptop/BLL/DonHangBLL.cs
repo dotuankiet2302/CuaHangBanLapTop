@@ -57,18 +57,21 @@ namespace BLL
         }
         public List<DonHang> GetDonHang()
         {
-            var danhSachDonHangDTO = dalDonHang.LoadDonHang();
-            //return dalLaptop.LoadLaptop();
-            return danhSachDonHangDTO.Select(sp => new DonHang
+            var danhSachDonHang = dalDonHang.GetDonHang();
+            return danhSachDonHang.Select(dh => new DonHang
             {
-                MaDH = sp.MADH,
-                NgayGiao = (DateTime)sp.NGAYGIAO,
-                NgayDat = (DateTime)sp.NGAYDAT,
-                DaThanhToan = sp.DATHANHTOAN,
-                TinhTrangGiao = sp.TINHTRANGGIAO,
-                MaKH = (int)sp.MAKH
+                MaDH = dh.MaDH,
+                NgayGiao = dh.NgayGiao,
+                NgayDat = dh.NgayDat,
+                DaThanhToan = dh.DaThanhToan,
+                TinhTrangGiao = dh.TinhTrangGiao,
+                MaKH = dh.MaKH,
+                TenKH = dh.TenKH,
+                MaLap = dh.MaLap,
+                TenLap = dh.TenLap,
+                SoLuong = dh.SoLuong,
+                DonGia = dh.DonGia
             }).ToList();
-            //return dalDonHang.LoadDonHang();
         }
 
         public bool ThemDonHang(donhang pDonHang)

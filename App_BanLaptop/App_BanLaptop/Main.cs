@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,12 +28,46 @@ namespace App_BanLaptop
             this.picHoaDon.Click += PicHoaDon_Click;
             this.btnTTKhachHang.Click += BtnTTKhachHang_Click;
             this.picTTKH.Click += PicTTKH_Click;
-            this.btnTinTuc.Click += BtnDatHang_Click;
-            this.picTinTuc.Click += PicDatHang_Click;
             this.btnTKDoanhThu.Click += BtnTKDoanhThu_Click;
             this.picTKDT.Click += PicTKDT_Click;
             this.btnDangXuat.Click += BtnDangXuat_Click;
             this.picDangXuat.Click += PicDangXuat_Click;
+            this.btnDatHang.Click += BtnDatHang_Click;
+            this.picDatHang.Click += PicDatHang_Click;
+            this.btnTinTuc.Click += BtnTinTuc_Click;
+            this.picTinTuc.Click += PicTinTuc_Click;
+        }
+        
+        private void PicTinTuc_Click(object sender, EventArgs e)
+        {
+            BtnTinTuc_Click(sender, e);
+        }
+
+        private void BtnTinTuc_Click(object sender, EventArgs e)
+        {
+            TopLabel.Text = "Tin Tức";
+            openChildForm(new Forms.TinTuc());
+        }
+
+        private void PicDatHang_Click(object sender, EventArgs e)
+        {
+            BtnDatHang_Click(sender, e);
+        }
+
+        private void BtnDatHang_Click(object sender, EventArgs e)
+        {
+            TopLabel.Text = "Đặt Hàng";
+            // Lấy mã khách hàng từ SessionManager
+            int maKH = SessionManager.CurrentCustomerId;
+
+            if (maKH == -1)
+            {
+                MessageBox.Show("Vui lòng đăng nhập trước khi đặt hàng!",
+                              "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            openChildForm(new Forms.QL_DatHang(maKH));
         }
 
         private void PicDangXuat_Click(object sender, EventArgs e)
@@ -54,17 +89,6 @@ namespace App_BanLaptop
         {
             TopLabel.Text = "Báo cáo thống kê";
             openChildForm(new Forms.BaoCaoThongKe());
-        }
-
-        private void BtnDatHang_Click(object sender, EventArgs e)
-        {
-            TopLabel.Text = "Đặt Hàng";
-            openChildForm(new Forms.TinTuc());
-        }
-
-        private void PicDatHang_Click(object sender, EventArgs e)
-        {
-            BtnDatHang_Click(sender, e);
         }
 
         private void PicTTKH_Click(object sender, EventArgs e)

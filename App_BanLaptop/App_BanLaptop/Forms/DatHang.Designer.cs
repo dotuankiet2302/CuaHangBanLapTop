@@ -2,7 +2,7 @@
 
 namespace App_BanLaptop.Forms
 {
-    partial class DatHang
+    partial class TinTuc
     {
         /// <summary>
         /// Required designer variable.

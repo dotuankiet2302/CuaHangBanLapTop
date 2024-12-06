@@ -329,6 +329,7 @@ namespace App_BanLaptop.Forms
             // dgvKH
             // 
             this.dgvKH.AutoGenerateColumns = false;
+            this.dgvKH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -342,14 +343,13 @@ namespace App_BanLaptop.Forms
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10});
             this.dgvKH.DataSource = this.qLKhachHangBindingSource;
-            this.dgvKH.Dock = DockStyle.Bottom;
-            this.dgvKH.Location = new System.Drawing.Point(25, 291);
+            this.dgvKH.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvKH.Location = new System.Drawing.Point(0, 338);
             this.dgvKH.Name = "dgvKH";
             this.dgvKH.RowHeadersWidth = 51;
             this.dgvKH.RowTemplate.Height = 24;
-            this.dgvKH.Size = new System.Drawing.Size(1025, 242);
+            this.dgvKH.Size = new System.Drawing.Size(1072, 242);
             this.dgvKH.TabIndex = 131;
-            this.dgvKH.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -357,7 +357,6 @@ namespace App_BanLaptop.Forms
             this.dataGridViewTextBoxColumn1.HeaderText = "MAKH";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 125;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -365,7 +364,6 @@ namespace App_BanLaptop.Forms
             this.dataGridViewTextBoxColumn2.HeaderText = "HOTEN";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 125;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -373,7 +371,6 @@ namespace App_BanLaptop.Forms
             this.dataGridViewTextBoxColumn3.HeaderText = "NGAYSINH";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 125;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -381,7 +378,6 @@ namespace App_BanLaptop.Forms
             this.dataGridViewTextBoxColumn4.HeaderText = "GIOITINH";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 125;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -389,7 +385,6 @@ namespace App_BanLaptop.Forms
             this.dataGridViewTextBoxColumn5.HeaderText = "DIENTHOAI";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 125;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -397,7 +392,6 @@ namespace App_BanLaptop.Forms
             this.dataGridViewTextBoxColumn6.HeaderText = "TAIKHOAN";
             this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 125;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -405,7 +399,6 @@ namespace App_BanLaptop.Forms
             this.dataGridViewTextBoxColumn7.HeaderText = "MATKHAU";
             this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 125;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -413,7 +406,6 @@ namespace App_BanLaptop.Forms
             this.dataGridViewTextBoxColumn8.HeaderText = "EMAIL";
             this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 125;
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -421,7 +413,6 @@ namespace App_BanLaptop.Forms
             this.dataGridViewTextBoxColumn9.HeaderText = "DIACHI";
             this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 125;
             // 
             // dataGridViewTextBoxColumn10
             // 
@@ -429,7 +420,6 @@ namespace App_BanLaptop.Forms
             this.dataGridViewTextBoxColumn10.HeaderText = "MATINH";
             this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Width = 125;
             // 
             // qLKhachHangBindingSource
             // 
@@ -584,7 +574,7 @@ namespace App_BanLaptop.Forms
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.btnSearch);
             this.Name = "QL_KhachHang";
-            this.Text = "QL_KhachHang";
+            this.Text = "Quản Lý Khách Hàng";
             this.Load += new System.EventHandler(this.QL_KhachHang_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLKhachHangBindingSource)).EndInit();

@@ -20,10 +20,7 @@ namespace App_BanLaptop.Forms
         public QL_NhanVien()
         {
             InitializeComponent();
-            this.AutoSize = false;
-            this.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;    
-            this.dgvNhanVien.Dock = DockStyle.Bottom;
-            this.dgvNhanVien.Height = this.ClientSize.Height - 300;
+            this.AutoSize = false;   
             this.txtManv.Enabled = false;
             this.dgvNhanVien.CellClick += DgvNhanVien_CellClick;
             this.Them.Click += Them_Click;
@@ -41,6 +38,7 @@ namespace App_BanLaptop.Forms
             this.Load += new EventHandler(QL_NhanVien_Load);
             this.Xuat.Click += Xuat_Click;
         }
+
 
         private void Xuat_Click(object sender, EventArgs e)
         {
@@ -393,7 +391,6 @@ namespace App_BanLaptop.Forms
             this.WindowState = FormWindowState.Normal;
             this.FormBorderStyle = FormBorderStyle.None;
             this.Dock = DockStyle.Fill;
-            ResizeControls();
             QLNhanVienTableAdapter qlNV = new QLNhanVienTableAdapter();
             DataTable dataTable = qlNV.GetData();
             dgvNhanVien.DataSource = dataTable;
@@ -402,122 +399,6 @@ namespace App_BanLaptop.Forms
         {
             loadNhanVien();
         }
-
-        private void ResizeControls()
-        {
-            // Tính padding dựa trên kích thước form
-            int padding = (this.ClientSize.Width - 220) / 20;
-            
-            // Cột bên trái
-            label1.Left = padding;
-            txtManv.Left = label1.Right + padding;
-            txtManv.Width = 150;
-
-            label2.Left = padding;
-            label2.Top = label1.Bottom + padding;
-            txtTennv.Left = label2.Right + padding;
-            txtTennv.Width = 150;
-            txtTennv.Top = label2.Top;
-
-            label3.Left = padding;
-            label3.Top = label2.Bottom + padding;
-            txtNgaySinh.Left = label3.Right + padding;
-            txtNgaySinh.Width = 150;
-            txtNgaySinh.Top = label3.Top;
-
-            label4.Left = padding;
-            label4.Top = label3.Bottom + padding;
-            radioButtonNam.Left = label4.Right + padding;
-            radioButtonNam.Top = label4.Top;
-            radioButtonNu.Left = radioButtonNam.Right + padding;
-            radioButtonNu.Top = label4.Top;
-
-            // Cột giữa
-            int middleX = this.ClientSize.Width / 2;
-
-            label5.Left = middleX - 100;
-            txtPhone.Left = label5.Right + padding;
-            txtPhone.Width = 150;
-            txtPhone.Top = txtManv.Top;
-
-            label7.Left = middleX - 100;
-            label7.Top = label5.Bottom + padding;
-            txtUserName.Left = label7.Right + padding;
-            txtUserName.Width = 150;
-            txtUserName.Top = label7.Top;
-
-            label8.Left = middleX - 100;
-            label8.Top = label7.Bottom + padding;
-            txtPass.Left = label8.Right + padding;
-            txtPass.Width = 150;
-            txtPass.Top = label8.Top;
-            cbHienThiMK.Left = txtPass.Right + padding;
-            cbHienThiMK.Top = txtPass.Top;
-
-            // Cột bên phải
-            int rightX = this.ClientSize.Width - 220;
-
-            label9.Left = rightX - 150;
-            txtEmail.Left = label9.Right + padding;
-            txtEmail.Width = 150;
-            txtEmail.Top = txtManv.Top;
-
-            label10.Left = rightX - 150;
-            label10.Top = label9.Bottom + padding;
-            txtAddress.Left = label10.Right + padding;
-            txtAddress.Width = 150;
-            txtAddress.Top = label10.Top;
-
-            label6.Left = rightX - 150;
-            label6.Top = label10.Bottom + padding;
-            txtMaTinh.Left = label6.Right + padding;
-            txtMaTinh.Width = 150;
-            txtMaTinh.Top = label6.Top;
-
-            // Thanh tìm kiếm
-            cboTimKiem.Left = padding;
-            cboTimKiem.Top = label4.Bottom + padding * 2;
-            cboTimKiem.Width = 120;
-
-            txtTimKiem.Left = cboTimKiem.Right + padding;
-            txtTimKiem.Top = cboTimKiem.Top;
-            txtTimKiem.Width = 200;
-
-            btnTimKiem.Left = txtTimKiem.Right + padding;
-            btnTimKiem.Top = txtTimKiem.Top;
-
-            // Các nút chức năng
-            Them.Left = this.ClientSize.Width - 250;
-            Them.Top = cboTimKiem.Top;
-            
-            Sua.Left = Them.Right + padding;
-            Sua.Top = Them.Top;
-            
-            Xoa.Left = Sua.Right + padding;
-            Xoa.Top = Them.Top;
-
-            In.Left = Xoa.Right + padding;
-            In.Top = Them.Top;
-
-            Xuat.Left = In.Right + padding;
-            Xuat.Top = Them.Top;
-
-            // DataGridView
-            dgvNhanVien.Left = padding;
-            dgvNhanVien.Top = Them.Bottom + padding * 2;
-            dgvNhanVien.Width = this.ClientSize.Width - (padding * 2);
-            dgvNhanVien.Height = this.ClientSize.Height - dgvNhanVien.Top - padding;
-
-            // Đặt Anchor cho các controls cần thiết
-            dgvNhanVien.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            txtTimKiem.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            Them.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            Sua.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            Xoa.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            In.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            Xuat.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-        }
-
         private void qLNhanVienBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();

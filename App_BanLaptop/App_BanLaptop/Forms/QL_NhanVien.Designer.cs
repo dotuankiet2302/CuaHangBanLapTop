@@ -118,7 +118,7 @@
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(882, 22);
+            this.btnTimKiem.Location = new System.Drawing.Point(816, 22);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(100, 42);
@@ -128,13 +128,11 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTimKiem.Location = new System.Drawing.Point(323, 22);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimKiem.Multiline = true;
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(513, 41);
+            this.txtTimKiem.Size = new System.Drawing.Size(448, 40);
             this.txtTimKiem.TabIndex = 93;
             // 
             // cbHienThiMK
@@ -408,11 +406,7 @@
             // 
             // dgvNhanVien
             // 
-            this.dgvNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvNhanVien.AutoGenerateColumns = false;
-            this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
@@ -425,11 +419,11 @@
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10});
             this.dgvNhanVien.DataSource = this.qLNhanVienBindingSource;
-            this.dgvNhanVien.Location = new System.Drawing.Point(24, 289);
+            this.dgvNhanVien.Location = new System.Drawing.Point(25, 300);
             this.dgvNhanVien.Name = "dgvNhanVien";
             this.dgvNhanVien.RowHeadersWidth = 51;
             this.dgvNhanVien.RowTemplate.Height = 24;
-            this.dgvNhanVien.Size = new System.Drawing.Size(1033, 234);
+            this.dgvNhanVien.Size = new System.Drawing.Size(1750, 250);
             this.dgvNhanVien.TabIndex = 104;
             // 
             // dataGridViewTextBoxColumn1
@@ -540,8 +534,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 600); // Kích thước nhỏ hơn để dễ design
-
+            this.ClientSize = new System.Drawing.Size(1061, 600);
             this.Controls.Add(this.Xuat);
             this.Controls.Add(this.In);
             this.Controls.Add(this.dgvNhanVien);
@@ -574,7 +567,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "QL_NhanVien";
-            this.Text = "QL_NhanVien";
+            this.Text = "Quản Lý Nhân Viên";
             this.Load += new System.EventHandler(this.QL_NhanVien_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.Xoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sua)).EndInit();

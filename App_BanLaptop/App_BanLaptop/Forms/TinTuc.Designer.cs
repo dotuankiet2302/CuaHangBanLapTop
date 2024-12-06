@@ -31,78 +31,56 @@ namespace App_BanLaptop.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.txtMaTin = new System.Windows.Forms.TextBox();
-            this.txtNoiDung = new System.Windows.Forms.TextBox();
-            this.txtTieuDe = new System.Windows.Forms.TextBox();
-            this.txtNgayDang = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.In = new System.Windows.Forms.PictureBox();
-            this.Xoa = new System.Windows.Forms.PictureBox();
-            this.Sua = new System.Windows.Forms.PictureBox();
-            this.Them = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.picHInhAnh = new System.Windows.Forms.PictureBox();
-            this.cboTimKiem = new System.Windows.Forms.ComboBox();
-            this.btnTimKiem = new System.Windows.Forms.Button();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.dgvQLTinTuc = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qLTinTucBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.doan_laptop = new App_BanLaptop.doan_laptop();
+            this.qLTinTucBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qLTinTucTableAdapter = new App_BanLaptop.doan_laptopTableAdapters.QLTinTucTableAdapter();
             this.tableAdapterManager = new App_BanLaptop.doan_laptopTableAdapters.TableAdapterManager();
+            this.dgvTinTuc = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtMaTin = new UC_RequiredTextBox.txtKhongDeTrong();
+            this.txtTieuDe = new UC_RequiredTextBox.txtKhongDeTrong();
+            this.txtNoiDung = new UC_RequiredTextBox.txtKhongDeTrong();
+            this.txtNgayDang = new UC_RequiredTextBox.txtKhongDeTrong();
             this.txtMaLoaiTin = new System.Windows.Forms.ComboBox();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.picHInhAnh = new System.Windows.Forms.PictureBox();
+            this.Xuat = new System.Windows.Forms.PictureBox();
+            this.In = new System.Windows.Forms.PictureBox();
+            this.Xoa = new System.Windows.Forms.PictureBox();
+            this.Sua = new System.Windows.Forms.PictureBox();
+            this.Them = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.doan_laptop)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLTinTucBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTinTuc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHInhAnh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Xuat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.In)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Xoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sua)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Them)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picHInhAnh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvQLTinTuc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLTinTucBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doan_laptop)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtMaTin
-            // 
-            this.txtMaTin.Location = new System.Drawing.Point(122, 112);
-            this.txtMaTin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtMaTin.Name = "txtMaTin";
-            this.txtMaTin.Size = new System.Drawing.Size(121, 20);
-            this.txtMaTin.TabIndex = 20;
-            // 
-            // txtNoiDung
-            // 
-            this.txtNoiDung.Location = new System.Drawing.Point(472, 112);
-            this.txtNoiDung.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtNoiDung.Name = "txtNoiDung";
-            this.txtNoiDung.Size = new System.Drawing.Size(335, 20);
-            this.txtNoiDung.TabIndex = 18;
-            // 
-            // txtTieuDe
-            // 
-            this.txtTieuDe.Location = new System.Drawing.Point(271, 112);
-            this.txtTieuDe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtTieuDe.Name = "txtTieuDe";
-            this.txtTieuDe.Size = new System.Drawing.Size(175, 20);
-            this.txtTieuDe.TabIndex = 17;
-            // 
-            // txtNgayDang
-            // 
-            this.txtNgayDang.Location = new System.Drawing.Point(272, 169);
-            this.txtNgayDang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtNgayDang.Name = "txtNgayDang";
-            this.txtNgayDang.Size = new System.Drawing.Size(121, 20);
-            this.txtNgayDang.TabIndex = 13;
             // 
             // label13
             // 
@@ -140,54 +118,6 @@ namespace App_BanLaptop.Forms
             this.label8.TabIndex = 2;
             this.label8.Text = "Mã tin: ";
             // 
-            // In
-            // 
-            this.In.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.In.Image = global::App_BanLaptop.Properties.Resources.In;
-            this.In.Location = new System.Drawing.Point(953, 182);
-            this.In.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.In.Name = "In";
-            this.In.Size = new System.Drawing.Size(54, 45);
-            this.In.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.In.TabIndex = 94;
-            this.In.TabStop = false;
-            // 
-            // Xoa
-            // 
-            this.Xoa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Xoa.Image = global::App_BanLaptop.Properties.Resources.xoa;
-            this.Xoa.Location = new System.Drawing.Point(836, 182);
-            this.Xoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Xoa.Name = "Xoa";
-            this.Xoa.Size = new System.Drawing.Size(54, 45);
-            this.Xoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Xoa.TabIndex = 93;
-            this.Xoa.TabStop = false;
-            // 
-            // Sua
-            // 
-            this.Sua.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Sua.Image = global::App_BanLaptop.Properties.Resources.sua;
-            this.Sua.Location = new System.Drawing.Point(953, 112);
-            this.Sua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Sua.Name = "Sua";
-            this.Sua.Size = new System.Drawing.Size(54, 54);
-            this.Sua.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Sua.TabIndex = 92;
-            this.Sua.TabStop = false;
-            // 
-            // Them
-            // 
-            this.Them.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Them.Image = global::App_BanLaptop.Properties.Resources.them;
-            this.Them.Location = new System.Drawing.Point(836, 112);
-            this.Them.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Them.Name = "Them";
-            this.Them.Size = new System.Drawing.Size(54, 48);
-            this.Them.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Them.TabIndex = 91;
-            this.Them.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -205,68 +135,6 @@ namespace App_BanLaptop.Forms
             this.label2.Size = new System.Drawing.Size(62, 16);
             this.label2.TabIndex = 97;
             this.label2.Text = "Hình ảnh:";
-            // 
-            // picHInhAnh
-            // 
-            this.picHInhAnh.ErrorImage = global::App_BanLaptop.Properties.Resources.errorImage;
-            this.picHInhAnh.Location = new System.Drawing.Point(537, 160);
-            this.picHInhAnh.Name = "picHInhAnh";
-            this.picHInhAnh.Size = new System.Drawing.Size(270, 180);
-            this.picHInhAnh.TabIndex = 98;
-            this.picHInhAnh.TabStop = false;
-            // 
-            // cboTimKiem
-            // 
-            this.cboTimKiem.FormattingEnabled = true;
-            this.cboTimKiem.Items.AddRange(new object[] {
-            "Tên Sản Phẩm",
-            "Giá Bán"});
-            this.cboTimKiem.Location = new System.Drawing.Point(99, 24);
-            this.cboTimKiem.Margin = new System.Windows.Forms.Padding(4);
-            this.cboTimKiem.Name = "cboTimKiem";
-            this.cboTimKiem.Size = new System.Drawing.Size(174, 21);
-            this.cboTimKiem.TabIndex = 101;
-            this.cboTimKiem.Text = "Tên Sản Phẩm";
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.Location = new System.Drawing.Point(898, 24);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(109, 42);
-            this.btnTimKiem.TabIndex = 100;
-            this.btnTimKiem.Text = "Tìm Kiếm";
-            this.btnTimKiem.UseVisualStyleBackColor = true;
-            // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Location = new System.Drawing.Point(318, 24);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTimKiem.Multiline = true;
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(544, 41);
-            this.txtTimKiem.TabIndex = 99;
-            // 
-            // dgvQLTinTuc
-            // 
-            this.dgvQLTinTuc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvQLTinTuc.AutoGenerateColumns = false;
-            this.dgvQLTinTuc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvQLTinTuc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
-            this.dgvQLTinTuc.DataSource = this.qLTinTucBindingSource;
-            this.dgvQLTinTuc.Location = new System.Drawing.Point(12, 346);
-            this.dgvQLTinTuc.Name = "dgvQLTinTuc";
-            this.dgvQLTinTuc.RowHeadersWidth = 51;
-            this.dgvQLTinTuc.RowTemplate.Height = 24;
-            this.dgvQLTinTuc.Size = new System.Drawing.Size(1074, 220);
-            this.dgvQLTinTuc.TabIndex = 102;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -316,15 +184,15 @@ namespace App_BanLaptop.Forms
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.Width = 125;
             // 
-            // qLTinTucBindingSource
-            // 
-            this.qLTinTucBindingSource.DataMember = "QLTinTuc";
-            this.qLTinTucBindingSource.DataSource = this.doan_laptop;
-            // 
             // doan_laptop
             // 
             this.doan_laptop.DataSetName = "doan_laptop";
             this.doan_laptop.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // qLTinTucBindingSource
+            // 
+            this.qLTinTucBindingSource.DataMember = "QLTinTuc";
+            this.qLTinTucBindingSource.DataSource = this.doan_laptop;
             // 
             // qLTinTucTableAdapter
             // 
@@ -351,72 +219,322 @@ namespace App_BanLaptop.Forms
             this.tableAdapterManager.tinTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = App_BanLaptop.doan_laptopTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // dgvTinTuc
+            // 
+            this.dgvTinTuc.AutoGenerateColumns = false;
+            this.dgvTinTuc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTinTuc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12});
+            this.dgvTinTuc.DataSource = this.qLTinTucBindingSource;
+            this.dgvTinTuc.Location = new System.Drawing.Point(42, 245);
+            this.dgvTinTuc.Name = "dgvTinTuc";
+            this.dgvTinTuc.RowHeadersWidth = 51;
+            this.dgvTinTuc.RowTemplate.Height = 24;
+            this.dgvTinTuc.Size = new System.Drawing.Size(1036, 220);
+            this.dgvTinTuc.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "MATIN";
+            this.dataGridViewTextBoxColumn7.HeaderText = "MATIN";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "TIEUDE";
+            this.dataGridViewTextBoxColumn8.HeaderText = "TIEUDE";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "NOIDUNG";
+            this.dataGridViewTextBoxColumn9.HeaderText = "NOIDUNG";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "HINH";
+            this.dataGridViewTextBoxColumn10.HeaderText = "HINH";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "NGAYDANG";
+            this.dataGridViewTextBoxColumn11.HeaderText = "NGAYDANG";
+            this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "TLTIN";
+            this.dataGridViewTextBoxColumn12.HeaderText = "TLTIN";
+            this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Width = 125;
+            // 
+            // txtMaTin
+            // 
+            this.txtMaTin.BackColor = System.Drawing.Color.LightPink;
+            this.txtMaTin.Location = new System.Drawing.Point(138, 9);
+            this.txtMaTin.Name = "txtMaTin";
+            this.txtMaTin.Size = new System.Drawing.Size(100, 22);
+            this.txtMaTin.TabIndex = 2;
+            // 
+            // txtTieuDe
+            // 
+            this.txtTieuDe.BackColor = System.Drawing.Color.LightPink;
+            this.txtTieuDe.Location = new System.Drawing.Point(138, 42);
+            this.txtTieuDe.Name = "txtTieuDe";
+            this.txtTieuDe.Size = new System.Drawing.Size(100, 22);
+            this.txtTieuDe.TabIndex = 3;
+            // 
+            // txtNoiDung
+            // 
+            this.txtNoiDung.BackColor = System.Drawing.Color.LightPink;
+            this.txtNoiDung.Location = new System.Drawing.Point(138, 70);
+            this.txtNoiDung.Name = "txtNoiDung";
+            this.txtNoiDung.Size = new System.Drawing.Size(100, 22);
+            this.txtNoiDung.TabIndex = 4;
+            // 
+            // txtNgayDang
+            // 
+            this.txtNgayDang.BackColor = System.Drawing.Color.LightPink;
+            this.txtNgayDang.Location = new System.Drawing.Point(138, 100);
+            this.txtNgayDang.Name = "txtNgayDang";
+            this.txtNgayDang.Size = new System.Drawing.Size(100, 22);
+            this.txtNgayDang.TabIndex = 5;
+            // 
             // txtMaLoaiTin
             // 
             this.txtMaLoaiTin.FormattingEnabled = true;
             this.txtMaLoaiTin.Items.AddRange(new object[] {
             "TIN TỨC MỚI NHẤT",
-            "TIN KHUYẾN MẠI",
+            "TIN KHUYẾN MÃI",
             "TIN TỨC KHÁC"});
-            this.txtMaLoaiTin.Location = new System.Drawing.Point(122, 169);
+            this.txtMaLoaiTin.Location = new System.Drawing.Point(355, 9);
             this.txtMaLoaiTin.Name = "txtMaLoaiTin";
-            this.txtMaLoaiTin.Size = new System.Drawing.Size(121, 21);
-            this.txtMaLoaiTin.TabIndex = 103;
-            this.txtMaLoaiTin.Text = "TIN TỨC MỚI NHẤT";
+            this.txtMaLoaiTin.Size = new System.Drawing.Size(121, 24);
+            this.txtMaLoaiTin.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(39, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 16);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Mã tin";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(39, 45);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 16);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Tiêu đề";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(40, 73);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 16);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Nội dung";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(40, 103);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 16);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Ngày đăng";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(257, 12);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 16);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Mã loại tin";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(257, 42);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(59, 16);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Hình ảnh";
+            // 
+            // picHInhAnh
+            // 
+            this.picHInhAnh.ErrorImage = global::App_BanLaptop.Properties.Resources.errorImage;
+            this.picHInhAnh.Location = new System.Drawing.Point(355, 42);
+            this.picHInhAnh.Name = "picHInhAnh";
+            this.picHInhAnh.Size = new System.Drawing.Size(270, 180);
+            this.picHInhAnh.TabIndex = 94;
+            this.picHInhAnh.TabStop = false;
+            // 
+            // Xuat
+            // 
+            this.Xuat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Xuat.Image = global::App_BanLaptop.Properties.Resources.xuat;
+            this.Xuat.Location = new System.Drawing.Point(689, 185);
+            this.Xuat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Xuat.Name = "Xuat";
+            this.Xuat.Size = new System.Drawing.Size(44, 39);
+            this.Xuat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Xuat.TabIndex = 143;
+            this.Xuat.TabStop = false;
+            // 
+            // In
+            // 
+            this.In.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.In.Image = global::App_BanLaptop.Properties.Resources.In;
+            this.In.Location = new System.Drawing.Point(689, 141);
+            this.In.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.In.Name = "In";
+            this.In.Size = new System.Drawing.Size(44, 40);
+            this.In.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.In.TabIndex = 142;
+            this.In.TabStop = false;
+            // 
+            // Xoa
+            // 
+            this.Xoa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Xoa.Image = global::App_BanLaptop.Properties.Resources.xoa;
+            this.Xoa.Location = new System.Drawing.Point(688, 97);
+            this.Xoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Xoa.Name = "Xoa";
+            this.Xoa.Size = new System.Drawing.Size(43, 40);
+            this.Xoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Xoa.TabIndex = 141;
+            this.Xoa.TabStop = false;
+            // 
+            // Sua
+            // 
+            this.Sua.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Sua.Image = global::App_BanLaptop.Properties.Resources.sua;
+            this.Sua.Location = new System.Drawing.Point(689, 55);
+            this.Sua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Sua.Name = "Sua";
+            this.Sua.Size = new System.Drawing.Size(42, 38);
+            this.Sua.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Sua.TabIndex = 140;
+            this.Sua.TabStop = false;
+            // 
+            // Them
+            // 
+            this.Them.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Them.Image = global::App_BanLaptop.Properties.Resources.them;
+            this.Them.Location = new System.Drawing.Point(689, 12);
+            this.Them.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Them.Name = "Them";
+            this.Them.Size = new System.Drawing.Size(42, 39);
+            this.Them.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Them.TabIndex = 139;
+            this.Them.TabStop = false;
             // 
             // TinTuc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1047, 483);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ClientSize = new System.Drawing.Size(1396, 594);
+            this.Controls.Add(this.Xuat);
+            this.Controls.Add(this.In);
+            this.Controls.Add(this.Xoa);
+            this.Controls.Add(this.Sua);
+            this.Controls.Add(this.Them);
+            this.Controls.Add(this.picHInhAnh);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtMaLoaiTin);
+            this.Controls.Add(this.txtNgayDang);
+            this.Controls.Add(this.txtNoiDung);
+            this.Controls.Add(this.txtTieuDe);
+            this.Controls.Add(this.txtMaTin);
+            this.Controls.Add(this.dgvTinTuc);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TinTuc";
-            this.Text = "DatHang";
+            this.Text = "Tin Tức";
             this.Load += new System.EventHandler(this.TinTuc_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.doan_laptop)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLTinTucBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTinTuc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHInhAnh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Xuat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.In)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Xoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Sua)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Them)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picHInhAnh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvQLTinTuc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLTinTucBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doan_laptop)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtMaTin;
-        private System.Windows.Forms.TextBox txtNoiDung;
-        private System.Windows.Forms.TextBox txtTieuDe;
-        private System.Windows.Forms.TextBox txtNgayDang;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.PictureBox In;
-        private System.Windows.Forms.PictureBox Xoa;
-        private System.Windows.Forms.PictureBox Sua;
-        private System.Windows.Forms.PictureBox Them;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox picHInhAnh;
-        private System.Windows.Forms.ComboBox cboTimKiem;
-        private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.TextBox txtTimKiem;
-        private doan_laptop doan_laptop;
-        private System.Windows.Forms.BindingSource qLTinTucBindingSource;
-        private doan_laptopTableAdapters.QLTinTucTableAdapter qLTinTucTableAdapter;
-        private doan_laptopTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridView dgvQLTinTuc;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.ComboBox txtMaLoaiTin;
-        private System.Windows.Forms.ColorDialog colorDialog1;
+        private doan_laptop doan_laptop;
+        private BindingSource qLTinTucBindingSource;
+        private doan_laptopTableAdapters.QLTinTucTableAdapter qLTinTucTableAdapter;
+        private doan_laptopTableAdapters.TableAdapterManager tableAdapterManager;
+        private DataGridView dgvTinTuc;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private UC_RequiredTextBox.txtKhongDeTrong txtMaTin;
+        private UC_RequiredTextBox.txtKhongDeTrong txtTieuDe;
+        private UC_RequiredTextBox.txtKhongDeTrong txtNoiDung;
+        private UC_RequiredTextBox.txtKhongDeTrong txtNgayDang;
+        private ComboBox txtMaLoaiTin;
+        private Label label3;
+        private Label label4;
+        private Label label5;
+        private Label label6;
+        private Label label7;
+        private Label label10;
+        private PictureBox picHInhAnh;
+        private PictureBox Xuat;
+        private PictureBox In;
+        private PictureBox Xoa;
+        private PictureBox Sua;
+        private PictureBox Them;
     }
 }

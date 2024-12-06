@@ -1,10 +1,10 @@
 ﻿using DTO;
+using DTO.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DTO;
 
 namespace DAL
 {
@@ -20,7 +20,31 @@ namespace DAL
         {
             return qlLapTop.khachhangs.Select(kh => kh).ToList<khachhang>();
         }
+        public KhachHang GetKhachHangByUsername(string username)
+        {
+            try
+            {
+                var khachHang = qlLapTop.khachhangs
+                    .Where(kh => kh.TAIKHOAN == username)
+                    .Select(kh => new KhachHang
+                    {
+                        MaKH = kh.MAKH,
+                        TenKH = kh.HOTEN,
+                        DiaChi = kh.DIACHI,
+                        DienThoai = kh.DIENTHOAI,
+                        Email = kh.EMAIL,
+                        TaiKhoan = kh.TAIKHOAN,
+                        MatKhau = kh.MATKHAU
+                    })
+                    .FirstOrDefault();
 
+                return khachHang;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi truy vấn dữ liệu: " + ex.Message);
+            }
+        }
         public bool ThemKhachHang(khachhang pKhachHang)
         {
             try

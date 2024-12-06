@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Common;
 
 namespace UC_DangNhap
 {
@@ -82,25 +83,40 @@ namespace UC_DangNhap
         }
         public void ProcessLogin()
         {
-            LoginResult result;
-            result = CauHinh.Check_User(txtTK.Text, txtMK.Text, CNN); //
-            //Check_User viết trong Class QL_NguoiDung
-            // Wrong username or pass
-            if (result == LoginResult.Invalid)
+            try
             {
-                MessageBox.Show("Sai " + label1.Text + " Hoặc " +
-                label2.Text);
-                return;
-            }
-            // Account had been disabled
-            else if (result == LoginResult.Disabled)
-            {
-                MessageBox.Show("Tài khoản bị khóa");
-                return;
-            }
+                LoginResult result = CauHinh.Check_User(txtTK.Text, txtMK.Text, CNN);
 
-            TT = true;
-            GetChange_DN.Invoke(this, new EventArgs());
+                if (result == LoginResult.Invalid)
+                {
+                    MessageBox.Show("Sai " + label1.Text + " Hoặc " + label2.Text);
+                    return;
+                }
+                else if (result == LoginResult.Disabled)
+                {
+                    MessageBox.Show("Tài khoản bị khóa");
+                    return;
+                }
+
+                // Lưu thông tin người dùng vào SessionManager
+                var userInfo = CauHinh.GetUserInfo(txtTK.Text);
+                if (userInfo != null)
+                {
+                    SessionManager.CurrentCustomerId = userInfo.MaKH;
+                    SessionManager.CurrentUserName = userInfo.TaiKhoan;
+                    SessionManager.CurrentCustomerName = userInfo.TenKH;
+                }
+
+                TT = true;
+                if (GetChange_DN != null)
+                {
+                    GetChange_DN.Invoke(this, new EventArgs());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi đăng nhập: " + ex.Message);
+            }
         }
     }
     public enum LoginResult
